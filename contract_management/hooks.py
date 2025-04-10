@@ -5,6 +5,75 @@ app_description = "This app is created for forest department"
 app_email = "bharat@algoware.in"
 app_license = "mit"
 
+
+# web_include_css = "/assets/contract_management/css/asdfad.css"
+# app_include_js = "/assets/contract_management/js/project_setup.js"
+
+# web_include_css = "/assets/contract_management/css/workteam.css"
+
+
+
+# send information form to applicang using email
+doc_events = {
+    "Prospect Applicant": {
+        "after_insert": "contract_management.contract_management.doctype.prospect_applicant.prospect_applicant.send_email_on_creation"
+    }
+}
+
+#  Create Entry in Marked Attandance doctype using frappe.enqueue
+# doc_events = {
+#     "Time and Daily Allowance": {
+#         "before_save": "contract_management.contract_management.doctype.time_and_daily_allowance.time_and_daily_allowance.create_attendance_entries"
+#         # "before_save": "contract_management.contract_management.doctype.time_and_daily_allowance.time_and_daily_allowance.before_save"
+#     }
+# }
+
+# doc_events = {
+#     "Time and Daily Allowance": {
+#         "before_save": "contract_management.contract_management.doctype.time_and_daily_allowance.time_and_daily_allowance.create_marked_attendance"
+#     }
+# }
+
+# doc_events = {
+#     "Time And Daily Allowance": {
+#         "before_save": "contract_management.time_and_daily_allowance.insert_into_marked_attendance"
+#     }
+# }
+
+
+# contract_management/contract_management/contract_management/doctype/project_setup/project_setup.py
+
+
+# doc_events = {
+#     "Verification By HR": {
+#         "after_insert": "contract_management.contract_management.doctype.verification_by_hr.verification_by_hr.send_email_api"
+#     }
+# }
+
+
+# Trying to create user permission automatically by project setup
+
+# doc_events = {
+#     "Project Setup": {
+#         "before_save": "contract_management.contract_management.doctype.project_setup.project_setup.create_user_permission"
+#     }
+# }
+
+# contract_management/contract_management/contract_management/doctype/project_setup/project_setup.py
+
+# doc_events = {
+#     "Project Setup": {
+#         "after_insert": "contract_management.contract_management.doctype.project_setup.project_setup.create_user_permission"
+#         # "before_save": "contract_management.contract_management.doctype.project_setup.project_setup.create_user_permission"
+#         # "on_update": "contract_management.contract_management.doctype.project_setup.project_setup.create_user_permission"
+#     }
+# }
+
+
+
+
+
+
 # Apps
 # ------------------
 

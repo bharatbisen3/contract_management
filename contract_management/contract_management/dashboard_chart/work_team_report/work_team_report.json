@@ -1,0 +1,33 @@
+{
+ "chart_name": "Work Team report",
+ "chart_type": "Report",
+ "creation": "2025-03-24 19:21:02.264855",
+ "currency": "INR",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2025-03-24 19:21:02.264855",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Work Team report",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Total Work Teams",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "team_name",
+ "y_axis": [
+  {
+   "y_field": "member_count"
+  }
+ ]
+}

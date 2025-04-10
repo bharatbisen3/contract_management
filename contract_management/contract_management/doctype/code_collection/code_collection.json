@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-04 11:57:48.278992",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "module_name",
+  "module_type",
+  "file_type",
+  "version",
+  "column_break_divk",
+  "discription",
+  "section_break_vbwu",
+  "code_in_text_format",
+  "column_break_vzww",
+  "real_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "version",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Version"
+  },
+  {
+   "fieldname": "discription",
+   "fieldtype": "Small Text",
+   "label": "Discription"
+  },
+  {
+   "fieldname": "column_break_divk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vbwu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "code_in_text_format",
+   "fieldtype": "Long Text",
+   "label": "Code In Text Format"
+  },
+  {
+   "fieldname": "real_code",
+   "fieldtype": "Code",
+   "label": "Real Code"
+  },
+  {
+   "fieldname": "column_break_vzww",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "file_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "File Type",
+   "options": "\nPy\nJS\nJSON\nOther"
+  },
+  {
+   "fieldname": "module_name",
+   "fieldtype": "Data",
+   "label": "Module Name"
+  },
+  {
+   "fieldname": "module_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Module Type",
+   "options": "---\nDoctype\nWeb Form\nOthers"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-04 12:10:46.490731",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Code Collection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

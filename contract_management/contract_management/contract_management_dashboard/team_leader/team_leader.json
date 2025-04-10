@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Work Team report",
+   "width": "Full"
+  }
+ ],
+ "creation": "2025-03-26 17:30:45.118031",
+ "dashboard_name": "Team Leader",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-03-26 17:32:44.322554",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Team Leader",
+ "owner": "Administrator"
+}

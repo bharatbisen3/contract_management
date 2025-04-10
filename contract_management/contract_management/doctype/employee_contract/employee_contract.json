@@ -1,0 +1,758 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:EC-{YYYY}-{#####}",
+ "creation": "2025-03-03 13:14:53.808265",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employer_information_section",
+  "employer",
+  "organization_numer",
+  "website",
+  "email",
+  "mobile_phone_number",
+  "column_break_yanz",
+  "address",
+  "city",
+  "postcode",
+  "country",
+  "employee_information_section",
+  "verification_id",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "gender",
+  "column_break_sset",
+  "date_of_birth",
+  "country_of_birth",
+  "citizenship",
+  "applicant_contact_number",
+  "applicant_email",
+  "what_is_your_current_address_section",
+  "applicant_address",
+  "column_break_vntm",
+  "city_emp",
+  "state__province",
+  "zip__postal_code",
+  "country_emp",
+  "bank_information_section",
+  "bank",
+  "bic_code",
+  "please_attach_a_picture_your_valid_id_or_passport",
+  "column_break_qiiw",
+  "name_the_other_bank",
+  "your_bank_account_number",
+  "employment_and_workplace_section",
+  "job_duties",
+  "the_work_includes_the_following",
+  "place_of_employment_section",
+  "place_of_employment",
+  "the_main_rule",
+  "the_alternative_rule",
+  "the_exception_rule",
+  "workplaces_section",
+  "folketshusv\u00e4gen_40_841_98_ljungaverk_sweden",
+  "form_of_employment_section",
+  "basis_for_time_limitation",
+  "probationary_employment",
+  "special_fixed_term_employment",
+  "seasonal_work",
+  "column_break_oczu",
+  "estimated_starting_date",
+  "estimated_finish_date",
+  "terms_of_employment_section",
+  "workinghours_per_week_and_time",
+  "time_span_start",
+  "time_span_end",
+  "section_break_zjoj",
+  "conditions_for_overtime_work_or_moretime_work",
+  "only_ordered_overtime_or_moretime",
+  "according_to_the_applicable_collective_agreement",
+  "section_break_qgnh",
+  "hourly_salary_in_sek_gross_salary",
+  "column_break_xalx",
+  "piecework_pay_according_to_a_separate_agreement",
+  "section_break_minb",
+  "pay_period",
+  "the_salary_is_paid_the_month_after_earning",
+  "the_salary_is_paid_on_the_25th_of_each_month",
+  "holiday_right",
+  "by_law",
+  "according_to_collective_agreement_and_law",
+  "any_training_provided_by_the_employer",
+  "insurances",
+  "by_law_emp",
+  "according_to_collective_agreement_and_law_emp",
+  "the_employment_protection_act",
+  "collective_agreement",
+  "other_conditions",
+  "code_of_cunduct_section",
+  "language",
+  "section_break_wixk",
+  "terms_and_conditions",
+  "signature_of_emp_section",
+  "candidate_column",
+  "place_a",
+  "date_a",
+  "status",
+  "column_break_cwzt",
+  "signature_from_employee",
+  "section_break_rnda",
+  "type_your_question_here",
+  "signature_of_hr_section",
+  "hr_column",
+  "place",
+  "date",
+  "column_break_svdm",
+  "signature_from_employer",
+  "section_break_lsdx",
+  "document_viewer",
+  "vid"
+ ],
+ "fields": [
+  {
+   "fieldname": "employer_information_section",
+   "fieldtype": "Section Break",
+   "label": "Employer Information"
+  },
+  {
+   "default": "Ljungan Skogsv\u00e5rd AB",
+   "fieldname": "employer",
+   "fieldtype": "Data",
+   "label": "Employer"
+  },
+  {
+   "default": "Folkethusv\u00e4gen 40",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "default": "841 98",
+   "fieldname": "postcode",
+   "fieldtype": "Int",
+   "label": "Postcode"
+  },
+  {
+   "default": "LJUNGAVERK",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "default": "+46 72 743 14 11",
+   "fieldname": "mobile_phone_number",
+   "fieldtype": "Phone",
+   "label": "Mobile phone number"
+  },
+  {
+   "default": "559292-9086",
+   "fieldname": "organization_numer",
+   "fieldtype": "Data",
+   "label": "Organization numer",
+   "options": "Phone"
+  },
+  {
+   "default": "Sweden",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "default": "ljunganskogsvard@gmail.com",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fetch_from": "verification_id.applicant_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "First name"
+  },
+  {
+   "default": "https://www.ljunganskogsvard.se",
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
+  },
+  {
+   "fetch_from": "verification_id.middle_name",
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle name"
+  },
+  {
+   "fetch_from": "verification_id.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last name"
+  },
+  {
+   "fetch_from": "verification_id.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fetch_from": "verification_id.country_of_birth",
+   "fieldname": "country_of_birth",
+   "fieldtype": "Link",
+   "label": "Country of birth ",
+   "options": "Country"
+  },
+  {
+   "fetch_from": "verification_id.citizenship_",
+   "fieldname": "citizenship",
+   "fieldtype": "Data",
+   "label": "Citizenship"
+  },
+  {
+   "fieldname": "what_is_your_current_address_section",
+   "fieldtype": "Section Break",
+   "label": "What is your current address"
+  },
+  {
+   "fetch_from": "verification_id.applicant_address",
+   "fieldname": "applicant_address",
+   "fieldtype": "Small Text",
+   "label": "Applicant Address"
+  },
+  {
+   "fetch_from": "verification_id.city_a",
+   "fieldname": "city_emp",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fetch_from": "verification_id.state__province",
+   "fieldname": "state__province",
+   "fieldtype": "Data",
+   "label": "State / Province"
+  },
+  {
+   "fetch_from": "verification_id.zip__postal_code",
+   "fieldname": "zip__postal_code",
+   "fieldtype": "Int",
+   "label": "ZIP / Postal code"
+  },
+  {
+   "fetch_from": "verification_id.country",
+   "fieldname": "country_emp",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fetch_from": "verification_id.applicant_contact_number",
+   "fieldname": "applicant_contact_number",
+   "fieldtype": "Phone",
+   "label": "Applicant Contact Number "
+  },
+  {
+   "fetch_from": "verification_id.applicant_email_address",
+   "fieldname": "applicant_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Applicant Email",
+   "unique": 1
+  },
+  {
+   "fetch_from": "verification_id.bank",
+   "fieldname": "bank",
+   "fieldtype": "Select",
+   "label": "Bank",
+   "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nOther"
+  },
+  {
+   "fetch_from": "verification_id.bic_code",
+   "fieldname": "bic_code",
+   "fieldtype": "Data",
+   "label": "BIC Code"
+  },
+  {
+   "depends_on": "eval:doc.bank == \"Other\"",
+   "fetch_from": "verification_id.name_the_other_bank",
+   "fieldname": "name_the_other_bank",
+   "fieldtype": "Data",
+   "label": "Name the other bank"
+  },
+  {
+   "fetch_from": "verification_id.your_bank_account_number",
+   "fieldname": "your_bank_account_number",
+   "fieldtype": "Data",
+   "label": "Your bank account number"
+  },
+  {
+   "fieldname": "employment_and_workplace_section",
+   "fieldtype": "Section Break",
+   "label": "Employment and Workplace"
+  },
+  {
+   "description": "According to this agreement, the employee is employed by the company Ljungan Skogsv\u00e5rd AB to perform the following work in forestry:",
+   "fieldname": "job_duties",
+   "fieldtype": "Heading",
+   "label": "Job Duties"
+  },
+  {
+   "fetch_from": "verification_id.please_attach_your_valid_id_or_passport",
+   "fieldname": "please_attach_a_picture_your_valid_id_or_passport",
+   "fieldtype": "Attach",
+   "label": "Please attach a picture your valid ID or Passport"
+  },
+  {
+   "fetch_from": "verification_id.the_work_includes_the_following",
+   "fieldname": "the_work_includes_the_following",
+   "fieldtype": "Select",
+   "label": "The work includes the following",
+   "options": "\nForest Clearing\nForest Planting\nForest Planning\nWork Report"
+  },
+  {
+   "fieldname": "place_of_employment_section",
+   "fieldtype": "Section Break",
+   "label": "Place of Employment"
+  },
+  {
+   "fieldname": "place_of_employment",
+   "fieldtype": "Heading",
+   "label": "Place of Employment"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.the_main_rule",
+   "fieldname": "the_main_rule",
+   "fieldtype": "Check",
+   "label": "The main rule The place of employment is the place where the employee performs the main part of his work"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.the_alternative_rule",
+   "fieldname": "the_alternative_rule",
+   "fieldtype": "Check",
+   "label": "The alternative rule If the work is performed while moving or at workplaces that are constantly changing"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.the_exception_rule",
+   "fieldname": "the_exception_rule",
+   "fieldtype": "Check",
+   "label": "The exception rule  If the work takes place for a limited time at each location, the residence is a place of employment"
+  },
+  {
+   "description": "The workplace may vary depending on the company's mission and agreement",
+   "fieldname": "folketshusv\u00e4gen_40_841_98_ljungaverk_sweden",
+   "fieldtype": "Heading",
+   "label": "Folketshusv\u00e4gen 40, 841 98 LJUNGAVERK, Sweden"
+  },
+  {
+   "fieldname": "workplaces_section",
+   "fieldtype": "Section Break",
+   "label": "Workplaces"
+  },
+  {
+   "fieldname": "column_break_yanz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sset",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vntm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_information_section",
+   "fieldtype": "Section Break",
+   "label": "Bank Information"
+  },
+  {
+   "description": "The emploment contract comes into force when work on the site begins and finish when the assigned mission is finished and if the weather conditions no longer allow the continuation of the mission",
+   "fieldname": "form_of_employment_section",
+   "fieldtype": "Section Break",
+   "label": "Form of employment"
+  },
+  {
+   "fieldname": "basis_for_time_limitation",
+   "fieldtype": "Heading",
+   "label": "Basis for time limitation"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.probationary_employment",
+   "fieldname": "probationary_employment",
+   "fieldtype": "Check",
+   "label": "Probationary employment"
+  },
+  {
+   "fieldname": "verification_id",
+   "fieldtype": "Link",
+   "label": "Verification ID",
+   "options": "Job Offer"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.special_fixed_term_employment",
+   "fieldname": "special_fixed_term_employment",
+   "fieldtype": "Check",
+   "label": "Special fixed term employment"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.seasonal_work",
+   "fieldname": "seasonal_work",
+   "fieldtype": "Check",
+   "label": "Seasonal work"
+  },
+  {
+   "fetch_from": "verification_id.estimated_starting_date",
+   "fieldname": "estimated_starting_date",
+   "fieldtype": "Date",
+   "label": "Estimated starting date"
+  },
+  {
+   "fetch_from": "verification_id.estimated_finish_date",
+   "fieldname": "estimated_finish_date",
+   "fieldtype": "Date",
+   "label": "Estimated finish date"
+  },
+  {
+   "fieldname": "column_break_oczu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "terms_of_employment_section",
+   "fieldtype": "Section Break",
+   "label": "Terms of employment"
+  },
+  {
+   "fetch_from": "verification_id.workinghours_per_week_and_time",
+   "fieldname": "workinghours_per_week_and_time",
+   "fieldtype": "Int",
+   "label": "Workinghours per week and time"
+  },
+  {
+   "fetch_from": "verification_id.time_span_start",
+   "fieldname": "time_span_start",
+   "fieldtype": "Time",
+   "label": "Time Span (Start)"
+  },
+  {
+   "fetch_from": "verification_id.time_span_end",
+   "fieldname": "time_span_end",
+   "fieldtype": "Time",
+   "label": "Time Span (End)"
+  },
+  {
+   "fieldname": "section_break_zjoj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "conditions_for_overtime_work_or_moretime_work",
+   "fieldtype": "Heading",
+   "label": " Conditions for overtime work or moretime work"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.only_ordered_overtime_or_moretime",
+   "fieldname": "only_ordered_overtime_or_moretime",
+   "fieldtype": "Check",
+   "label": " Only ordered overtime or moretime"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.according_to_the_applicable_collective_agreement",
+   "fieldname": "according_to_the_applicable_collective_agreement",
+   "fieldtype": "Check",
+   "label": "According to the applicable collective agreement"
+  },
+  {
+   "fieldname": "section_break_qgnh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "verification_id.hourly_salary_in_sek_gross_salary",
+   "fieldname": "hourly_salary_in_sek_gross_salary",
+   "fieldtype": "Currency",
+   "label": "Hourly Salary in SEK (gross salary)"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.piecework_pay_according_to_a_separate_agreement",
+   "fieldname": "piecework_pay_according_to_a_separate_agreement",
+   "fieldtype": "Check",
+   "label": "Piecework pay according to a separate agreement"
+  },
+  {
+   "fieldname": "section_break_minb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Holiday 13% and ATF (Working Time Shortening) 3.62% are calculated on gross salary and paid with salary",
+   "fieldname": "pay_period",
+   "fieldtype": "Heading",
+   "label": "Pay period"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.the_salary_is_paid_the_month_after_earning",
+   "fieldname": "the_salary_is_paid_the_month_after_earning",
+   "fieldtype": "Check",
+   "label": "The salary is paid the month after earning"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.the_salary_is_paid_on_the_25th_of_each_month",
+   "fieldname": "the_salary_is_paid_on_the_25th_of_each_month",
+   "fieldtype": "Check",
+   "label": "The salary is paid on the 25th of each month"
+  },
+  {
+   "fieldname": "holiday_right",
+   "fieldtype": "Heading",
+   "label": "Holiday right"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.by_law",
+   "fieldname": "by_law",
+   "fieldtype": "Check",
+   "label": "By law"
+  },
+  {
+   "fieldname": "column_break_xalx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.according_to_collective_agreement_and_law",
+   "fieldname": "according_to_collective_agreement_and_law",
+   "fieldtype": "Check",
+   "label": "According to collective agreement and law"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.by_law_inc",
+   "fieldname": "by_law_emp",
+   "fieldtype": "Check",
+   "label": "By law"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.according_to_collective_agreement_and_law_inc",
+   "fieldname": "according_to_collective_agreement_and_law_emp",
+   "fieldtype": "Check",
+   "label": "According to collective agreement and law emp"
+  },
+  {
+   "fetch_from": "verification_id.any_training_provided_by_the_employer",
+   "fieldname": "any_training_provided_by_the_employer",
+   "fieldtype": "Data",
+   "label": "Any training provided by the employer"
+  },
+  {
+   "fieldname": "insurances",
+   "fieldtype": "Heading",
+   "label": "Insurances"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.the_employment_protection_act",
+   "fieldname": "the_employment_protection_act",
+   "fieldtype": "Check",
+   "label": "The Employment Protection Act"
+  },
+  {
+   "default": "0",
+   "fetch_from": "verification_id.collective_agreement",
+   "fieldname": "collective_agreement",
+   "fieldtype": "Check",
+   "label": "Collective agreement"
+  },
+  {
+   "fetch_from": "verification_id.other_conditions",
+   "fieldname": "other_conditions",
+   "fieldtype": "Small Text",
+   "label": "Other conditions"
+  },
+  {
+   "fieldname": "code_of_cunduct_section",
+   "fieldtype": "Section Break",
+   "label": "Code of Cunduct"
+  },
+  {
+   "fieldname": "section_break_rnda",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "verification_id.type_your_question_here",
+   "fieldname": "type_your_question_here",
+   "fieldtype": "Small Text",
+   "label": "Type your question here",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "verification_id.signature_from_employer",
+   "fieldname": "signature_from_employer",
+   "fieldtype": "Signature",
+   "label": "Signature from Employer"
+  },
+  {
+   "fieldname": "place_a",
+   "fieldtype": "Data",
+   "label": "Place",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_a",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_svdm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "signature_from_employee",
+   "fieldtype": "Signature",
+   "label": "Signature from Employee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_information_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Information"
+  },
+  {
+   "fieldname": "hr_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cwzt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "candidate_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "signature_of_hr_section",
+   "fieldtype": "Section Break",
+   "label": "Signatures"
+  },
+  {
+   "fieldname": "signature_of_emp_section",
+   "fieldtype": "Section Break",
+   "label": "Signatures"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Request Pending for hr\nApproved",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "fetch_from": "verification_id.language",
+   "fieldname": "language",
+   "fieldtype": "Select",
+   "label": "Language",
+   "options": "English\nSwedish\nRomanian\nThai"
+  },
+  {
+   "default": "0",
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Accept the Terms and conditions"
+  },
+  {
+   "fieldname": "place",
+   "fieldtype": "Data",
+   "label": "Place"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_wixk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_qiiw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_lsdx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "document_viewer",
+   "fieldtype": "HTML",
+   "label": "Document Viewer"
+  },
+  {
+   "fetch_from": "verification_id.gender",
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "vid",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Vid",
+   "print_hide": 1,
+   "report_hide": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-04 11:16:33.909068",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Employee Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Hr Executive",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,53 @@
+{
+ "cards": [
+  {
+   "card": "Total Employees"
+  },
+  {
+   "card": "Total Days"
+  },
+  {
+   "card": "Sum of Total_hours"
+  },
+  {
+   "card": "Sum of Total_days"
+  },
+  {
+   "card": "Sum of Total_hours-1"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Work Team report",
+   "width": "Half"
+  },
+  {
+   "chart": "Employee Wise Attendance Summery",
+   "width": "Half"
+  },
+  {
+   "chart": "Employee Wise Attendance",
+   "width": "Half"
+  },
+  {
+   "chart": "Employee attendance (Project Wise)",
+   "width": "Half"
+  },
+  {
+   "chart": "test chart",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-03-24 12:33:49.974713",
+ "dashboard_name": "Attendance and Records",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 3,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-03-26 20:06:40.866076",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Attendance and Records",
+ "owner": "Administrator"
+}

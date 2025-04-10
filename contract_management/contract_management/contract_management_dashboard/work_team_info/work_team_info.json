@@ -1,0 +1,28 @@
+{
+ "cards": [
+  {
+   "card": "Sum of Member_count"
+  },
+  {
+   "card": "Work Team Count"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Work Team report",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-03-24 19:31:38.391870",
+ "dashboard_name": "Work Team Info",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-03-26 16:55:20.457696",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Work Team Info",
+ "owner": "Administrator"
+}

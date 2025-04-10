@@ -1,0 +1,263 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-02-13 13:47:04.925426",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_details_section",
+  "project_customer",
+  "naming_series",
+  "column_break_uhai",
+  "sales_order",
+  "section_break_dbng",
+  "object",
+  "concat_obj_and_proj",
+  "section_break_ujxv",
+  "task",
+  "column_break_hixy",
+  "sla_class",
+  "new_proect__object_section",
+  "expected_start_date",
+  "status",
+  "priority",
+  "department",
+  "column_break_wuzp",
+  "expected_end_date",
+  "is_active",
+  "_complete_method",
+  "section_break_lhdl",
+  "project__object_size_in_hecter",
+  "column_break_enpp",
+  "project__object_price_per_hecter",
+  "work_team_planning_section",
+  "work_team",
+  "column_break_ubtk",
+  "team_leader",
+  "gross_salary_staff_compansation_section",
+  "will_be_added_later",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_dbng",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Expected Start Date"
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nOpen\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "column_break_wuzp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nMedium\nLow\nHigh"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "new_proect__object_section",
+   "fieldtype": "Section Break",
+   "label": "New Proect / Object"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Active",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "_complete_method",
+   "fieldtype": "Select",
+   "label": "% Complete Method",
+   "options": "\nManual\nTask Completion\nTask Progress\nTask Weight"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "column_break_uhai",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Data",
+   "label": "Sales Order"
+  },
+  {
+   "fieldname": "section_break_lhdl",
+   "fieldtype": "Section Break",
+   "label": "Project / Object Budgeting"
+  },
+  {
+   "fieldname": "project__object_size_in_hecter",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Project / Object Size in Hecter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project__object_price_per_hecter",
+   "fieldtype": "Currency",
+   "label": "Project / Object Price Per Hecter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_enpp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "work_team_planning_section",
+   "fieldtype": "Section Break",
+   "label": "Work Team Planning"
+  },
+  {
+   "fieldname": "work_team",
+   "fieldtype": "Link",
+   "label": "Work Team",
+   "options": "Work Team",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gross_salary_staff_compansation_section",
+   "fieldtype": "Section Break",
+   "label": "Gross salary Staff Compansation"
+  },
+  {
+   "fieldname": "will_be_added_later",
+   "fieldtype": "Data",
+   "label": "Will be added later"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "PROJ-"
+  },
+  {
+   "fetch_from": "work_team.team_leader",
+   "fieldname": "team_leader",
+   "fieldtype": "Link",
+   "label": "Team Leader",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ubtk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Project Setup",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_ujxv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "object",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Object",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hixy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "concat_obj_and_proj",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Concat Obj And Proj",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "project_customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Project / Customer ",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Task",
+   "options": "\nForest Clearing\nForest Planting\nForest Planning\nWork Report",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sla_class",
+   "fieldtype": "Select",
+   "label": "SLA Class",
+   "options": "\nSLA Class 1\nSLA Class 2\nSLA Class 3\nSLA Class 4\nSLA Class 5\nSLA Class 6\nSLA Class 7\nSLA Class 8\nSLA Class 9\nSLA Class 10\nSLA Class 11\nSLA Class 12",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-29 18:17:07.931661",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Project Setup",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Open"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ],
+ "title_field": "concat_obj_and_proj"
+}

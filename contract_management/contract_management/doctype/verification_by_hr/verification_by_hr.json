@@ -1,0 +1,317 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VERF-{full_name}-{###}",
+ "creation": "2025-02-17 19:16:30.090557",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_tepj",
+  "candidateid",
+  "section_break_axfi",
+  "first_name",
+  "last_name",
+  "citizenship_",
+  "column_break_wnkr",
+  "middle_name",
+  "full_name",
+  "birthday",
+  "country_of_birth",
+  "what_is_your_current_address_section",
+  "address",
+  "section_break_avym",
+  "city",
+  "column_break_bdvg",
+  "state__province",
+  "column_break_wekr",
+  "zip__postal_code",
+  "section_break_tgze",
+  "country",
+  "section_break_jzhz",
+  "mobile__phone_number",
+  "email",
+  "section_break_opxk",
+  "bank_information",
+  "name_of_other_bank",
+  "bic_code",
+  "your_bank_account_number",
+  "section_break_ylgp",
+  "please_attach_your_valid_id_or_passport",
+  "details_by_hr_department_section",
+  "start_date",
+  "end_date",
+  "employment_type",
+  "column_break_tmce",
+  "working_hours_week",
+  "salary_per_hour",
+  "status",
+  "section_break_chwb",
+  "place",
+  "date",
+  "column_break_yhlg",
+  "sign"
+ ],
+ "fields": [
+  {
+   "fetch_from": "candidateid.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fetch_from": "candidateid.middle_name",
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fetch_from": "candidateid.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fetch_from": "candidateid.date_of_birth",
+   "fieldname": "birthday",
+   "fieldtype": "Date",
+   "label": "Birthday"
+  },
+  {
+   "fetch_from": "candidateid.country",
+   "fieldname": "country_of_birth",
+   "fieldtype": "Data",
+   "label": "Country of Birth"
+  },
+  {
+   "fetch_from": "candidateid.citizenship_",
+   "fieldname": "citizenship_",
+   "fieldtype": "Data",
+   "label": "Citizenship ?"
+  },
+  {
+   "fieldname": "what_is_your_current_address_section",
+   "fieldtype": "Section Break",
+   "label": "What is your current address"
+  },
+  {
+   "fetch_from": "candidateid.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "section_break_avym",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "candidateid.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "column_break_bdvg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "candidateid.state__province",
+   "fieldname": "state__province",
+   "fieldtype": "Data",
+   "label": "State / Province"
+  },
+  {
+   "fieldname": "column_break_wekr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "candidateid.zip__postal_code",
+   "fieldname": "zip__postal_code",
+   "fieldtype": "Int",
+   "label": "ZIP / Postal code"
+  },
+  {
+   "fieldname": "section_break_tgze",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "candidateid.country",
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "section_break_jzhz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "candidateid.mobile_phone_number",
+   "fieldname": "mobile__phone_number",
+   "fieldtype": "Phone",
+   "label": "Mobile / Phone Number"
+  },
+  {
+   "fetch_from": "candidateid.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Email"
+  },
+  {
+   "fieldname": "section_break_opxk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "candidateid.bank",
+   "fieldname": "bank_information",
+   "fieldtype": "Select",
+   "label": "Bank Information",
+   "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nOther Bank"
+  },
+  {
+   "fetch_from": "candidateid.name_the_other_bank",
+   "fieldname": "name_of_other_bank",
+   "fieldtype": "Data",
+   "label": "Name of Other Bank"
+  },
+  {
+   "fetch_from": "candidateid.bic_code",
+   "fieldname": "bic_code",
+   "fieldtype": "Int",
+   "label": "BIC Code"
+  },
+  {
+   "fetch_from": "candidateid.account_number",
+   "fieldname": "your_bank_account_number",
+   "fieldtype": "Data",
+   "label": "Your Bank Account Number"
+  },
+  {
+   "fieldname": "section_break_ylgp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "candidateid.please_attach_your_valid_id_or_passport",
+   "fieldname": "please_attach_your_valid_id_or_passport",
+   "fieldtype": "Attach",
+   "label": "Please attach your valid ID or Passport"
+  },
+  {
+   "description": "FIled by HR or recruter only",
+   "fieldname": "details_by_hr_department_section",
+   "fieldtype": "Section Break",
+   "label": "Details by HR Department"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_tmce",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "working_hours_week",
+   "fieldtype": "Int",
+   "label": "Working Hours Per Week"
+  },
+  {
+   "fieldname": "employment_type",
+   "fieldtype": "Select",
+   "label": "Employment Type",
+   "options": "\nTemporary\nPermanent\nProject"
+  },
+  {
+   "fieldname": "salary_per_hour",
+   "fieldtype": "Currency",
+   "label": "Salary Per Hour"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Approve\nNew\nReject"
+  },
+  {
+   "fieldname": "sign",
+   "fieldtype": "Signature",
+   "label": "Sign"
+  },
+  {
+   "fieldname": "column_break_wnkr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tepj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_axfi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "candidateid.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_chwb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "place",
+   "fieldtype": "Data",
+   "label": "Place"
+  },
+  {
+   "fieldname": "column_break_yhlg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "candidateid",
+   "fieldtype": "Data",
+   "label": "Candidate ID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-26 16:26:25.558670",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Verification By HR",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

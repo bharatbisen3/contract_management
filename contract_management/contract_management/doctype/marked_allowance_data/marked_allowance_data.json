@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{employee_id}{####)",
+ "creation": "2025-03-17 12:34:46.270788",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_id",
+  "column_break_bsqc",
+  "full_name",
+  "section_break_wvjx",
+  "date",
+  "present",
+  "allowance",
+  "duration",
+  "section_break_vcpp",
+  "project",
+  "work_team",
+  "work_team_name",
+  "object",
+  "classified_sla_class",
+  "deviant_sla_class"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Employee",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_bsqc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee_id.employee_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "section_break_wvjx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "present",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Present",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "allowance",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Allowance",
+   "options": "\nYes\nNo"
+  },
+  {
+   "default": "8",
+   "fieldname": "duration",
+   "fieldtype": "Select",
+   "label": "Duration",
+   "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"
+  },
+  {
+   "fieldname": "section_break_vcpp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project Setup"
+  },
+  {
+   "fieldname": "work_team",
+   "fieldtype": "Link",
+   "label": "Work Team",
+   "options": "Work Team"
+  },
+  {
+   "fieldname": "work_team_name",
+   "fieldtype": "Data",
+   "label": "Work Team Name"
+  },
+  {
+   "fieldname": "object",
+   "fieldtype": "Link",
+   "label": "Object",
+   "options": "Objects"
+  },
+  {
+   "fieldname": "classified_sla_class",
+   "fieldtype": "Link",
+   "label": "Classified SLA Class",
+   "options": "Class Table"
+  },
+  {
+   "fieldname": "deviant_sla_class",
+   "fieldtype": "Link",
+   "label": "Deviant SLA Class",
+   "options": "Class Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-17 12:34:46.270788",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Marked Allowance Data",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

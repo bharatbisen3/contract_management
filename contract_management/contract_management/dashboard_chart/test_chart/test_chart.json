@@ -1,0 +1,33 @@
+{
+ "chart_name": "test chart",
+ "chart_type": "Report",
+ "creation": "2025-03-26 20:06:31.174887",
+ "currency": "",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2025-03-26 20:06:40.813540",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "test chart",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Chart Demo",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "employee_name",
+ "y_axis": [
+  {
+   "y_field": "total_days_present"
+  }
+ ]
+}

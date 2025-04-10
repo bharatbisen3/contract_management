@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Team {###}",
+ "creation": "2025-02-14 13:26:37.760062",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "team_name",
+  "team_leader",
+  "column_break_cvjx",
+  "department",
+  "specialization",
+  "availability",
+  "list_of_members_section",
+  "team_members_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "team_leader",
+   "fieldtype": "Link",
+   "label": "Team Leader",
+   "options": "User"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "specialization",
+   "fieldtype": "Select",
+   "label": "Specialization",
+   "options": "\nClearing\nPlanting\nPlanning\nReporting"
+  },
+  {
+   "default": "0",
+   "fieldname": "availability",
+   "fieldtype": "Check",
+   "label": "Availability"
+  },
+  {
+   "fieldname": "column_break_cvjx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "team_name",
+   "fieldtype": "Data",
+   "label": "Team Name"
+  },
+  {
+   "fieldname": "list_of_members_section",
+   "fieldtype": "Section Break",
+   "label": "List of Members"
+  },
+  {
+   "fieldname": "team_members_list",
+   "fieldtype": "Table",
+   "label": "Team Members List",
+   "options": "Team Members List"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-05 11:46:44.120286",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Work Team",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Hr Executive",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "team_name"
+}

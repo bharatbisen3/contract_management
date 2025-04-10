@@ -1,0 +1,68 @@
+/* Global Styles */
+body, .frappe-control, .form-control, label, p, h1, h2, h3, h4, h5, h6, span, option {
+    color: #105672;
+    font-family: 'Merriweather', 'Inter', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* CSS Variables */
+:root {
+    --primary-color: #105672;
+    --font-stack: 'Merriweather', 'Inter', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.h1{
+    margin-left: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* Ellipsis Class */
+.ellipsis {
+    color: var(--primary-color);
+    font-family: var(--font-stack);
+  
+}
+[data-fieldname="bank_information"],
+[data-fieldname="citizenship"] {
+    font-size: 16px !important;
+    /* color: aliceblue !important; */
+}
+
+/* Web Form Header */
+.web-form-header {
+    border-color: #ffffff;
+}
+
+/* Input Styles */
+input[type="text"] {
+    border: 0.5px solid rgba(5, 8, 12, 0.5) !important;
+    border-radius: 5px;
+    height: 35px;
+    /* color: #ffffff; */
+    background-color: #222222;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    border: 2px solid rgba(4, 12, 26, 0.5) !important;
+    background-color: #333333;
+    outline: none;
+}
+
+.form-control {
+    border: 0.5px solid rgba(5, 8, 12, 0.5) !important;
+    height: 35px;
+}
+
+.form-control:focus {
+    border: 2px solid rgba(4, 12, 26, 0.5) !important;
+    background-color: #333333;
+    outline: none;
+}
+
+/* Button Styles */
+.btn.btn-primary {
+    background-color: #105672;
+}

@@ -1,0 +1,31 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "creation": "2025-02-17 17:26:42.253594",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Prospect Applicant",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hi \nCongrats for your new postiton \nplease fill out your Form using the link given below\n\nLink: http://23.94.61.169:8000/personal-information/new\n\nBest Regards\nAlgoware Techworks",
+ "message_type": "Plain Text",
+ "modified": "2025-02-19 14:23:43.619272",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "New Applicant",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "All"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 1,
+ "sender": "Bharat",
+ "sender_email": "bharat@algoware.in",
+ "subject": "Wellcome to Forest Department"
+}

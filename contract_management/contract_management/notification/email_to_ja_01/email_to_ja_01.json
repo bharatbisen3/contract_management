@@ -1,0 +1,31 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "creation": "2025-02-26 16:59:52.550044",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Job Applicant",
+ "enabled": 0,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<pre><code>    Dear {{doc.name}},&lt;br&gt;&lt;br&gt;\n    Please Click on the link below to sign the contract.&lt;br&gt; \n    # Link: http://23.94.61.169:8000/employment-contract/new  &lt;br&gt;\n</code></pre>\n",
+ "message_type": "Markdown",
+ "modified": "2025-03-19 12:20:44.340858",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Email to JA 01",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "email_id",
+   "receiver_by_role": "All"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Yash Gandhi",
+ "sender_email": "yash@algoware.in",
+ "subject": "Job application"
+}

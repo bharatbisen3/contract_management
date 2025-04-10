@@ -1,0 +1,37 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-04-05 16:42:56.070902",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-04-05 17:50:31.971839",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Project Summery Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    ps.project_customer AS \"Project Name\",\r\n    ps.object AS \"Object\",\r\n    pa.start_date AS \"Start Date\",\r\n    pa.end_date AS \"End Date\",\r\n    ps.project__object_size_in_hecter AS \"Total Area (Hectare)\",\r\n    pa.total_compleated_work_till_now AS \"Completed Area\",\r\nCONCAT(ROUND((pa.total_compleated_work_till_now/ps.project__object_size_in_hecter)*100, 2), 2) AS \"Completion\"\r\nFROM \r\n    `tabProject Attendance` pa\r\nJOIN \r\n    `tabProject Setup` ps ON pa.project__client = ps.name\r\nWHERE \r\n    pa.docstatus = 1\r\nORDER BY \r\n    pa.start_date DESC",
+ "ref_doctype": "Employee Attendance Master",
+ "report_name": "Project Summery Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Projects Manager"
+  },
+  {
+   "role": "Team Leader"
+  },
+  {
+   "role": "Hr Executive"
+  }
+ ],
+ "timeout": 0
+}

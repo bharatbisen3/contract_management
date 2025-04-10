@@ -1,0 +1,47 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-03-26 19:57:01.681312",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "project_name ",
+   "fieldtype": "Link",
+   "label": "Project Name",
+   "mandatory": 0,
+   "options": "Project Setup",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-03-27 19:49:13.241115",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Chart Demo",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    eam.employee AS \"Employee:Link/Employee:150\",\r\n    eam.full_name AS \"Employee Name::200\",\r\n    eam.project AS \"Project:Link/Project Setup:150\",\r\n    ps.project__object_name AS \"Project Name::200\",\r\n    COUNT(eam.name) AS \"Total Days Present:Int:100\",\r\n    eam.team_leader AS \"Team Leader:Link/User:150\",\r\n    eam.tl_name AS \"Team Leader Name::200\"\r\nFROM `tabEmployee Attendance Master` eam\r\nLEFT JOIN `tabProject Setup` ps ON eam.project = ps.name\r\nWHERE eam.present = 'Yes'\r\nGROUP BY eam.employee, eam.full_name, eam.project, ps.project__object_name, eam.team_leader, eam.tl_name\r\nORDER BY eam.employee, COUNT(eam.name) DESC;\r\n",
+ "ref_doctype": "Employee Attendance Master",
+ "report_name": "Chart Demo",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Projects Manager"
+  }
+ ],
+ "timeout": 0
+}

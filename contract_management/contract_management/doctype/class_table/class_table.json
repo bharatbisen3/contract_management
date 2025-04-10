@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{class_name} {####}",
+ "creation": "2025-03-10 18:55:37.629830",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "class_name",
+  "sla_class"
+ ],
+ "fields": [
+  {
+   "fieldname": "class_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Class Name"
+  },
+  {
+   "fieldname": "sla_class",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "SLA Class",
+   "options": "\nClassified SLA Class\nDeviant SLA Class"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-27 19:43:39.228804",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Class Table",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

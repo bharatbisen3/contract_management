@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Project Wise Attendance",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-03-24 17:12:54.564337",
+ "dashboard_name": "Project Setup",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-03-26 17:29:38.841452",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Project Setup",
+ "owner": "Administrator"
+}

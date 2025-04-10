@@ -1,0 +1,29 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Total Employees",
+   "width": "Full"
+  },
+  {
+   "chart": "Total Prospect",
+   "width": "Half"
+  },
+  {
+   "chart": "Total Prospect",
+   "width": "Half"
+  }
+ ],
+ "creation": "2025-03-26 17:07:18.639860",
+ "dashboard_name": "Hr",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2025-03-26 17:26:14.060070",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Hr",
+ "owner": "Administrator"
+}

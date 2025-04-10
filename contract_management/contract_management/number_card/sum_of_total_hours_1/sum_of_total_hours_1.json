@@ -1,0 +1,23 @@
+{
+ "creation": "2025-03-25 18:29:55.362425",
+ "currency": "INR",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Sum of Total_hours",
+ "modified": "2025-03-25 18:29:55.435414",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Sum of Total_hours-1",
+ "owner": "Administrator",
+ "report_field": "total_hours",
+ "report_function": "Sum",
+ "report_name": "Employee Wise Attendance Summary",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}

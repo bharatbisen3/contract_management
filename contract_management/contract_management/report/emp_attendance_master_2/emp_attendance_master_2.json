@@ -1,0 +1,31 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-03-27 19:08:55.945969",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2025-03-27 19:10:18.080776",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Emp Attendance Master 2",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Employee Attendance Master",
+ "report_name": "Emp Attendance Master 2",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Projects Manager"
+  }
+ ],
+ "timeout": 0
+}

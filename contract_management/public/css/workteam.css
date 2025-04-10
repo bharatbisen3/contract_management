@@ -1,0 +1,57 @@
+body, .frappe-control, .form-control,  label,  p,  h1, h2, h3, h4, h5, h6,  span {
+    color: #105672;
+    font-family: 15px Merriweather, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+} 
+
+.ellipsis {
+    color: #105672;
+    font-family: 24px Merriweather, Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;    
+    font-weight: 300; 
+    
+} 
+
+
+.web-form-header {
+    border-color: #ffffff;
+}
+ /*.ellipsis::after {
+    content: "Please fill out the following information in full"; 
+    font-size: 10px;
+    font-weight: bold;
+    color: #105672;
+    font-family: inherit;
+    margin-top: 10px; 
+    text-align: center;
+}*/
+
+
+
+
+input[type="text"] {
+    border: 0.5px solid rgba(5, 8, 12, 0.5) !important;
+    border-radius: 5px;
+    height: 35px;
+    color: #ffffff; 
+    background-color: #222222;
+    transition: all 0.3s ease-in-out; 
+}
+
+
+input[type="text"]{
+    border: 1px solid rgba(4, 12, 26, 0.5) !important; 
+    outline: none; 
+    background-color: #333333; 
+}
+.form-control {
+    border: 0.5px solid rgba(5, 8, 12, 0.5) !important;
+    height: 35px;
+
+}
+.form-control:focus {
+    border:  solid rgba(4, 12, 26, 0.5) !important; 
+    background-color: #333333;
+    outline: none;
+}
+.btn.btn-primary {
+    background-color: #105672;
+}
