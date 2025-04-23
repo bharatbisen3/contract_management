@@ -18,7 +18,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2025-03-19 12:08:17.338878",
+ "modified": "2025-04-18 16:28:38.376063",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "application-form",
@@ -67,7 +67,7 @@
    "options": "Gender",
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -118,7 +118,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {

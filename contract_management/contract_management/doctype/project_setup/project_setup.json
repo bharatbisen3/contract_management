@@ -29,6 +29,7 @@
   "_complete_method",
   "section_break_lhdl",
   "project__object_size_in_hecter",
+  "total_compleated_work_till_now",
   "column_break_enpp",
   "project__object_price_per_hecter",
   "work_team_planning_section",
@@ -203,7 +204,7 @@
    "fieldname": "concat_obj_and_proj",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "Concat Obj And Proj",
+   "label": "Project / Object",
    "print_hide": 1,
    "report_hide": 1
   },
@@ -230,12 +231,18 @@
    "label": "SLA Class",
    "options": "\nSLA Class 1\nSLA Class 2\nSLA Class 3\nSLA Class 4\nSLA Class 5\nSLA Class 6\nSLA Class 7\nSLA Class 8\nSLA Class 9\nSLA Class 10\nSLA Class 11\nSLA Class 12",
    "reqd": 1
+  },
+  {
+   "fieldname": "total_compleated_work_till_now",
+   "fieldtype": "Int",
+   "label": "Total Completed Work Till Now",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-29 18:17:07.931661",
+ "modified": "2025-04-22 16:55:14.999299",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

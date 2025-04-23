@@ -39,3 +39,41 @@ frappe.ui.form.on("Project Setup", {
 });
 
 
+
+
+
+
+
+
+
+
+
+// frappe.ui.form.on("Project Setup", {
+//     onload: function(frm) {
+//         if (!frm.is_new()) {
+//             frappe.db.get_list("Project Attendance", {
+//                 fields: ["area_completed_for_this_submission"],
+//                 filters: {
+//                     docstatus: 1,
+//                     project__client: frm.doc.name
+//                 }
+//             }).then(records => {
+//                 let total = 0;
+//                 records.forEach(rec => {
+//                     total += rec.area_completed_for_this_submission;
+//                     console.log("For Each Total: ", total);
+//                 });
+
+//                 // Visually update field in the form
+//                 frm.set_value("total_compleated_work_till_now", total);
+
+//                 // Save it in the database too
+//                 frappe.db.set_value('Project Setup', frm.doc.name, 'total_compleated_work_till_now', total)
+//                     .then(() => {
+//                         console.log("Auto-updated in DB:", total);
+//                         frappe.msgprint(__('Total completed work auto-updated'));
+//                     });
+//             });
+//         }
+//     }
+// });

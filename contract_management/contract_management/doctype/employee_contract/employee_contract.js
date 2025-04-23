@@ -98,7 +98,7 @@ frappe.ui.form.on("Employee Contract", {
                             other_bank_name: frm.doc.name_the_other_bank, 
                             your_bank_account_number: frm.doc.your_bank_account_number, // Ensure this field exists in the form
                             // bank_account_number: frm.doc.your_bank_account_number,
-                            personal_email: frm.doc.applicant_email
+                            // personal_email: frm.doc.applicant_email
                         });
                     }
                 }

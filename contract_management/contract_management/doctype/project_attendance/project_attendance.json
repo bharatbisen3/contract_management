@@ -236,14 +236,14 @@
   {
    "fieldname": "total_compleated_work_till_now",
    "fieldtype": "Int",
-   "label": "Total Compleated Work Till Now",
+   "label": "Total Completed Work Till Now",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-05 16:06:28.614719",
+ "modified": "2025-04-21 16:58:06.935406",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Attendance",

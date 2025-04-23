@@ -598,7 +598,6 @@
    "read_only": 1
   },
   {
-   "fetch_from": "verification_id.signature_from_employer",
    "fieldname": "signature_from_employer",
    "fieldtype": "Signature",
    "label": "Signature from Employer"
@@ -719,7 +718,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-04 11:16:33.909068",
+ "modified": "2025-04-18 16:24:00.511732",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

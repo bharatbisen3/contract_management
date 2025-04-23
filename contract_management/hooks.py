@@ -13,12 +13,13 @@ app_license = "mit"
 
 
 
-# send information form to applicang using email
-doc_events = {
-    "Prospect Applicant": {
-        "after_insert": "contract_management.contract_management.doctype.prospect_applicant.prospect_applicant.send_email_on_creation"
-    }
-}
+# send information form to applicant using email
+
+# doc_events = {
+#     "Prospect Applicant": {
+#         "after_insert": "contract_management.contract_management.doctype.prospect_applicant.prospect_applicant.send_email_on_creation"
+#     }
+# }
 
 #  Create Entry in Marked Attandance doctype using frappe.enqueue
 # doc_events = {
