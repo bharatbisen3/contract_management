@@ -1,63 +1,10 @@
-// // Copyright (c) 2025, bharat and contributors
-// // For license information, please see license.txt
-
-// // frappe.ui.form.on("Employee Contract", {
-// // 	refresh(frm) {
-
-// // 	},
-// // });
-
-
-
-
-
-
+// Copyright (c) 2025, bharat and contributors
+// For license information, please see license.txt
 
 // frappe.ui.form.on("Employee Contract", {
-//     refresh: function (frm) {
-//         frm.add_custom_button(__("Create Employee"), function () {
-//             frappe.call({
-//                 method: "contract_management.contract_management.doctype.employee_contract.employee_contract.check_existing_employee",
-//                 args: {
-//                     select_candidate: frm.doc.name
-//                 },
-//                 callback: function (r) {
-//                     if (r.message) {
-//                         frappe.msgprint({
-//                             title: __("Error"),
-//                             message: __("An Employee record already exists for this contract."),
-//                             indicator: "red",
-//                         });
-//                     } else {
-//                         frappe.new_doc("Employee", {
-//                             select_candidate: frm.doc.first_name,
-//                             first_name: frm.doc.first_name,
-//                             middle_name: frm.doc.middle_name,
-//                             last_name: frm.doc.last_name,  
-//                             gender: frm.doc.gender,
-//                             date_of_birth: frm.doc.date_of_birth,
-//                             country_of_birth: frm.doc.country_of_birth,
-//                             applicant_contact_number: frm.doc.applicant_contact_number, 
-//                             email_address: frm.doc.applicant_email,
-//                             contact_number: frm.doc.applicant_contact_number, // Ensure this field exists in the form
-//                             citizenship: frm.doc.citizenship, // Ensure this field exists in the form
-//                             address: frm.doc.applicant_address, // Ensure this field exists in the form
-//                             city: frm.doc.city_emp, // Ensure this field exists in the form
-//                             state__province: frm.doc.state__province, // Ensure this field exists in the form
-//                             zip__postal_code: frm.doc.zip__postal_code, // Ensure this field exists in the form
-//                             country: frm.doc.country_emp, // Ensure this field exists in the form
-//                             bank: frm.doc.bank, // Ensure this field exists in the form
-//                             bic_code: frm.doc.bic_code, // Ensure this field exists in the form
-//                             please_attach_your_valid_id_or_passport: frm.doc.please_attach_a_picture_your_valid_id_or_passport, // Ensure this field exists in the form
-//                             name_the_other_bank: frm.doc.name_the_other_bank, // Ensure this field exists in the form
-//                             your_bank_account_number: frm.doc.your_bank_account_number, // Ensure this field exists in the form
-//                             personal_email: frm.doc.applicant_email
-//                         });
-//                     }
-//                 }
-//             });
-//         });
-//     }
+// 	refresh(frm) {
+
+// 	},
 // });
 
 
@@ -77,7 +24,7 @@ frappe.ui.form.on("Employee Contract", {
                         frappe.throw(__("An Employee record already exists for this contract."));
                     } else {
                         frappe.new_doc("Employee", {
-                            select_candidate: frm.doc.first_name,
+                            select_candidate: frm.doc.name,
                             first_name: frm.doc.first_name,
                             middle_name: frm.doc.middle_name,
                             last_name: frm.doc.last_name,  
@@ -87,8 +34,8 @@ frappe.ui.form.on("Employee Contract", {
                             email_address: frm.doc.applicant_email,
                             gender: frm.doc.gender,
                             citizenship: frm.doc.citizenship,
-                            address: frm.doc.applicant_address,
-                            city: frm.doc.city_emp,
+                            custom_address: frm.doc.applicant_address,
+                            custom_city: frm.doc.city_emp,
                             state__province: frm.doc.state__province, // Ensure this field exists in the form
                             zip__postal_code: frm.doc.zip__postal_code, // Ensure this field exists in the form
                             country: frm.doc.country_emp,

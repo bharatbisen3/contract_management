@@ -32,9 +32,9 @@
   "what_is_your_current_address_section",
   "applicant_address",
   "column_break_vntm",
+  "zip__postal_code",
   "city_emp",
   "state__province",
-  "zip__postal_code",
   "country_emp",
   "bank_information_section",
   "bank",
@@ -183,32 +183,32 @@
    "options": "URL"
   },
   {
-   "fetch_from": "verification_id.middle_name",
+   "fetch_from": "verification_id.custom_middle_name",
    "fieldname": "middle_name",
    "fieldtype": "Data",
    "label": "Middle name"
   },
   {
-   "fetch_from": "verification_id.last_name",
+   "fetch_from": "verification_id.custom_last_name",
    "fieldname": "last_name",
    "fieldtype": "Data",
    "label": "Last name"
   },
   {
-   "fetch_from": "verification_id.date_of_birth",
+   "fetch_from": "verification_id.custom_date_of_birth",
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
    "label": "Date of Birth"
   },
   {
-   "fetch_from": "verification_id.country_of_birth",
+   "fetch_from": "verification_id.custom_country_of_birth_",
    "fieldname": "country_of_birth",
    "fieldtype": "Link",
    "label": "Country of birth ",
    "options": "Country"
   },
   {
-   "fetch_from": "verification_id.citizenship_",
+   "fetch_from": "verification_id.custom_citizenship_",
    "fieldname": "citizenship",
    "fieldtype": "Data",
    "label": "Citizenship"
@@ -219,38 +219,38 @@
    "label": "What is your current address"
   },
   {
-   "fetch_from": "verification_id.applicant_address",
+   "fetch_from": "verification_id.custom_applicant_address_a1",
    "fieldname": "applicant_address",
    "fieldtype": "Small Text",
    "label": "Applicant Address"
   },
   {
-   "fetch_from": "verification_id.city_a",
+   "fetch_from": "verification_id.custom_city_a1",
    "fieldname": "city_emp",
    "fieldtype": "Data",
    "label": "City"
   },
   {
-   "fetch_from": "verification_id.state__province",
+   "fetch_from": "verification_id.custom_stateprovince",
    "fieldname": "state__province",
    "fieldtype": "Data",
    "label": "State / Province"
   },
   {
-   "fetch_from": "verification_id.zip__postal_code",
+   "fetch_from": "verification_id.custom_zippostal_code_",
    "fieldname": "zip__postal_code",
    "fieldtype": "Int",
    "label": "ZIP / Postal code"
   },
   {
-   "fetch_from": "verification_id.country",
+   "fetch_from": "verification_id.custom_country_a",
    "fieldname": "country_emp",
    "fieldtype": "Link",
    "label": "Country",
    "options": "Country"
   },
   {
-   "fetch_from": "verification_id.applicant_contact_number",
+   "fetch_from": "verification_id.custom_mobile_phone_number",
    "fieldname": "applicant_contact_number",
    "fieldtype": "Phone",
    "label": "Applicant Contact Number "
@@ -264,27 +264,27 @@
    "unique": 1
   },
   {
-   "fetch_from": "verification_id.bank",
+   "fetch_from": "verification_id.custom_bank",
    "fieldname": "bank",
    "fieldtype": "Select",
    "label": "Bank",
    "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nOther"
   },
   {
-   "fetch_from": "verification_id.bic_code",
+   "fetch_from": "verification_id.custom_bic_code",
    "fieldname": "bic_code",
    "fieldtype": "Data",
    "label": "BIC Code"
   },
   {
    "depends_on": "eval:doc.bank == \"Other\"",
-   "fetch_from": "verification_id.name_the_other_bank",
+   "fetch_from": "verification_id.custom_name_the_other_bank",
    "fieldname": "name_the_other_bank",
    "fieldtype": "Data",
    "label": "Name the other bank"
   },
   {
-   "fetch_from": "verification_id.your_bank_account_number",
+   "fetch_from": "verification_id.custom_your_bank_account_number",
    "fieldname": "your_bank_account_number",
    "fieldtype": "Data",
    "label": "Your bank account number"
@@ -301,13 +301,13 @@
    "label": "Job Duties"
   },
   {
-   "fetch_from": "verification_id.please_attach_your_valid_id_or_passport",
+   "fetch_from": "verification_id.custom_please_attach_your_valid_id_or_passport",
    "fieldname": "please_attach_a_picture_your_valid_id_or_passport",
    "fieldtype": "Attach",
    "label": "Please attach a picture your valid ID or Passport"
   },
   {
-   "fetch_from": "verification_id.the_work_includes_the_following",
+   "fetch_from": "verification_id.custom_the_work_includes_the_following",
    "fieldname": "the_work_includes_the_following",
    "fieldtype": "Select",
    "label": "The work includes the following",
@@ -551,7 +551,7 @@
    "label": "According to collective agreement and law emp"
   },
   {
-   "fetch_from": "verification_id.any_training_provided_by_the_employer",
+   "fetch_from": "verification_id.custom_any_training_provided_by_the_employer",
    "fieldname": "any_training_provided_by_the_employer",
    "fieldtype": "Data",
    "label": "Any training provided by the employer"
@@ -576,7 +576,7 @@
    "label": "Collective agreement"
   },
   {
-   "fetch_from": "verification_id.other_conditions",
+   "fetch_from": "verification_id.custom_other_conditions",
    "fieldname": "other_conditions",
    "fieldtype": "Small Text",
    "label": "Other conditions"
@@ -591,7 +591,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fetch_from": "verification_id.type_your_question_here",
    "fieldname": "type_your_question_here",
    "fieldtype": "Small Text",
    "label": "Type your question here",
@@ -701,7 +700,7 @@
    "label": "Document Viewer"
   },
   {
-   "fetch_from": "verification_id.gender",
+   "fetch_from": "verification_id.custom_gender",
    "fieldname": "gender",
    "fieldtype": "Link",
    "label": "Gender",
@@ -718,7 +717,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-18 16:24:00.511732",
+ "modified": "2025-05-08 20:13:47.027487",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

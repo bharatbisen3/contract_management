@@ -199,9 +199,14 @@ app_license = "mit"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+# 	"Job Offer": "override.custom_job_offer.custom_job_offer"
+	"Job Offer": "contract_management.custom_job_offer.custom_job_offer"
+}
+# apps/contract_management/contract_management/custom_job_offer.py
+
+
+# contract_management/override/custom_job_offer
 
 # Document Events
 # ---------------
@@ -245,8 +250,12 @@ app_license = "mit"
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "contract_management.event.get_events"
+# 	# "frappe.desk.doctype.event.event.get_events": "contract_management.event.get_events"
+# 	"hrms.hr.doctype.job_offer.job_offer.send_email": "override.custom_job_offer.send_email"
+#     # hrms.hrms.hr.doctype.job_offer.job_offer.py
+#     # apps/contract_management/contract_management/override/custom_job_offer.py
 # }
+
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -312,3 +321,162 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            ["name", "in", [
+                "Job Applicant-custom_bank",
+                "Job Applicant-custom_other_bank_name",
+                "Job Applicant-custom_column_break_nvhhj",
+                "Job Applicant-custom_country",
+                "Job Applicant-custom_country_of_birth",
+                "Job Applicant-custom_citizenship",
+                "Job Applicant-custom_employment_type",
+                "Job Applicant-custom_salary_per_hour",
+                "Job Applicant-custom_column_break_qmlxw",
+                "Job Applicant-custom_working_hours_per_week",
+                "Job Applicant-custom_end_date",
+                "Job Applicant-custom_start_date",
+                "Job Applicant-custom_details_by_hr_department",
+                "Job Applicant-custom_please_attach_your_valid_id_or_passport",
+                "Job Applicant-custom_section_break_f08xr",
+                "Job Applicant-custom_bank_account_number",
+                "Job Applicant-custom_column_break_ym2kj",
+                "Job Applicant-custom_bic_code",
+                "Job Applicant-custom_zippostal_code",
+                "Job Applicant-custom_bank_information",
+                "Job Applicant-custom_stateprovince",
+                "Job Applicant-custom_city",
+                "Job Applicant-custom_column_break_dqfbg",
+                "Job Applicant-custom_mobilephone_number",
+                "Job Applicant-custom_address",
+                "Job Applicant-custom_address__contact",
+                "Job Applicant-custom_date_of_birth",
+                "Job Applicant-custom_last_name",
+                "Job Applicant-custom_column_break_bvyvb",
+                "Job Applicant-custom_middle_name",
+                "Job Applicant-custom_gender",
+                # "fljljk",
+                "Employee-custom_your_bank_account_number",
+                "Employee-custom_bank_information",
+                "Employee-custom_bank",
+                "Employee-custom_bic_code",
+                "Employee-custom_please_attach_your_valid_id_or_passport",
+                "Employee-custom_name_the_other_bank",
+                "Employee-custom_column_break_ovdd5",
+                "Employee-custom_your_bank_account_number_a",
+                "Employee-custom_address_information",
+                "Employee-custom_address",
+                "Employee-custom_city",
+                "Employee-custom_column_break_vyq4y",
+                "Employee-custom_stateprovince",
+                "Employee-custom_zip__postal_code",
+                "Employee-custom_country",
+                # "fljljk",
+				"Job Offer-custom_according_to_collective_agreement_and_law",
+				"Job Offer-custom_according_to_collective_agreement_and_law_a",
+				"Job Offer-custom_according_to_the_applicable_collective_agreement_",
+				"Job Offer-custom_address",
+				"Job Offer-custom_any_training_provided_by_the_employer",
+				"Job Offer-custom_applicant_address_a1",
+				"Job Offer-custom_applicant_contact_number",
+				"Job Offer-custom_bank",
+				"Job Offer-custom_bank_information",
+				"Job Offer-custom_basis_for_time_limitation",
+				"Job Offer-custom_bic_code",
+				"Job Offer-custom_by_law",
+				"Job Offer-custom_by_law_a",
+				"Job Offer-custom_citizenship_",
+				"Job Offer-custom_city",
+				"Job Offer-custom_city_a1",
+				"Job Offer-custom_collective_agreement",
+				"Job Offer-custom_column_break_htpih",
+				"Job Offer-custom_column_break_kpwkf",
+				"Job Offer-custom_column_break_l7gju",
+				"Job Offer-custom_column_break_no5ge",
+				"Job Offer-custom_column_break_sfxve",
+				"Job Offer-custom_column_break_wxwcz",
+				"Job Offer-custom_conditions_for_overtime_work_or_moretime_work",
+				"Job Offer-custom_country",
+				"Job Offer-custom_country_a",
+				"Job Offer-custom_country_of_birth_",
+				"Job Offer-custom_date_of_birth",
+				"Job Offer-custom_email",
+				"Job Offer-custom_employee_address_a1",
+				"Job Offer-custom_employer",
+				"Job Offer-custom_employer_information",
+				"Job Offer-custom_employment_and_workspace",
+				"Job Offer-custom_estimated_finish_date",
+				"Job Offer-custom_estimated_starting_date",
+				"Job Offer-custom_form_of_employment",
+				"Job Offer-custom_gender",
+				"Job Offer-custom_holiday_right",
+				"Job Offer-custom_hourly_salary_in_sek_gross_salary",
+				"Job Offer-custom_insurances",
+				"Job Offer-custom_job_duties",
+				"Job Offer-custom_last_name",
+				"Job Offer-custom_middle_name",
+				"Job Offer-custom_mobile_phone_number",
+				"Job Offer-custom_name_the_other_bank",
+				"Job Offer-custom_only_ordered_overtime_or_moretime",
+				"Job Offer-custom_organization_number",
+				"Job Offer-custom_other_conditions",
+				"Job Offer-custom_pay_period",
+				"Job Offer-custom_place_of_employment_a",
+				"Job Offer-custom_place_of_employment_a1",
+				"Job Offer-custom_please_attach_your_valid_id_or_passport",
+				"Job Offer-custom_plecework_pay_according_to_separate_agreement_",
+				"Job Offer-custom_postcode_",
+				"Job Offer-custom_probationary_employment",
+				"Job Offer-custom_seasonal_work",
+				"Job Offer-custom_section_break_jdiyc",
+				"Job Offer-custom_section_break_qbhud",
+				"Job Offer-custom_special_fixed_term_employment",
+				"Job Offer-custom_stateprovince",
+				"Job Offer-custom_terms_of_employment_",
+				"Job Offer-custom_the_alternative_rule_if",
+				"Job Offer-custom_the_companys_main_worksplace_is",
+				"Job Offer-custom_the_employment_protection_act",
+				"Job Offer-custom_the_exception_rule_if_the_work_takes_place_for_a",
+				"Job Offer-custom_the_main_rule",
+				"Job Offer-custom_the_salary_is_paid_on_the_25th_of_each_month",
+				"Job Offer-custom_the_salary_is_paid_the_month_after_earning",
+				"Job Offer-custom_the_work_includes_the_following",
+				"Job Offer-custom_time_span_end",
+				"Job Offer-custom_time_span_start",
+				"Job Offer-custom_website",
+				"Job Offer-custom_workinghours_per_week_and_time",
+				"Job Offer-custom_workspace",
+				"Job Offer-custom_your_bank_account_number",
+				"Job Offer-custom_zippostal_code_"                
+
+            ]]
+        ]
+    },
+    {
+        "doctype": "Client Script",
+        "filters": [
+            ["name", "in", [
+				"Call Token and Email",
+                "Button in Applicant",
+                "Set Workspace",
+                "Hide Add Button of PA",
+                "Work Team TL",
+                "Calculate Work",
+                "Insert From Project To Marked",
+                "Fetch Attendance Information",
+                "Concat Project Name",
+                "Date Range For Project Attendance",
+                "Filter ONly Team Leaders",
+                "Set Citizenship",
+                "Get Work In Project",
+                "Date Range for Daily Allowance",
+                "Contract Status",
+                "Other Bank Validation"
+                # "field2",
+            ]]
+        ]
+    }
+]
