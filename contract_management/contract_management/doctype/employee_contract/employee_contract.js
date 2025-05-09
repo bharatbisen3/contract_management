@@ -30,21 +30,20 @@ frappe.ui.form.on("Employee Contract", {
                             last_name: frm.doc.last_name,  
                             date_of_birth: frm.doc.date_of_birth,
                             country_of_birth: frm.doc.country_of_birth,
-                            contact_number: frm.doc.applicant_contact_number,  
+                            contact_number: frm.doc.applicant_contact_number,
                             email_address: frm.doc.applicant_email,
                             gender: frm.doc.gender,
                             citizenship: frm.doc.citizenship,
                             custom_address: frm.doc.applicant_address,
                             custom_city: frm.doc.city_emp,
-                            state__province: frm.doc.state__province, // Ensure this field exists in the form
-                            zip__postal_code: frm.doc.zip__postal_code, // Ensure this field exists in the form
-                            country: frm.doc.country_emp,
-                            bank: frm.doc.bank,
-                            bic_code: frm.doc.bic_code,
-                            id_or_passport: frm.doc.please_attach_your_valid_id_or_passport, // Adjust field name
-                            other_bank_name: frm.doc.name_the_other_bank, 
-                            your_bank_account_number: frm.doc.your_bank_account_number, // Ensure this field exists in the form
-                            // bank_account_number: frm.doc.your_bank_account_number,
+                            custom_stateprovince: frm.doc.state__province, 
+                            custom_zip__postal_code: frm.doc.zip__postal_code,
+                            custom_country: frm.doc.country_emp,
+                            custom_bank: frm.doc.bank,
+                            custom_bic_code: frm.doc.bic_code,
+                            custom_please_attach_your_valid_id_or_passport: frm.doc.please_attach_your_valid_id_or_passport, 
+                            custom_name_the_other_bank: frm.doc.name_the_other_bank, 
+                            custom_your_bank_account_number_a: frm.doc.your_bank_account_number, 
                             // personal_email: frm.doc.applicant_email
                         });
                     }

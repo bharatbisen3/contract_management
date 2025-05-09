@@ -478,5 +478,47 @@ fixtures = [
                 # "field2",
             ]]
         ]
+    },
+    {
+        "doctype": "Property Setter",
+        "filters": [
+            ["name", "in", [
+                # "field2",
+                "Employee Attendance Master-date-in_list_view",
+                "Employee Attendance Master-full_name-in_list_view",
+                "Employee Attendance Master-present-in_list_view",
+                "Employee Attendance Master-team_leader-in_list_view",
+                "Employee Attendance Master-tl_name-in_list_view",
+                "Employee Contract-date_of_birth-fetch_from",
+                "Employee Contract-main-default_print_format",
+                "Employee Contract-main-field_order",
+                "Employee-designation-in_list_view",
+                "Employee-email_address-in_list_view",
+                "Employee-employee_name-in_list_view",
+                "Employee-main-field_order",
+                "Employee-naming_series-options",
+                "Job Applicant-applicant_name-in_list_view",
+                "Job Applicant-applicant_name-label",
+                "Job Applicant-applicant_name-report_hide",
+                "Job Applicant-applicant_rating-in_list_view",
+                "Job Applicant-designation-hidden",
+                "Job Applicant-details_section-label",
+                "Job Applicant-job_title-hidden",
+                "Job Applicant-job_title-in_list_view",
+                "Job Applicant-main-field_order",
+                "Job Applicant-phone_number-hidden",
+                "Job Applicant-section_break_16-hidden",
+                "Job Applicant-section_break_6-hidden",
+                "Job Applicant-source_and_rating_section-hidden",
+                "Job Applicant-status-in_list_view",
+                "Job Offer-applicant_email_address-in_list_view",
+                "Job Offer-applicant_name-in_list_view",
+                "Job Offer-designation-in_list_view",
+                "Job Offer-main-field_order",
+                "Project Attendance-end_date-in_list_view",
+                "Project Attendance-start_date-in_list_view"
+            ]]
+        ]
     }
+
 ]

@@ -325,21 +325,21 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.the_main_rule",
+   "fetch_from": "verification_id.custom_the_main_rule",
    "fieldname": "the_main_rule",
    "fieldtype": "Check",
    "label": "The main rule The place of employment is the place where the employee performs the main part of his work"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.the_alternative_rule",
+   "fetch_from": "verification_id.custom_the_alternative_rule_if",
    "fieldname": "the_alternative_rule",
    "fieldtype": "Check",
    "label": "The alternative rule If the work is performed while moving or at workplaces that are constantly changing"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.the_exception_rule",
+   "fetch_from": "verification_id.custom_the_exception_rule_if_the_work_takes_place_for_a",
    "fieldname": "the_exception_rule",
    "fieldtype": "Check",
    "label": "The exception rule  If the work takes place for a limited time at each location, the residence is a place of employment"
@@ -385,7 +385,7 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.probationary_employment",
+   "fetch_from": "verification_id.custom_probationary_employment",
    "fieldname": "probationary_employment",
    "fieldtype": "Check",
    "label": "Probationary employment"
@@ -398,26 +398,26 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.special_fixed_term_employment",
+   "fetch_from": "verification_id.custom_special_fixed_term_employment",
    "fieldname": "special_fixed_term_employment",
    "fieldtype": "Check",
    "label": "Special fixed term employment"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.seasonal_work",
+   "fetch_from": "verification_id.custom_seasonal_work",
    "fieldname": "seasonal_work",
    "fieldtype": "Check",
    "label": "Seasonal work"
   },
   {
-   "fetch_from": "verification_id.estimated_starting_date",
+   "fetch_from": "verification_id.custom_estimated_starting_date",
    "fieldname": "estimated_starting_date",
    "fieldtype": "Date",
    "label": "Estimated starting date"
   },
   {
-   "fetch_from": "verification_id.estimated_finish_date",
+   "fetch_from": "verification_id.custom_estimated_finish_date",
    "fieldname": "estimated_finish_date",
    "fieldtype": "Date",
    "label": "Estimated finish date"
@@ -432,19 +432,19 @@
    "label": "Terms of employment"
   },
   {
-   "fetch_from": "verification_id.workinghours_per_week_and_time",
+   "fetch_from": "verification_id.custom_workinghours_per_week_and_time",
    "fieldname": "workinghours_per_week_and_time",
    "fieldtype": "Int",
    "label": "Workinghours per week and time"
   },
   {
-   "fetch_from": "verification_id.time_span_start",
+   "fetch_from": "verification_id.custom_time_span_start",
    "fieldname": "time_span_start",
    "fieldtype": "Time",
    "label": "Time Span (Start)"
   },
   {
-   "fetch_from": "verification_id.time_span_end",
+   "fetch_from": "verification_id.custom_time_span_end",
    "fieldname": "time_span_end",
    "fieldtype": "Time",
    "label": "Time Span (End)"
@@ -460,14 +460,14 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.only_ordered_overtime_or_moretime",
+   "fetch_from": "verification_id.custom_only_ordered_overtime_or_moretime",
    "fieldname": "only_ordered_overtime_or_moretime",
    "fieldtype": "Check",
    "label": " Only ordered overtime or moretime"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.according_to_the_applicable_collective_agreement",
+   "fetch_from": "verification_id.custom_according_to_the_applicable_collective_agreement_",
    "fieldname": "according_to_the_applicable_collective_agreement",
    "fieldtype": "Check",
    "label": "According to the applicable collective agreement"
@@ -477,14 +477,14 @@
    "fieldtype": "Section Break"
   },
   {
-   "fetch_from": "verification_id.hourly_salary_in_sek_gross_salary",
+   "fetch_from": "verification_id.custom_hourly_salary_in_sek_gross_salary",
    "fieldname": "hourly_salary_in_sek_gross_salary",
    "fieldtype": "Currency",
    "label": "Hourly Salary in SEK (gross salary)"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.piecework_pay_according_to_a_separate_agreement",
+   "fetch_from": "verification_id.custom_plecework_pay_according_to_separate_agreement_",
    "fieldname": "piecework_pay_according_to_a_separate_agreement",
    "fieldtype": "Check",
    "label": "Piecework pay according to a separate agreement"
@@ -501,14 +501,14 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.the_salary_is_paid_the_month_after_earning",
+   "fetch_from": "verification_id.custom_the_salary_is_paid_the_month_after_earning",
    "fieldname": "the_salary_is_paid_the_month_after_earning",
    "fieldtype": "Check",
    "label": "The salary is paid the month after earning"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.the_salary_is_paid_on_the_25th_of_each_month",
+   "fetch_from": "verification_id.custom_the_salary_is_paid_on_the_25th_of_each_month",
    "fieldname": "the_salary_is_paid_on_the_25th_of_each_month",
    "fieldtype": "Check",
    "label": "The salary is paid on the 25th of each month"
@@ -520,7 +520,7 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.by_law",
+   "fetch_from": "verification_id.custom_by_law",
    "fieldname": "by_law",
    "fieldtype": "Check",
    "label": "By law"
@@ -531,21 +531,21 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.according_to_collective_agreement_and_law",
+   "fetch_from": "verification_id.custom_according_to_collective_agreement_and_law",
    "fieldname": "according_to_collective_agreement_and_law",
    "fieldtype": "Check",
    "label": "According to collective agreement and law"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.by_law_inc",
+   "fetch_from": "verification_id.custom_by_law_a",
    "fieldname": "by_law_emp",
    "fieldtype": "Check",
    "label": "By law"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.according_to_collective_agreement_and_law_inc",
+   "fetch_from": "verification_id.custom_according_to_collective_agreement_and_law_a",
    "fieldname": "according_to_collective_agreement_and_law_emp",
    "fieldtype": "Check",
    "label": "According to collective agreement and law emp"
@@ -563,14 +563,14 @@
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.the_employment_protection_act",
+   "fetch_from": "verification_id.custom_the_employment_protection_act",
    "fieldname": "the_employment_protection_act",
    "fieldtype": "Check",
    "label": "The Employment Protection Act"
   },
   {
    "default": "0",
-   "fetch_from": "verification_id.collective_agreement",
+   "fetch_from": "verification_id.custom_collective_agreement",
    "fieldname": "collective_agreement",
    "fieldtype": "Check",
    "label": "Collective agreement"
@@ -717,7 +717,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-08 20:13:47.027487",
+ "modified": "2025-05-09 12:51:48.709817",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",
