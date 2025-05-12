@@ -35,15 +35,16 @@ frappe.ui.form.on("Employee Contract", {
                             gender: frm.doc.gender,
                             citizenship: frm.doc.citizenship,
                             custom_address: frm.doc.applicant_address,
+                            custom_address_2: frm.doc.address2,
+                            custom_zip__postal_code: frm.doc.zip__postal_code,
                             custom_city: frm.doc.city_emp,
                             custom_stateprovince: frm.doc.state__province, 
-                            custom_zip__postal_code: frm.doc.zip__postal_code,
                             custom_country: frm.doc.country_emp,
                             custom_bank: frm.doc.bank,
                             custom_bic_code: frm.doc.bic_code,
                             custom_please_attach_your_valid_id_or_passport: frm.doc.please_attach_your_valid_id_or_passport, 
                             custom_name_the_other_bank: frm.doc.name_the_other_bank, 
-                            custom_your_bank_account_number_a: frm.doc.your_bank_account_number, 
+                            custom_your_bank_account_number_a: frm.doc.your_bank_account_number
                             // personal_email: frm.doc.applicant_email
                         });
                     }

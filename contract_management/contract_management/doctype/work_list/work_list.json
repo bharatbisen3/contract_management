@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:work_includes",
+ "creation": "2025-05-12 15:20:10.661773",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "work_includes"
+ ],
+ "fields": [
+  {
+   "fieldname": "work_includes",
+   "fieldtype": "Data",
+   "label": "Work Includes",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-12 15:37:28.902553",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Work List",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

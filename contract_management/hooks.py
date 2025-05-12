@@ -323,6 +323,9 @@ override_doctype_class = {
 
 
 fixtures = [
+    "Website Settings",
+    "Role Permission for Page and Report",  # For Role Permission Manager data
+    "Role Profile",
     {
         "doctype": "Custom Field",
         "filters": [
@@ -436,10 +439,8 @@ fixtures = [
 				"Job Offer-custom_special_fixed_term_employment",
 				"Job Offer-custom_stateprovince",
 				"Job Offer-custom_terms_of_employment_",
-				"Job Offer-custom_the_alternative_rule_if",
 				"Job Offer-custom_the_companys_main_worksplace_is",
 				"Job Offer-custom_the_employment_protection_act",
-				"Job Offer-custom_the_exception_rule_if_the_work_takes_place_for_a",
 				"Job Offer-custom_the_main_rule",
 				"Job Offer-custom_the_salary_is_paid_on_the_25th_of_each_month",
 				"Job Offer-custom_the_salary_is_paid_the_month_after_earning",
@@ -450,7 +451,25 @@ fixtures = [
 				"Job Offer-custom_workinghours_per_week_and_time",
 				"Job Offer-custom_workspace",
 				"Job Offer-custom_your_bank_account_number",
-				"Job Offer-custom_zippostal_code_"                
+				"Job Offer-custom_zippostal_code_",
+                "Job Offer-custom_the_work_includes_the_following_html",
+                "Job Offer-custom_forest_planting",
+                "Job Offer-custom_forest_clearing",
+                "Job Offer-custom_work_report",
+                "Job Offer-custom_forest_planning",
+                "Job Offer-custom_hours_per_week",
+                "Job Offer-custom_termination_of_the_employment__copy",
+                "Job Offer-custom_termination_of_the_employment_",
+                "Job Offer-custom_probationary_employment_period_in_month",
+                "Job Offer-custom_workspace_text",
+                "Job Offer-custom_mission",
+                "Job Offer-custom_part_of_above_emp_form",
+                "Job Offer-custom_anytext",
+                "Job Offer-custom_the_exception_rule",
+                "Job Offer-custom_the_alternative_rule",
+                "Job Offer-custom_address_2",
+                "Job Applicant-custom_address_2",
+                "Employee-custom_address_2"
 
             ]]
         ]
