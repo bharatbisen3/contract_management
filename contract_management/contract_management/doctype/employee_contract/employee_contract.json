@@ -164,7 +164,7 @@
    "default": "559292-9086",
    "fieldname": "organization_numer",
    "fieldtype": "Data",
-   "label": "Organization numer",
+   "label": "Organization number",
    "options": "Phone"
   },
   {
@@ -827,7 +827,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-12 18:31:39.058222",
+ "modified": "2025-05-13 15:31:16.176540",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

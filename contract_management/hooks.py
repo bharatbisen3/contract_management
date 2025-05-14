@@ -323,9 +323,10 @@ override_doctype_class = {
 
 
 fixtures = [
-    "Website Settings",
-    "Role Permission for Page and Report",  # For Role Permission Manager data
-    "Role Profile",
+    # "Website Settings",
+    # "Role Permission for Page and Report",  # For Role Permission Manager data
+    # "Role Profile",
+    # {"doctype": "Workspace"},  # Custom Workspaces
     {"doctype": "Workspace"},  # Custom Workspaces
     {"doctype": "Workspace Link"},  # Links inside workspaces (optional but recommended)
     {"doctype": "Navbar Item", "filters": [["parent", "=", "Navbar Settings"]]},

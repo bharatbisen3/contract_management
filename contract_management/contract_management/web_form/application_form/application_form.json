@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2025-05-12 18:30:34.466128",
+ "modified": "2025-05-13 11:47:11.368264",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "application-form",
@@ -147,7 +147,7 @@
    "options": "Country",
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -160,7 +160,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -186,7 +186,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -212,7 +212,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -225,7 +225,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -251,7 +251,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -265,7 +265,7 @@
    "options": "Country",
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -332,21 +332,20 @@
    "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nOther",
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
-   "depends_on": "eval:doc.custom_bank == \"Other\"",
-   "fieldname": "custom_other_bank_name",
+   "fieldname": "custom_bic_code",
    "fieldtype": "Data",
    "hidden": 0,
-   "label": "Other Bank Name",
+   "label": "BIC Code",
    "max_length": 0,
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -364,15 +363,16 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "custom_bic_code",
+   "depends_on": "eval:doc.custom_bank == \"Other\"",
+   "fieldname": "custom_other_bank_name",
    "fieldtype": "Data",
    "hidden": 0,
-   "label": "BIC Code",
+   "label": "Other Bank Name",
    "max_length": 0,
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -385,20 +385,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
-   "show_in_filter": 0
-  },
-  {
-   "allow_read_on_all_link_options": 0,
-   "fieldname": "custom_section_break_f08xr",
-   "fieldtype": "Section Break",
-   "hidden": 0,
-   "label": "",
-   "max_length": 0,
-   "max_value": 0,
-   "precision": "",
-   "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
@@ -411,7 +398,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   }
  ]
