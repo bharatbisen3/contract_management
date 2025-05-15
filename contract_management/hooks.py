@@ -536,6 +536,7 @@ fixtures = [
         "filters": [
             ["name", "in", [
                 # "field2",
+                # "field2",
                 "Job Applicant-country-report_hide",
                 "Job Applicant-country-print_hide",
                 "Job Applicant-country-hidden",
