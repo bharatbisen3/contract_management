@@ -52,7 +52,7 @@
    "label": "Last Name"
   },
   {
-   "fetch_from": "employee_id.email_address",
+   "fetch_from": "employee_id.custom_email_address",
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email"
@@ -61,13 +61,14 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-13 18:30:46.926691",
+ "modified": "2025-05-15 16:39:53.341403",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Attendence List",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

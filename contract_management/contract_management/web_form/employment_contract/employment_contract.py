@@ -41,7 +41,7 @@ def fetch_job_offer(verification_id, token):
     """Fetch job offer details securely if the token is valid."""
     job_offer = frappe.get_doc("Job Offer", verification_id)
 
-    if not job_offer.public_access_token or job_offer.public_access_token != token:
+    if not job_offer.custom_public_access_token or job_offer.custom_public_access_token != token:
         frappe.throw(_("Invalid or expired token"), frappe.AuthenticationError)
 
     return {
@@ -54,7 +54,7 @@ def fetch_job_offer(verification_id, token):
         "country_of_birth": job_offer.custom_country_of_birth_,
         "citizenship": job_offer.custom_citizenship_,
         "applicant_contact_number": job_offer.custom_applicant_contact_number,
-        "applicant_email": job_offer.applicant_email_address,
+        "applicant_email": job_offer.applicant_email,
 		
 		"applicant_address": job_offer.custom_applicant_address_a1,
 		"address2": job_offer.custom_address_2,

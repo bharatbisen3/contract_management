@@ -52,7 +52,7 @@
    "label": "Full Name"
   },
   {
-   "fetch_from": "employee_id.email_address",
+   "fetch_from": "employee_id.custom_email_address",
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email"
@@ -61,13 +61,14 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-08 19:00:46.550446",
+ "modified": "2025-05-15 12:26:23.709837",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Team Members List",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

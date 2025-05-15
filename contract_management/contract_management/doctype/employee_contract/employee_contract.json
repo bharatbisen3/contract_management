@@ -266,18 +266,17 @@
    "options": "Country"
   },
   {
-   "fetch_from": "verification_id.custom_mobile_phone_number",
+   "fetch_from": "verification_id.custom_applicant_contact_number",
    "fieldname": "applicant_contact_number",
    "fieldtype": "Phone",
    "label": "Applicant Contact Number "
   },
   {
-   "fetch_from": "verification_id.applicant_email_address",
+   "fetch_from": "verification_id.applicant_email",
    "fieldname": "applicant_email",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Applicant Email",
-   "reqd": 1,
    "unique": 1
   },
   {
@@ -827,7 +826,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-13 15:31:16.176540",
+ "modified": "2025-05-14 19:22:12.042879",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",
@@ -860,6 +859,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

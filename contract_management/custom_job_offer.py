@@ -71,10 +71,10 @@ class custom_job_offer(JobOffer):
         """Verify token and return data"""
         job_offer = frappe.get_doc("Job Offer", verification_id)
         
-        if not job_offer.public_access_token:
+        if not job_offer.custom_public_access_token:
             raise frappe.AuthenticationError(_("No access token exists for this record"))
         
-        if job_offer.public_access_token != token:
+        if job_offer.custom_public_access_token != token:
             raise frappe.AuthenticationError(_("Invalid token"))
         
         return job_offer.as_dict()
@@ -85,7 +85,7 @@ class custom_job_offer(JobOffer):
         token = f"persistent_{secrets.token_urlsafe(24)}"
         
         frappe.db.set_value("Job Offer", verification_id, {
-            "public_access_token": token
+            "custom_public_access_token": token
         })
         
         return token
@@ -95,17 +95,17 @@ class custom_job_offer(JobOffer):
 
         # ========== MODIFIED SEND EMAIL METHOD ==========
     def send_email(self):
-        if not self.applicant_email_address:
+        if not self.applicant_email:
             frappe.throw("Applicant does not have an email address")
         
         # Generate or retrieve existing token (keep existing token system)
-        if not self.public_access_token:
-            self.public_access_token = f"persistent_{secrets.token_urlsafe(24)}"
-            self.db_set("public_access_token", self.public_access_token)
+        if not self.custom_public_access_token:
+            self.custom_public_access_token = f"persistent_{secrets.token_urlsafe(24)}"
+            self.db_set("custom_public_access_token", self.custom_public_access_token)
 
         # Create both types of links for backward compatibility 
-        plain_link = f"{frappe.utils.get_url()}/employment-contract/new?verification_id={self.name}&token={self.public_access_token}"
-        # encrypted_link = f"{frappe.utils.get_url()}/employment-contract/new?vid={self.encrypt_verification_id(self.name)}&token={self.public_access_token}"
+        plain_link = f"{frappe.utils.get_url()}/employment-contract/new?verification_id={self.name}&token={self.custom_public_access_token}"
+        # encrypted_link = f"{frappe.utils.get_url()}/employment-contract/new?vid={self.encrypt_verification_id(self.name)}&token={self.custom_public_access_token}"
 
         subject = "Job Offer Contract"
         message = f"""Dear Applicant,<br><br>
@@ -119,7 +119,7 @@ class custom_job_offer(JobOffer):
         # (For older systems: <a href="{encrypted_link}">Encrypted Link</a>)<br><br>
 
         frappe.sendmail(
-            recipients=self.applicant_email_address,    
+            recipients=self.applicant_email,    
             subject=subject,
             message=message,
             now=True
@@ -145,7 +145,7 @@ def send_email_link(docname):
 @frappe.whitelist()
 def verify_token(verification_id, token):
     doc = frappe.get_doc("Job Offer", verification_id)
-    if not doc.public_access_token or doc.public_access_token != token:
+    if not doc.custom_public_access_token or doc.custom_public_access_token != token:
         frappe.throw("Invalid or expired link", frappe.AuthenticationError)
     return True
 
@@ -165,7 +165,7 @@ def get_applicant_details(verification_id):
         "country_of_birth": job_offer.custom_country_of_birth_,
         "citizenship": job_offer.custom_citizenship_,
         "applicant_contact_number": job_offer.custom_applicant_contact_number,
-        "applicant_email": job_offer.applicant_email_address,
+        "applicant_email": job_offer.applicant_email,
         "applicant_address": job_offer.custom_applicant_address_a1,
         "address2": job_offer.custom_address_2,
         "zip__postal_code": job_offer.custom_zippostal_code_,
