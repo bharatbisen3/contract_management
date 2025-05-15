@@ -69,11 +69,13 @@
   {
    "fieldname": "date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Date"
   },
   {
    "fieldname": "present",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Present",
    "options": "\nYes\nNo"
@@ -81,6 +83,7 @@
   {
    "fieldname": "allowance",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Allowance",
    "options": "\nYes\nNo"
@@ -89,6 +92,7 @@
    "default": "8",
    "fieldname": "duration",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Duration",
    "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12"
   }
@@ -96,7 +100,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-05-15 16:37:36.461616",
+ "modified": "2025-05-15 20:15:55.583193",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Members and  Allowance List",
