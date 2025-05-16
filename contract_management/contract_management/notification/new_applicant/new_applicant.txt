@@ -2,7 +2,7 @@ Hi
 Congrats for your new postiton 
 please fill out your Form using the link given below
 
-Link: http://23.94.61.169:8000/personal-information/new
+Link: http://fixture.local:8001/application-form/new
 
 Best Regards
 Algoware Techworks
