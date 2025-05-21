@@ -609,7 +609,8 @@ fixtures = [
                 "Employee-email_address-in_list_view",
                 "Employee-employee_name-in_list_view",
                 "Employee-designation-in_list_view",
-                "Employee-naming_series-options"
+                "Employee-naming_series-options",
+                "Job Applicant-custom_last_name-in_list_view",
 
             ]]
         ]
