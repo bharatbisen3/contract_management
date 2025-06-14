@@ -8,7 +8,7 @@
  "anonymous": 1,
  "apply_document_permissions": 0,
  "button_label": "Submit",
- "client_script": "frappe.web_form.after_load = () => {\r\n    frappe.web_form.on('custom_country_of_birth', (fieldname, value) => {\r\n        if (value) {\r\n            frappe.web_form.set_value('custom_citizenship', value);\r\n        }\r\n    });\r\n\r\n    frappe.web_form.on('custom_citizenship', (fieldname, value) => {\r\n        if (value) {\r\n            frappe.web_form.set_value('custom_country_of_birth', value);\r\n        }\r\n    });\r\n\r\n\r\n};\r\n",
+ "client_script": "frappe.web_form.after_load = () => {\r\n    \r\n    $('input[data-fieldname=\"custom_gender\"]').attr('placeholder', 'Male');\r\n    \r\n\r\n    frappe.web_form.on('custom_country_of_birth', (fieldname, value) => {\r\n        if (value) {\r\n            frappe.web_form.set_value('custom_citizenship', value);\r\n            frappe.web_form.set_value('custom_country', value);\r\n        }\r\n    });\r\n\r\n    frappe.web_form.on('custom_citizenship', (fieldname, value) => {\r\n        if (value) {\r\n            frappe.web_form.set_value('custom_country_of_birth', value);\r\n            frappe.web_form.set_value('custom_country', value);\r\n        }\r\n    });\r\n \r\n    frappe.web_form.on('custom_country', (fieldname, value) => {\r\n        if (value) {\r\n            frappe.web_form.set_value('custom_citizenship', value);\r\n            frappe.web_form.set_value('custom_country_of_birth', value);\r\n        }\r\n    });\r\n\r\n};\r\n",
  "condition_json": "[]",
  "creation": "2025-03-03 18:27:06.525823",
  "doc_type": "Job Applicant",
@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2025-05-16 21:41:54.722363",
+ "modified": "2025-06-12 18:08:07.634625",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "application-form",
@@ -98,6 +98,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
+   "default": "",
    "fieldname": "custom_gender",
    "fieldtype": "Link",
    "hidden": 0,
@@ -107,11 +108,12 @@
    "options": "Gender",
    "precision": "",
    "read_only": 0,
-   "reqd": 0,
+   "reqd": 1,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
+   "description": "Format YYYY-MM-DD",
    "fieldname": "custom_date_of_birth",
    "fieldtype": "Date",
    "hidden": 0,
@@ -199,7 +201,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 1,
+   "reqd": 0,
    "show_in_filter": 0
   },
   {
@@ -368,6 +370,7 @@
    "fieldtype": "Data",
    "hidden": 0,
    "label": "Other Bank Name",
+   "mandatory_depends_on": "eval:frappe.web_form.get_value('custom_bank') === 'Other'\r\n",
    "max_length": 0,
    "max_value": 0,
    "precision": "",
@@ -398,7 +401,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 1,
+   "reqd": 0,
    "show_in_filter": 0
   }
  ]

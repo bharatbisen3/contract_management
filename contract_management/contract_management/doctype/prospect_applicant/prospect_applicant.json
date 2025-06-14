@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "first_name",
+  "middle_name",
   "last_name",
   "full_name",
   "email"
@@ -20,7 +21,7 @@
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "label": "Last Name"
+   "label": "Last Name "
   },
   {
    "fieldname": "email",
@@ -37,11 +38,16 @@
    "in_standard_filter": 1,
    "label": "Full Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-01 12:25:31.153390",
+ "modified": "2025-05-24 08:50:07.577008",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Prospect Applicant",
@@ -75,6 +81,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

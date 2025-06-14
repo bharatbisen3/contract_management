@@ -131,12 +131,15 @@ frappe.ready(function () {
                     frappe.web_form.set_value("the_salary_is_paid_on_the_25th_of_each_month", data.the_salary_is_paid_on_the_25th_of_each_month);
                     frappe.web_form.set_value("by_law", data.by_law);
                     frappe.web_form.set_value("according_to_collective_agreement_and_law", data.according_to_collective_agreement_and_law);
+                    frappe.web_form.set_value("deviating_regulations_a", data.deviating_regulations_a);
+                    frappe.web_form.set_value("number_of_paid_holiday_days", data.number_of_paid_holiday_days);
                     frappe.web_form.set_value("any_training_provided_by_the_employer", data.any_training_provided_by_the_employer);
                     frappe.web_form.set_value("by_law_emp", data.by_law_emp);
                     frappe.web_form.set_value("according_to_collective_agreement_and_law_emp", data.according_to_collective_agreement_and_law_emp);
                     frappe.web_form.set_value("the_employment_protection_act", data.the_employment_protection_act);
                     frappe.web_form.set_value("collective_agreement", data.collective_agreement);
                     frappe.web_form.set_value("other_conditions", data.other_conditions);
+                    frappe.web_form.set_value("requested_from_job_offer", data.requested_from_job_offer);
 
                     // Log for debugging
                     // console.log("Job Offer data loaded:", data);

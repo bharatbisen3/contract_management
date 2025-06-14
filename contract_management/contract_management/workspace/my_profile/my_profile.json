@@ -10,10 +10,10 @@
  "icon": "users",
  "idx": 0,
  "indicator_color": "green",
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "My Profile",
  "links": [],
- "modified": "2025-05-12 19:52:53.312056",
+ "modified": "2025-05-28 22:02:15.842883",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "My Profile",
@@ -30,7 +30,7 @@
    "role": "Team Leader"
   }
  ],
- "sequence_id": 43.0,
+ "sequence_id": 36.0,
  "shortcuts": [
   {
    "color": "Grey",

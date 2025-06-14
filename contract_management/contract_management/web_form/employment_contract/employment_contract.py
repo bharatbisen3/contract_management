@@ -96,11 +96,14 @@ def fetch_job_offer(verification_id, token):
         "the_salary_is_paid_on_the_25th_of_each_month": job_offer.custom_the_salary_is_paid_on_the_25th_of_each_month,
         "by_law": job_offer.custom_by_law,
         "according_to_collective_agreement_and_law": job_offer.custom_according_to_collective_agreement_and_law,
+        "deviating_regulations_a": job_offer.custom_deviating_regulations_a ,
+        "number_of_paid_holiday_days": job_offer.custom_number_of_paid_holiday_days ,
         "any_training_provided_by_the_employer": job_offer.custom_any_training_provided_by_the_employer,
         "by_law_emp": job_offer.custom_by_law_a,
         "according_to_collective_agreement_and_law_emp": job_offer.custom_according_to_collective_agreement_and_law_a,
         "the_employment_protection_act": job_offer.custom_the_employment_protection_act,
         "collective_agreement": job_offer.custom_collective_agreement,
-        "other_conditions": job_offer.custom_other_conditions
+        "other_conditions": job_offer.custom_other_conditions,
+        "requested_from_job_offer": job_offer.custom_requested_on
         
     }

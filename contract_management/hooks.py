@@ -501,7 +501,21 @@ fixtures = [
                 "Employee-default_shift",
                 "Employee-grade",
                 "Employee-job_applicant",
-                "Employee-employment_type"
+                "Employee-employment_type",
+                "Job Offer-custom_estimated_dates",
+                "Job Offer-custom_basis_for_time_limitation_a",
+                "Job Offer-custom___",
+                "Job Offer-custom______",
+                "Job Offer-custom_jd_agriment",
+                "Job Offer-custom_requested_on",
+                "Job Offer-custom_number_of_paid_holiday_days",
+                "Job Offer-custom_workspace_new",
+                "Job Offer-custom_collective_agreement_gs_union",
+                "Job Offer-custom_training",
+                "Job Offer-custom_the_employer_provides_adequate_training",
+                "Job Offer-custom_deviating_regulations_a",
+                "Job Offer-custom_terms_workinghours"
+
 
 
 
@@ -611,6 +625,16 @@ fixtures = [
                 "Employee-designation-in_list_view",
                 "Employee-naming_series-options",
                 "Job Applicant-custom_last_name-in_list_view",
+                "Employee Contract-status-in_list_view",
+                "Employee Contract-first_name-in_list_view",
+                "Employee Contract-applicant_email-in_list_view",
+                "Job Offer-main-field_order",
+                "Employee-create_user-hidden",
+                "Employee-employee_number-hidden",
+                "Employee-employee_number-reqd",
+                "Employee-naming_series-reqd",
+                "Employee-naming_series-hidden",
+
 
             ]]
         ]

@@ -9,13 +9,13 @@
   "employer_information_section",
   "employer",
   "organization_numer",
-  "website",
   "email",
   "mobile_phone_number",
+  "website",
   "column_break_yanz",
   "address",
-  "city",
   "postcode",
+  "city",
   "country",
   "employee_information_section",
   "verification_id",
@@ -55,23 +55,26 @@
   "abs",
   "place_of_employment_section",
   "place_of_employment",
+  "html_bign",
   "the_main_rule",
   "the_alternative_rule",
   "the_exception_rule",
   "workplaces_section",
   "html_izka",
   "form_of_employment_section",
-  "basis_for_time_limitation",
+  "basis_for_time_limitation_a",
   "probationary_employment",
   "probationary_employment_period_in_month",
   "special_fixed_term_employment",
   "seasonal_work",
   "column_break_oczu",
+  "estimated_dates",
   "estimated_starting_date",
   "estimated_finish_date",
   "part_of_above_emp_form_section",
   "mission",
   "terms_of_employment_section",
+  "collective_agreement_gs_union",
   "html_tcjc",
   "workinghours_per_week_and_time",
   "column_break_cocf",
@@ -82,9 +85,10 @@
   "only_ordered_overtime_or_moretime",
   "according_to_the_applicable_collective_agreement",
   "section_break_qgnh",
+  "html_ovdp",
   "hourly_salary_in_sek_gross_salary",
-  "column_break_xalx",
   "piecework_pay_according_to_a_separate_agreement",
+  "column_break_xalx",
   "section_break_minb",
   "pay_period",
   "the_salary_is_paid_the_month_after_earning",
@@ -92,6 +96,10 @@
   "holiday_right",
   "by_law",
   "according_to_collective_agreement_and_law",
+  "deviating_regulations_a",
+  "number_of_paid_holiday_days",
+  "html_xfxl",
+  "the_employer_provides_adequate_training",
   "any_training_provided_by_the_employer",
   "insurances",
   "by_law_emp",
@@ -107,22 +115,27 @@
   "terms_and_conditions",
   "signature_of_emp_section",
   "candidate_column",
-  "place_a",
-  "date_a",
-  "status",
-  "column_break_cwzt",
   "signature_from_employee",
+  "column_break_cwzt",
+  "place_a",
+  "emp_sign_time",
+  "date_a",
   "section_break_rnda",
   "type_your_question_here",
   "signature_of_hr_section",
   "hr_column",
-  "place",
-  "date",
-  "column_break_svdm",
   "signature_from_employer",
+  "column_break_svdm",
+  "place",
+  "completion_sign_time",
+  "date",
+  "status",
   "section_break_lsdx",
   "document_viewer",
-  "vid"
+  "vid",
+  "creation_time",
+  "requested_from_job_offer",
+  "amended_from"
  ],
  "fields": [
   {
@@ -137,7 +150,7 @@
    "label": "Employer"
   },
   {
-   "default": "Folkethusv\u00e4gen 40",
+   "default": "Folketshusv\u00e4gen 40",
    "fieldname": "address",
    "fieldtype": "Data",
    "label": "Address"
@@ -145,7 +158,7 @@
   {
    "default": "84198",
    "fieldname": "postcode",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Postcode"
   },
   {
@@ -283,7 +296,7 @@
    "fetch_from": "verification_id.custom_bank",
    "fieldname": "bank",
    "fieldtype": "Select",
-   "label": "Bank",
+   "label": "Bank Name",
    "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nOther",
    "reqd": 1
   },
@@ -336,6 +349,7 @@
   {
    "fieldname": "place_of_employment",
    "fieldtype": "Heading",
+   "hidden": 1,
    "label": "Place of Employment"
   },
   {
@@ -355,7 +369,7 @@
    "label": "The alternative rule:"
   },
   {
-   "default": "0",
+   "default": "1",
    "description": " If the work takes place for a limited time at each location, which applies to certain works in the building and construction industry and similar industries, the residence is a place of employment.",
    "fetch_from": "verification_id.custom_the_exception_rule",
    "fieldname": "the_exception_rule",
@@ -366,7 +380,10 @@
    "description": "The Company's main worksplace is",
    "fieldname": "workplaces_section",
    "fieldtype": "Section Break",
-   "label": "Workplaces"
+   "hidden": 1,
+   "label": "Workplaces",
+   "print_hide": 1,
+   "report_hide": 1
   },
   {
    "fieldname": "column_break_yanz",
@@ -391,11 +408,6 @@
    "label": "Form of employment"
   },
   {
-   "fieldname": "basis_for_time_limitation",
-   "fieldtype": "Heading",
-   "label": "Basis for time limitation"
-  },
-  {
    "default": "0",
    "fetch_from": "verification_id.custom_probationary_employment",
    "fieldname": "probationary_employment",
@@ -405,6 +417,7 @@
   {
    "fieldname": "verification_id",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Verification ID",
    "options": "Job Offer"
   },
@@ -416,7 +429,7 @@
    "label": "Special fixed term employment"
   },
   {
-   "default": "0",
+   "default": "1",
    "fetch_from": "verification_id.custom_seasonal_work",
    "fieldname": "seasonal_work",
    "fieldtype": "Check",
@@ -426,13 +439,13 @@
    "fetch_from": "verification_id.custom_estimated_starting_date",
    "fieldname": "estimated_starting_date",
    "fieldtype": "Date",
-   "label": "Estimated starting date"
+   "label": "Estimated Starting date"
   },
   {
    "fetch_from": "verification_id.custom_estimated_finish_date",
    "fieldname": "estimated_finish_date",
    "fieldtype": "Date",
-   "label": "Estimated finish date"
+   "label": "Estimated Ending date"
   },
   {
    "fieldname": "column_break_oczu",
@@ -444,18 +457,21 @@
    "label": "Terms of employment"
   },
   {
+   "default": "40 hours",
    "fetch_from": "verification_id.custom_hours_per_week",
    "fieldname": "workinghours_per_week_and_time",
    "fieldtype": "Int",
    "label": "Hours per week"
   },
   {
+   "default": "06:30",
    "fetch_from": "verification_id.custom_time_span_start",
    "fieldname": "time_span_start",
    "fieldtype": "Time",
    "label": "Time Span (Start)"
   },
   {
+   "default": "17:00",
    "fetch_from": "verification_id.custom_time_span_end",
    "fieldname": "time_span_end",
    "fieldtype": "Time",
@@ -468,15 +484,15 @@
   {
    "fieldname": "conditions_for_overtime_work_or_moretime_work",
    "fieldtype": "HTML",
-   "label": "Conditions for overtime work or moretime work",
-   "options": "<h4> Conditions for overtime work or moretime work </h4>"
+   "label": "Conditions for overtime work or more time work:",
+   "options": "<h4> Conditions for overtime work or moretime work: </h4>"
   },
   {
-   "default": "0",
+   "default": "1",
    "fetch_from": "verification_id.custom_only_ordered_overtime_or_moretime",
    "fieldname": "only_ordered_overtime_or_moretime",
    "fieldtype": "Check",
-   "label": " Only ordered overtime or moretime"
+   "label": " Only ordered overtime or more time"
   },
   {
    "default": "0",
@@ -490,13 +506,14 @@
    "fieldtype": "Section Break"
   },
   {
+   "default": "180",
    "fetch_from": "verification_id.custom_hourly_salary_in_sek_gross_salary",
    "fieldname": "hourly_salary_in_sek_gross_salary",
    "fieldtype": "Currency",
    "label": "Hourly Salary in SEK (gross salary)"
   },
   {
-   "default": "0",
+   "default": "1",
    "fetch_from": "verification_id.custom_plecework_pay_according_to_separate_agreement_",
    "fieldname": "piecework_pay_according_to_a_separate_agreement",
    "fieldtype": "Check",
@@ -509,18 +526,18 @@
   {
    "fieldname": "pay_period",
    "fieldtype": "HTML",
-   "label": "Pay period",
-   "options": "<h5>Pay period</h5>"
+   "options": "<h4>Pay period:</h4>"
   },
   {
-   "default": "0",
+   "default": "1",
    "fetch_from": "verification_id.custom_the_salary_is_paid_the_month_after_earning",
    "fieldname": "the_salary_is_paid_the_month_after_earning",
    "fieldtype": "Check",
    "label": "The salary is paid the month after earning"
   },
   {
-   "default": "0",
+   "default": "1",
+   "description": "Holiday 13% and ATF (Working Time Shortening) 3.62% are calculated on gross salary and paid with salary",
    "fetch_from": "verification_id.custom_the_salary_is_paid_on_the_25th_of_each_month",
    "fieldname": "the_salary_is_paid_on_the_25th_of_each_month",
    "fieldtype": "Check",
@@ -529,8 +546,7 @@
   {
    "fieldname": "holiday_right",
    "fieldtype": "HTML",
-   "label": "Holiday right",
-   "options": "<p>Holiday 13% and ATF (Working Time Shortening) 3.62% are calculated on gross salary and paid with salary</p><br>\n\n<h5>Holiday right</h5>"
+   "options": "<h4>Holiday right:</h4>"
   },
   {
    "default": "0",
@@ -544,11 +560,11 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
+   "default": "1",
    "fetch_from": "verification_id.custom_according_to_collective_agreement_and_law",
    "fieldname": "according_to_collective_agreement_and_law",
    "fieldtype": "Check",
-   "label": "According to collective agreement and law"
+   "label": "By law and collective agreement"
   },
   {
    "default": "0",
@@ -558,23 +574,23 @@
    "label": "By law"
   },
   {
-   "default": "0",
+   "default": "1",
    "fetch_from": "verification_id.custom_according_to_collective_agreement_and_law_a",
    "fieldname": "according_to_collective_agreement_and_law_emp",
    "fieldtype": "Check",
-   "label": "According to collective agreement and law emp"
+   "label": "According to collective agreement"
   },
   {
    "fetch_from": "verification_id.custom_any_training_provided_by_the_employer",
    "fieldname": "any_training_provided_by_the_employer",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Any training provided by the employer"
   },
   {
    "fieldname": "insurances",
    "fieldtype": "HTML",
-   "label": "Insurances",
-   "options": "<h5>Insurances</h5>"
+   "options": "<h4>Insurances:</h4>"
   },
   {
    "default": "0",
@@ -584,7 +600,7 @@
    "label": "The Employment Protection Act"
   },
   {
-   "default": "0",
+   "default": "1",
    "fetch_from": "verification_id.custom_collective_agreement",
    "fieldname": "collective_agreement",
    "fieldtype": "Check",
@@ -603,7 +619,8 @@
   },
   {
    "fieldname": "section_break_rnda",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "hidden": 1
   },
   {
    "fieldname": "type_your_question_here",
@@ -624,9 +641,9 @@
   },
   {
    "fieldname": "date_a",
-   "fieldtype": "Date",
-   "label": "Date",
-   "read_only": 1
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Date"
   },
   {
    "fieldname": "column_break_svdm",
@@ -656,6 +673,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "description": "The agreed conditions in the agreement above are hereby confirmed. The employee also confirms that the employer in accordance with the applicable data protection legislation has informed the employee about the employer's processing of employees' personal data.",
    "fieldname": "signature_of_hr_section",
    "fieldtype": "Section Break",
    "label": "Signatures"
@@ -683,6 +701,7 @@
   },
   {
    "default": "0",
+   "description": "By signing the Employee Contract below, I certify that I have read and understood the Code of Contact.",
    "fieldname": "terms_and_conditions",
    "fieldtype": "Check",
    "label": "Accept the Terms and conditions"
@@ -694,8 +713,11 @@
   },
   {
    "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Date",
+   "print_hide": 1,
+   "report_hide": 1
   },
   {
    "fieldname": "section_break_wixk",
@@ -733,8 +755,7 @@
    "fetch_from": "verification_id.custom_address_2",
    "fieldname": "address2",
    "fieldtype": "Data",
-   "label": "Address 2",
-   "reqd": 1
+   "label": "Address 2"
   },
   {
    "fieldname": "abs",
@@ -744,6 +765,7 @@
   {
    "fieldname": "html_izka",
    "fieldtype": "HTML",
+   "hidden": 1,
    "options": "<h5>Folketshusv\u00e4gen 40, 841 98 LJUNGAVERK, Sweden</h5>\n\nThe workplace may vary depending on the company's mission and agreement"
   },
   {
@@ -760,12 +782,12 @@
   {
    "fieldname": "html_bkjc",
    "fieldtype": "HTML",
-   "options": "Termination of the employment relationship must take place for both parties according to the rules in:"
+   "options": "<h4>Termination : </h4><h5>\nTermination of the employment relationship must take place for both parties according to the rules in:</h5>"
   },
   {
    "fieldname": "for_both_parties",
    "fieldtype": "HTML",
-   "options": "<h4>For both parties, notice of termination of employment must be given in writing.</h4>"
+   "options": "<h5>For both parties, notice of termination of employment must be given in writing.</h5>"
   },
   {
    "fieldname": "part_of_above_emp_form_section",
@@ -800,7 +822,7 @@
    "options": "<p>The work includes the following:</p><p></p>"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "forest_clearing",
    "fieldtype": "Check",
    "label": "Forest Clearing"
@@ -822,11 +844,98 @@
    "fieldname": "work_report",
    "fieldtype": "Check",
    "label": "Work Report"
+  },
+  {
+   "default": "1",
+   "fieldname": "collective_agreement_gs_union",
+   "fieldtype": "Check",
+   "label": "Collective agreement: GS UNION"
+  },
+  {
+   "default": "0",
+   "fieldname": "deviating_regulations_a",
+   "fieldtype": "Check",
+   "label": "Deviating Regulations"
+  },
+  {
+   "fieldname": "html_xfxl",
+   "fieldtype": "HTML",
+   "options": "<h4>Training:</h4>"
+  },
+  {
+   "default": "1",
+   "fieldname": "the_employer_provides_adequate_training",
+   "fieldtype": "Check",
+   "label": "The employer provides adequate training before the employee starts work in the field."
+  },
+  {
+   "fieldname": "html_bign",
+   "fieldtype": "HTML",
+   "options": "The Company's main worksplace is : <b>Folketshusv\u00e4gen 40, 841 98 LJUNGAVERK, Sweden</b>"
+  },
+  {
+   "fieldname": "number_of_paid_holiday_days",
+   "fieldtype": "Data",
+   "label": "Number of paid holiday days"
+  },
+  {
+   "fieldname": "creation_time",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Creation Time"
+  },
+  {
+   "fetch_from": "verification_id.custom_requested_on",
+   "fieldname": "requested_from_job_offer",
+   "fieldtype": "Datetime",
+   "hidden": 1,
+   "label": "Requested from job offer",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "emp_sign_time",
+   "fieldtype": "Datetime",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completion_sign_time",
+   "fieldtype": "Datetime",
+   "label": "Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Employee Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "html_ovdp",
+   "fieldtype": "HTML",
+   "options": "<h4>Salary Information:</h4>"
+  },
+  {
+   "fieldname": "basis_for_time_limitation_a",
+   "fieldtype": "HTML",
+   "label": "Basis for time limitation",
+   "options": "<h5>Basis for time limitation:</h5>"
+  },
+  {
+   "fieldname": "estimated_dates",
+   "fieldtype": "HTML",
+   "label": "Estimated Dates",
+   "options": "<h5>Estimated Dates:</h5>"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-14 19:22:12.042879",
+ "modified": "2025-06-13 14:46:36.256975",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

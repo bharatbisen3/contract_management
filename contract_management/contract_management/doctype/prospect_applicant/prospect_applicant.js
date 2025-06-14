@@ -71,13 +71,16 @@ frappe.ui.form.on('Prospect Applicant', {
     first_name: function(frm) {
         set_full_name(frm);
     },
+    middle_name: function(frm) {
+        set_full_name(frm);
+    },
     last_name: function(frm) {
         set_full_name(frm);
     }
 });
 
 function set_full_name(frm) {
-    let full_name = [frm.doc.first_name, frm.doc.last_name]
+    let full_name = [frm.doc.first_name, frm.doc.middle_name, frm.doc.last_name]
         .filter(Boolean)
         .join(' ');
     frm.set_value('full_name', full_name);

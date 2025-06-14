@@ -48,7 +48,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-05-12 19:52:36.739441",
+ "modified": "2025-05-28 22:02:15.657048",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Attendance And Employee Records",
@@ -77,7 +77,7 @@
    "role": "Administrator"
   }
  ],
- "sequence_id": 42.0,
+ "sequence_id": 35.0,
  "shortcuts": [
   {
    "color": "Grey",
@@ -91,6 +91,7 @@
    "doc_view": "List",
    "label": "Employee Attendance Detailed Report",
    "link_to": "Employee Attendance Detailed Report",
+   "report_ref_doctype": "Employee Attendance Master",
    "type": "Report"
   }
  ],

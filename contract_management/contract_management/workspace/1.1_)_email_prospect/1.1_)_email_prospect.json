@@ -1,0 +1,49 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"HjaHpJM0o1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">1.1 ) Email Prospect Applicant</span>\",\"col\":12}},{\"id\":\"lBW4wiRRJ3\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"17ChZ4t6Zw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.1 ) Email Prospect Applicant\",\"col\":3}}]",
+ "creation": "2025-05-28 22:15:42.184456",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "mail",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "1.1 ) Email Prospect",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Prospect Applicant",
+   "link_count": 0,
+   "link_to": "Prospect Applicant",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-06-11 19:23:48.990975",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "1.1 ) Email Prospect",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "1.0) Workspace HR",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 37.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "New",
+   "label": "1.1 ) Email Prospect Applicant",
+   "link_to": "Prospect Applicant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "1.1 ) Email Prospect"
+}

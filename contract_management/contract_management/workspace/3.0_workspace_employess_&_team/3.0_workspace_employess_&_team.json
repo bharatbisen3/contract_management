@@ -1,0 +1,74 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"mnFrLr74_O\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">A. Project User Workspace</span>\",\"col\":12}},{\"id\":\"xfRaR12gpn\",\"type\":\"paragraph\",\"data\":{\"text\":\"V\u00e4lkommen till Projektmodulen!<br>H\u00e4r kan du uppdatera dina tidrapporter och projektstatus. Om du st\u00f6ter p\u00e5 n\u00e5gra problem \u00e4r du alltid v\u00e4lkommen att kontakta oss.\",\"col\":12}},{\"id\":\"IVMZEF9907\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.0 Create New Timesheet\",\"col\":3}},{\"id\":\"2sjKEnKSlN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2.0 View Timesheet\",\"col\":3}},{\"id\":\"P37MRoH5X1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"fYXR2c-pIk\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Teams\",\"col\":4}},{\"id\":\"rb5mRWbH5F\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"1U48dbzLDN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance Summary\",\"col\":3}},{\"id\":\"ErYDlI540F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance Report\",\"col\":3}}]",
+ "creation": "2025-02-23 22:53:02.467857",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "share-people",
+ "idx": 14,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "3.0 Workspace Employess & Team",
+ "links": [],
+ "modified": "2025-06-11 19:24:08.517684",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "3.0 Workspace Employess & Team",
+ "number_cards": [
+  {
+   "label": "Teams",
+   "number_card_name": "Total Teams"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "Team Leader"
+  }
+ ],
+ "sequence_id": 34.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Attendance Summary",
+   "link_to": "Employee Attendance Summary",
+   "report_ref_doctype": "Employee Attendance Master",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "1.0 Create New Timesheet",
+   "link_to": "Project Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "2.0 View Timesheet",
+   "link_to": "Project Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Attendance Report",
+   "link_to": "Employee Attendance Detailed Report",
+   "report_ref_doctype": "Employee Attendance Master",
+   "type": "Report"
+  }
+ ],
+ "title": "3.0 Workspace Employess & Team"
+}
