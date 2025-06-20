@@ -18,6 +18,7 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
+# from frappe.utils import get_url
 
 class ProjectSetup(Document):
 	pass
@@ -30,6 +31,40 @@ class ProjectSetup(Document):
     #         return frappe._("Cancelled")    
 
 	# pass
+
+
+# import frappe
+# from frappe.utils import get_url
+@frappe.whitelist()
+def send_open_project_reminders():
+    open_projects = frappe.get_all(
+        "Project Setup",
+        filters={"status": "Open"},
+        fields=["name", "team_leader", "object"]
+    )
+
+    for project in open_projects:
+        if not project.team_leader:
+            continue
+
+        subject = f"Reminder: Attendance for Project '{project.name}'"
+        message = f"""
+        Dear Team Leader,<br><br>
+        
+        Kindly log attendance upto last week for the project you have been assigned<br>
+        Thank You!<br><br>
+
+        HR Department<br>
+        Ljunganforestry
+        """
+
+        frappe.sendmail(
+            recipients=project.team_leader,
+            subject=subject,
+            message=message,
+            delayed=False
+
+        )
 
 
 

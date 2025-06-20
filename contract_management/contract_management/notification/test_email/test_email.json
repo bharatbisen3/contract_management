@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.status==\"Open\"\n",
+ "creation": "2025-06-17 16:54:11.994256",
+ "date_changed": "expected_end_date",
+ "days_in_advance": 2,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Project Setup",
+ "enabled": 0,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Hi</p>\n\n<p>project message here</p>\n\n<p>thank you</p>\n",
+ "message_type": "Markdown",
+ "modified": "2025-06-17 16:55:48.312494",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Test Email",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "team_leader"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Add Attendance"
+}

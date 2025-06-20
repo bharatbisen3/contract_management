@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2025-06-12 18:08:07.634625",
+ "modified": "2025-06-17 13:28:33.201265",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "application-form",
@@ -206,7 +206,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "custom_zippostal_code",
+   "fieldname": "custom_custom_zippostal_code",
    "fieldtype": "Data",
    "hidden": 0,
    "label": "ZIP/Postal Code",
@@ -214,7 +214,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 0,
-   "reqd": 1,
+   "reqd": 0,
    "show_in_filter": 0
   },
   {

@@ -33,6 +33,7 @@
   "applicant_address",
   "address2",
   "zip__postal_code",
+  "new_zip",
   "column_break_vntm",
   "city_emp",
   "state__province",
@@ -156,7 +157,7 @@
    "label": "Address"
   },
   {
-   "default": "84198",
+   "default": "841 98",
    "fieldname": "postcode",
    "fieldtype": "Data",
    "label": "Postcode"
@@ -265,13 +266,6 @@
    "reqd": 1
   },
   {
-   "fetch_from": "verification_id.custom_zippostal_code_",
-   "fieldname": "zip__postal_code",
-   "fieldtype": "Int",
-   "label": "ZIP / Postal code",
-   "reqd": 1
-  },
-  {
    "fetch_from": "verification_id.custom_country_a",
    "fieldname": "country_emp",
    "fieldtype": "Link",
@@ -282,7 +276,7 @@
    "fetch_from": "verification_id.custom_applicant_contact_number",
    "fieldname": "applicant_contact_number",
    "fieldtype": "Phone",
-   "label": "Applicant Contact Number "
+   "label": "Mobile/Phone Number "
   },
   {
    "fetch_from": "verification_id.applicant_email",
@@ -895,13 +889,13 @@
   },
   {
    "fieldname": "emp_sign_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Data",
    "label": "Date",
    "read_only": 1
   },
   {
    "fieldname": "completion_sign_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Data",
    "label": "Date"
   },
   {
@@ -931,11 +925,23 @@
    "fieldtype": "HTML",
    "label": "Estimated Dates",
    "options": "<h5>Estimated Dates:</h5>"
+  },
+  {
+   "fetch_from": "verification_id.custom_zippostal_code_",
+   "fieldname": "zip__postal_code",
+   "fieldtype": "Data",
+   "label": "ZIP / Postal code"
+  },
+  {
+   "fetch_from": "verification_id.custom_zippostal_code_",
+   "fieldname": "new_zip",
+   "fieldtype": "Data",
+   "label": "ZIP / Postal code"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-13 14:46:36.256975",
+ "modified": "2025-06-17 18:27:30.621476",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

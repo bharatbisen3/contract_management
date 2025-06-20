@@ -245,12 +245,14 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nOpen\nCompleted\nCancelled"
+   "options": "\nOpen\nCompleted\nCancelled",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-06-14 13:01:55.705810",
+ "modified": "2025-06-19 16:42:49.241473",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

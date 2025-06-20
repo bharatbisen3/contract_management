@@ -87,6 +87,7 @@ frappe.ready(function () {
                     frappe.web_form.set_value("city_emp", data.city_emp);
                     frappe.web_form.set_value("state__province", data.state__province);
                     frappe.web_form.set_value("zip__postal_code", data.zip__postal_code);
+                    frappe.web_form.set_value("new_zip", data.new_zip);
                     frappe.web_form.set_value("country_emp", data.country_emp);
 
                     frappe.web_form.set_value("bank", data.bank);

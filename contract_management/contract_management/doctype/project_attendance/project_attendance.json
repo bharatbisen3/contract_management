@@ -234,6 +234,7 @@
    "label": "Project Name"
   },
   {
+   "fetch_from": "project__client.total_compleated_work_till_now",
    "fieldname": "total_compleated_work_till_now",
    "fieldtype": "Int",
    "label": "Total Completed Work Till Now",
@@ -243,7 +244,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-04-21 16:58:06.935406",
+ "modified": "2025-06-19 13:20:14.737118",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Attendance",
@@ -281,6 +282,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

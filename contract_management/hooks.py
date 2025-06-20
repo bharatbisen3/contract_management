@@ -241,6 +241,36 @@ override_doctype_class = {
 # 	],
 # }
 
+# scheduler_events = {
+#     "cron": {
+#         "29 17 * * *": [
+#             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
+#             # "contract_management.contract_management.doctype.project_setup.project_setup.create_user_permission"
+#             # "contract_management.api.project_email.send_open_project_reminders"
+#         ]
+#     }
+# }
+
+
+scheduler_events = {
+    "cron": {
+        "00 11 * * *": [
+            "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
+        ]
+    }
+}
+
+# scheduler_events = {
+#     "hourly": [
+#             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
+#     ]
+# }
+
+
+
+
+
+
 # Testing
 # -------
 

@@ -59,6 +59,7 @@ def fetch_job_offer(verification_id, token):
 		"applicant_address": job_offer.custom_applicant_address_a1,
 		"address2": job_offer.custom_address_2,
      	"zip__postal_code": job_offer.custom_zippostal_code_,
+     	"new_zip": job_offer.custom_zippostal_code_,
      	"city_emp": job_offer.custom_city_a1,
      	"state__province": job_offer.custom_stateprovince,
      	"country_emp": job_offer.custom_country_a,

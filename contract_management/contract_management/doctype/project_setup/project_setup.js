@@ -46,8 +46,6 @@ frappe.ui.form.on("Project Setup", {
 
 
 
-
-
 // frappe.ui.form.on("Project Setup", {
 //     onload: function(frm) {
 //         if (!frm.is_new()) {
@@ -61,7 +59,7 @@ frappe.ui.form.on("Project Setup", {
 //                 let total = 0;
 //                 records.forEach(rec => {
 //                     total += rec.area_completed_for_this_submission;
-//                     console.log("For Each Total: ", total);
+//                     // console.log("For Each Total: ", total);
 //                 });
 
 //                 // Visually update field in the form
@@ -71,7 +69,7 @@ frappe.ui.form.on("Project Setup", {
 //                 frappe.db.set_value('Project Setup', frm.doc.name, 'total_compleated_work_till_now', total)
 //                     .then(() => {
 //                         console.log("Auto-updated in DB:", total);
-//                         frappe.msgprint(__('Total completed work auto-updated'));
+//                         // frappe.msgprint(__('Total completed work auto-updated'));
 //                     });
 //             });
 //         }

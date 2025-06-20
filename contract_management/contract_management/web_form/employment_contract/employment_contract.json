@@ -8,7 +8,7 @@
  "anonymous": 1,
  "apply_document_permissions": 0,
  "button_label": "Submit",
- "client_script": "\r\n// frappe.web_form.after_load = () => {\r\n//     addPdfDisplay();\r\n\r\n//     // Set initial visibility based on current value\r\n//     const initialLanguage = frappe.web_form.get_value(\"language\");\r\n//     togglePdfButtons(initialLanguage);\r\n//     toggleTermsCheckbox(initialLanguage);\r\n\r\n//     // Handle language field changes\r\n//     frappe.web_form.on(\"language\", (field, value) => {\r\n//         togglePdfButtons(value);\r\n//         toggleTermsCheckbox(value);\r\n//     });\r\n\r\n//     // Handle checkbox toggle for Submit Button\r\n//     frappe.web_form.on(\"terms_and_conditions\", toggleSubmitButton);\r\n//     toggleSubmitButton();\r\n\r\n//     // Show/hide other bank field\r\n//     frappe.web_form.on(\"bank\", (field, value) => {\r\n//         frappe.web_form.set_df_property(\"name_the_other_bank\", \"hidden\", value !== \"Other\" ? 1 : 0);\r\n//     });\r\n// };\r\n\r\n// function addPdfDisplay() {\r\n//     const termsField = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n\r\n//     const pdfContainer = $(`\r\n//         <div class=\"form-group\" id=\"pdf-documents-group\" style=\"display: none;\">\r\n//             <label class=\"control-label\">Important Documents</label>\r\n//             <div class=\"pdf-display-container\" style=\"margin: 15px 0;\">\r\n//                 <div class=\"pdf-item pdf-English\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact ENG Occupational Health and Safety Standards and Internal Regulations.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> English\r\n//                     </a>\r\n//                 </div>\r\n//                 <div class=\"pdf-item pdf-Swedish\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact SWE Arbetsskydd normer och interna ordningsregler.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> Swedish\r\n//                     </a>\r\n//                 </div>\r\n//                 <div class=\"pdf-item pdf-Romanian\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact RUM Norme de protect\u0326ie a muncii V1.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> Romanian\r\n//                     </a>\r\n//                 </div>\r\n//                 <div class=\"pdf-item pdf-Thai\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact THAI \u0e19\u0e35\u0e48\u0e04\u0e37\u0e2d\u0e01\u0e32\u0e23\u0e41\u0e1b\u0e25\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21\u0e17\u0e35\u0e48\u0e43\u0e2b\u0e49\u0e21\u0e32\u0e40\u0e1b\u0e47\u0e19\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> Thai\r\n//                     </a>\r\n//                 </div>\r\n//             </div>\r\n//             <p class=\"help-box small text-muted\">Please review these documents before accepting the terms.</p>\r\n//         </div>\r\n//     `);\r\n\r\n//     pdfContainer.insertBefore(termsField);\r\n\r\n//     $('<style>')\r\n//         .text(`\r\n//             .pdf-display-container { border-top: 1px solid #eee; padding-top: 15px; }\r\n//             .pdf-item a { display: inline-block; padding: 5px 10px; }\r\n//         `)\r\n//         .appendTo('head');\r\n// }\r\n\r\n// function togglePdfButtons(language) {\r\n//     $('.pdf-item').hide(); // Hide all buttons\r\n\r\n//     if (language) {\r\n//         $(`#pdf-documents-group`).show(); // Show the container\r\n//         $(`.pdf-${language}`).show(); // Show only matching button\r\n//     } else {\r\n//         $(`#pdf-documents-group`).hide(); // Hide the entire section\r\n//     }\r\n// }\r\n\r\n// function toggleTermsCheckbox(language) {\r\n//     const checkboxGroup = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n//     if (language) {\r\n//         checkboxGroup.show();\r\n//     } else {\r\n//         checkboxGroup.hide();\r\n//     }\r\n// }\r\n\r\n// function toggleSubmitButton() {\r\n//     const termsAccepted = frappe.web_form.get_value(\"terms_and_conditions\") == 1;\r\n//     $(\".submit-btn\").toggle(termsAccepted);\r\n//     frappe.web_form.set_df_property(\"section_break_rnda\", \"hidden\", termsAccepted ? 0 : 1);\r\n//     frappe.web_form.set_df_property(\"signature_of_emp_section\", \"hidden\", termsAccepted ? 0 : 1);\r\n// }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nfrappe.web_form.after_load = () => {\r\n    addPdfDisplay();\r\n\r\n    // Set initial visibility based on current value\r\n    const initialLanguage = frappe.web_form.get_value(\"language\");\r\n    togglePdfButtons(initialLanguage);\r\n    toggleTermsCheckbox(initialLanguage);\r\n\r\n    // Handle language field changes\r\n    frappe.web_form.on(\"language\", (field, value) => {\r\n        togglePdfButtons(value);\r\n        toggleTermsCheckbox(value);\r\n    });\r\n\r\n    // Handle checkbox toggle for Submit Button\r\n    frappe.web_form.on(\"terms_and_conditions\", toggleSubmitButton);\r\n    toggleSubmitButton();\r\n\r\n    // Show/hide other bank field\r\n    frappe.web_form.on(\"bank\", (field, value) => {\r\n        frappe.web_form.set_df_property(\"name_the_other_bank\", \"hidden\", value !== \"Other\" ? 1 : 0);\r\n    });\r\n\r\n    // NEW: Set emp_sign_time when employee signs\r\n    frappe.web_form.on(\"signature_from_employee\", (field, value) => {\r\n        if (value && !frappe.web_form.get_value(\"emp_sign_time\")) {\r\n            // frappe.web_form.set_value(\"emp_sign_time\", frappe.datetime.now_datetime());\r\n            const utcTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');\r\n            frappe.web_form.set_value(\"emp_sign_time\", utcTimestamp);\r\n        }\r\n    });\r\n};\r\n\r\nfunction addPdfDisplay() {\r\n    const termsField = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n\r\n    const pdfContainer = $(`\r\n        <div class=\"form-group\" id=\"pdf-documents-group\" style=\"display: none;\">\r\n            <label class=\"control-label\">Important Documents</label>\r\n            <div class=\"pdf-display-container\" style=\"margin: 15px 0;\">\r\n                <div class=\"pdf-item pdf-English\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact ENG Occupational Health and Safety Standards and Internal Regulations.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> English\r\n                    </a>\r\n                </div>\r\n                <div class=\"pdf-item pdf-Swedish\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact SWE Arbetsskydd normer och interna ordningsregler.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> Swedish\r\n                    </a>\r\n                </div>\r\n                <div class=\"pdf-item pdf-Romanian\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact RUM Norme de protect\u0326ie a muncii V1.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> Romanian\r\n                    </a>\r\n                </div>\r\n                <div class=\"pdf-item pdf-Thai\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact THAI \u0e19\u0e35\u0e48\u0e04\u0e37\u0e2d\u0e01\u0e32\u0e23\u0e41\u0e1b\u0e25\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21\u0e17\u0e35\u0e48\u0e43\u0e2b\u0e49\u0e21\u0e32\u0e40\u0e1b\u0e47\u0e19\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> Thai\r\n                    </a>\r\n                </div>\r\n            </div>\r\n            <p class=\"help-box small text-muted\">Please review these documents before accepting the terms.</p>\r\n        </div>\r\n    `);\r\n\r\n    pdfContainer.insertBefore(termsField);\r\n\r\n    $('<style>')\r\n        .text(`\r\n            .pdf-display-container { border-top: 1px solid #eee; padding-top: 15px; }\r\n            .pdf-item a { display: inline-block; padding: 5px 10px; }\r\n        `)\r\n        .appendTo('head');\r\n}\r\n\r\nfunction togglePdfButtons(language) {\r\n    $('.pdf-item').hide(); // Hide all buttons\r\n\r\n    if (language) {\r\n        $(`#pdf-documents-group`).show(); // Show the container\r\n        $(`.pdf-${language}`).show(); // Show only matching button\r\n    } else {\r\n        $(`#pdf-documents-group`).hide(); // Hide the entire section\r\n    }\r\n}\r\n\r\nfunction toggleTermsCheckbox(language) {\r\n    const checkboxGroup = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n    if (language) {\r\n        checkboxGroup.show();\r\n    } else {\r\n        checkboxGroup.hide();\r\n    }\r\n}\r\n\r\nfunction toggleSubmitButton() {\r\n    const termsAccepted = frappe.web_form.get_value(\"terms_and_conditions\") == 1;\r\n    $(\".submit-btn\").toggle(termsAccepted);\r\n    frappe.web_form.set_df_property(\"section_break_rnda\", \"hidden\", termsAccepted ? 0 : 1);\r\n    frappe.web_form.set_df_property(\"signature_of_emp_section\", \"hidden\", termsAccepted ? 0 : 1);\r\n}\r\n",
+ "client_script": "\r\n// frappe.web_form.after_load = () => {\r\n//     addPdfDisplay();\r\n\r\n//     // Set initial visibility based on current value\r\n//     const initialLanguage = frappe.web_form.get_value(\"language\");\r\n//     togglePdfButtons(initialLanguage);\r\n//     toggleTermsCheckbox(initialLanguage);\r\n\r\n//     // Handle language field changes\r\n//     frappe.web_form.on(\"language\", (field, value) => {\r\n//         togglePdfButtons(value);\r\n//         toggleTermsCheckbox(value);\r\n//     });\r\n\r\n//     // Handle checkbox toggle for Submit Button\r\n//     frappe.web_form.on(\"terms_and_conditions\", toggleSubmitButton);\r\n//     toggleSubmitButton();\r\n\r\n//     // Show/hide other bank field\r\n//     frappe.web_form.on(\"bank\", (field, value) => {\r\n//         frappe.web_form.set_df_property(\"name_the_other_bank\", \"hidden\", value !== \"Other\" ? 1 : 0);\r\n//     });\r\n// };\r\n\r\n// function addPdfDisplay() {\r\n//     const termsField = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n\r\n//     const pdfContainer = $(`\r\n//         <div class=\"form-group\" id=\"pdf-documents-group\" style=\"display: none;\">\r\n//             <label class=\"control-label\">Important Documents</label>\r\n//             <div class=\"pdf-display-container\" style=\"margin: 15px 0;\">\r\n//                 <div class=\"pdf-item pdf-English\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact ENG Occupational Health and Safety Standards and Internal Regulations.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> English\r\n//                     </a>\r\n//                 </div>\r\n//                 <div class=\"pdf-item pdf-Swedish\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact SWE Arbetsskydd normer och interna ordningsregler.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> Swedish\r\n//                     </a>\r\n//                 </div>\r\n//                 <div class=\"pdf-item pdf-Romanian\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact RUM Norme de protect\u0326ie a muncii V1.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> Romanian\r\n//                     </a>\r\n//                 </div>\r\n//                 <div class=\"pdf-item pdf-Thai\" style=\"margin-bottom: 10px; display: none;\">\r\n//                     <a href=\"/files/Code of Condact THAI \u0e19\u0e35\u0e48\u0e04\u0e37\u0e2d\u0e01\u0e32\u0e23\u0e41\u0e1b\u0e25\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21\u0e17\u0e35\u0e48\u0e43\u0e2b\u0e49\u0e21\u0e32\u0e40\u0e1b\u0e47\u0e19\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n//                         <i class=\"fa fa-file-pdf-o\"></i> Thai\r\n//                     </a>\r\n//                 </div>\r\n//             </div>\r\n//             <p class=\"help-box small text-muted\">Please review these documents before accepting the terms.</p>\r\n//         </div>\r\n//     `);\r\n\r\n//     pdfContainer.insertBefore(termsField);\r\n\r\n//     $('<style>')\r\n//         .text(`\r\n//             .pdf-display-container { border-top: 1px solid #eee; padding-top: 15px; }\r\n//             .pdf-item a { display: inline-block; padding: 5px 10px; }\r\n//         `)\r\n//         .appendTo('head');\r\n// }\r\n\r\n// function togglePdfButtons(language) {\r\n//     $('.pdf-item').hide(); // Hide all buttons\r\n\r\n//     if (language) {\r\n//         $(`#pdf-documents-group`).show(); // Show the container\r\n//         $(`.pdf-${language}`).show(); // Show only matching button\r\n//     } else {\r\n//         $(`#pdf-documents-group`).hide(); // Hide the entire section\r\n//     }\r\n// }\r\n\r\n// function toggleTermsCheckbox(language) {\r\n//     const checkboxGroup = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n//     if (language) {\r\n//         checkboxGroup.show();\r\n//     } else {\r\n//         checkboxGroup.hide();\r\n//     }\r\n// }\r\n\r\n// function toggleSubmitButton() {\r\n//     const termsAccepted = frappe.web_form.get_value(\"terms_and_conditions\") == 1;\r\n//     $(\".submit-btn\").toggle(termsAccepted);\r\n//     frappe.web_form.set_df_property(\"section_break_rnda\", \"hidden\", termsAccepted ? 0 : 1);\r\n//     frappe.web_form.set_df_property(\"signature_of_emp_section\", \"hidden\", termsAccepted ? 0 : 1);\r\n// }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nfrappe.web_form.after_load = () => {\r\n    addPdfDisplay();\r\n\r\n    // Set initial visibility based on current value\r\n    const initialLanguage = frappe.web_form.get_value(\"language\");\r\n    togglePdfButtons(initialLanguage);\r\n    toggleTermsCheckbox(initialLanguage);\r\n\r\n    // Handle language field changes\r\n    frappe.web_form.on(\"language\", (field, value) => {\r\n        togglePdfButtons(value);\r\n        toggleTermsCheckbox(value);\r\n    });\r\n\r\n    // Handle checkbox toggle for Submit Button\r\n    frappe.web_form.on(\"terms_and_conditions\", toggleSubmitButton);\r\n    toggleSubmitButton();\r\n\r\n    // Show/hide other bank field\r\n    frappe.web_form.on(\"bank\", (field, value) => {\r\n        frappe.web_form.set_df_property(\"name_the_other_bank\", \"hidden\", value !== \"Other\" ? 1 : 0);\r\n    });\r\n\r\n    // NEW: Set emp_sign_time when employee signs\r\n    frappe.web_form.on(\"signature_from_employee\", (field, value) => {\r\n        if (value && !frappe.web_form.get_value(\"emp_sign_time\")) {\r\n            // frappe.web_form.set_value(\"emp_sign_time\", frappe.datetime.now_datetime());\r\n            const utcTimestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');\r\n            frappe.web_form.set_value(\"emp_sign_time\", utcTimestamp);\r\n        }\r\n    });\r\n    \r\n    // NEW: Make fields read-only\r\n    frappe.web_form.set_df_property(\"country_of_birth\", \"read_only\", 1);\r\n    frappe.web_form.set_df_property(\"gender\", \"read_only\", 1);\r\n    frappe.web_form.set_df_property(\"country_emp\", \"read_only\", 1);\r\n    \r\n    // If you need to make them appear disabled visually as well\r\n    // $('[data-fieldname=\"country_of_birth\"] input').attr('disabled', 'disabled');\r\n    // $('[data-fieldname=\"gender\"] select').attr('disabled', 'disabled');\r\n    // $('[data-fieldname=\"country_emp\"] input').attr('disabled', 'disabled');\r\n};\r\n\r\nfunction addPdfDisplay() {\r\n    const termsField = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n\r\n    const pdfContainer = $(`\r\n        <div class=\"form-group\" id=\"pdf-documents-group\" style=\"display: none;\">\r\n            <label class=\"control-label\">Important Documents</label>\r\n            <div class=\"pdf-display-container\" style=\"margin: 15px 0;\">\r\n                <div class=\"pdf-item pdf-English\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact ENG Occupational Health and Safety Standards and Internal Regulations.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> English\r\n                    </a>\r\n                </div>\r\n                <div class=\"pdf-item pdf-Swedish\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact SWE Arbetsskydd normer och interna ordningsregler.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> Swedish\r\n                    </a>\r\n                </div>\r\n                <div class=\"pdf-item pdf-Romanian\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact RUM Norme de protect\u0326ie a muncii V1.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> Romanian\r\n                    </a>\r\n                </div>\r\n                <div class=\"pdf-item pdf-Thai\" style=\"margin-bottom: 10px; display: none;\">\r\n                    <a href=\"/files/Code of Condact THAI \u0e19\u0e35\u0e48\u0e04\u0e37\u0e2d\u0e01\u0e32\u0e23\u0e41\u0e1b\u0e25\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21\u0e17\u0e35\u0e48\u0e43\u0e2b\u0e49\u0e21\u0e32\u0e40\u0e1b\u0e47\u0e19\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22.pdf\" target=\"_blank\" class=\"btn btn-default btn-sm\">\r\n                        <i class=\"fa fa-file-pdf-o\"></i> Thai\r\n                    </a>\r\n                </div>\r\n            </div>\r\n            <p class=\"help-box small text-muted\">Please review these documents before accepting the terms.</p>\r\n        </div>\r\n    `);\r\n\r\n    pdfContainer.insertBefore(termsField);\r\n\r\n    $('<style>')\r\n        .text(`\r\n            .pdf-display-container { border-top: 1px solid #eee; padding-top: 15px; }\r\n            .pdf-item a { display: inline-block; padding: 5px 10px; }\r\n        `)\r\n        .appendTo('head');\r\n}\r\n\r\nfunction togglePdfButtons(language) {\r\n    $('.pdf-item').hide(); // Hide all buttons\r\n\r\n    if (language) {\r\n        $(`#pdf-documents-group`).show(); // Show the container\r\n        $(`.pdf-${language}`).show(); // Show only matching button\r\n    } else {\r\n        $(`#pdf-documents-group`).hide(); // Hide the entire section\r\n    }\r\n}\r\n\r\nfunction toggleTermsCheckbox(language) {\r\n    const checkboxGroup = $('[data-fieldname=\"terms_and_conditions\"]').closest('.form-group');\r\n    if (language) {\r\n        checkboxGroup.show();\r\n    } else {\r\n        checkboxGroup.hide();\r\n    }\r\n}\r\n\r\nfunction toggleSubmitButton() {\r\n    const termsAccepted = frappe.web_form.get_value(\"terms_and_conditions\") == 1;\r\n    $(\".submit-btn\").toggle(termsAccepted);\r\n    frappe.web_form.set_df_property(\"section_break_rnda\", \"hidden\", termsAccepted ? 0 : 1);\r\n    frappe.web_form.set_df_property(\"signature_of_emp_section\", \"hidden\", termsAccepted ? 0 : 1);\r\n}\r\n",
  "condition_json": "[]",
  "creation": "2025-03-03 15:46:37.738981",
  "doc_type": "Employee Contract",
@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 100,
- "modified": "2025-06-13 10:33:29.593840",
+ "modified": "2025-06-17 18:40:48.345376",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "employment-contract",
@@ -40,7 +40,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -54,7 +54,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -68,13 +68,13 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
-   "default": "84198",
+   "default": "841 98",
    "fieldname": "postcode",
    "fieldtype": "Data",
    "hidden": 0,
@@ -82,7 +82,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -96,7 +96,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -111,7 +111,7 @@
    "max_value": 0,
    "options": "Country",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -137,7 +137,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -152,7 +152,7 @@
    "max_value": 0,
    "options": "Phone",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -167,7 +167,7 @@
    "max_value": 0,
    "options": "URL",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -182,7 +182,7 @@
    "max_value": 0,
    "options": "Email",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -209,7 +209,7 @@
    "max_value": 0,
    "options": "Job Offer",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -222,7 +222,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -235,7 +235,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -248,7 +248,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -287,7 +287,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -314,7 +314,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -323,11 +323,11 @@
    "fieldname": "applicant_contact_number",
    "fieldtype": "Phone",
    "hidden": 0,
-   "label": "Applicant Contact Number ",
+   "label": "Mobile/Phone Number",
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -340,7 +340,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -366,7 +366,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -379,20 +379,33 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "zip__postal_code",
-   "fieldtype": "Int",
-   "hidden": 0,
+   "fieldtype": "Data",
+   "hidden": 1,
    "label": "ZIP / Postal code",
    "max_length": 0,
    "max_value": 0,
    "precision": "",
    "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "new_zip",
+   "fieldtype": "Data",
+   "hidden": 0,
+   "label": "ZIP / Postal code",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -417,7 +430,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -430,7 +443,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -471,7 +484,7 @@
    "max_value": 0,
    "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nOther",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -484,7 +497,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -510,7 +523,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -523,7 +536,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 1,
    "show_in_filter": 0
   },
@@ -536,7 +549,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -561,7 +574,7 @@
    "max_value": 0,
    "options": "<h5>Job Duties</h5>\n<br><p>According to this agreement, the employee is employed by the company Ljungan Skogsv\u00e5rd AB to perform the following work in forestry:</p><p></p>\n<p>The work includes the following:</p><p></p>",
    "precision": "",
-   "read_only": 1,
+   "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -629,7 +642,7 @@
    "max_value": 0,
    "options": "For this agreement, the provisions agreed with the GS UNION apply, with the additions stated below.",
    "precision": "",
-   "read_only": 1,
+   "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -642,7 +655,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 1,
+   "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -654,7 +667,7 @@
    "max_value": 0,
    "options": "The Company's main worksplace is : <b>Folketshusv\u00e4gen 40, 841 98 LJUNGAVERK, Sweden</b>",
    "precision": "",
-   "read_only": 1,
+   "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -1316,7 +1329,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -1429,9 +1442,9 @@
   {
    "allow_read_on_all_link_options": 0,
    "fieldname": "emp_sign_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Data",
    "hidden": 0,
-   "label": "Date and Time",
+   "label": "Date",
    "max_length": 0,
    "max_value": 0,
    "precision": "",
@@ -1504,6 +1517,19 @@
   },
   {
    "allow_read_on_all_link_options": 0,
+   "fieldname": "completion_sign_time",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Date",
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
    "fieldname": "signature_from_employer",
    "fieldtype": "Signature",
    "hidden": 1,
@@ -1531,6 +1557,18 @@
    "allow_read_on_all_link_options": 0,
    "fieldname": "section_break_lsdx",
    "fieldtype": "Section Break",
+   "hidden": 1,
+   "max_length": 0,
+   "max_value": 0,
+   "precision": "",
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "candidate_column",
+   "fieldtype": "Column Break",
    "hidden": 1,
    "max_length": 0,
    "max_value": 0,
