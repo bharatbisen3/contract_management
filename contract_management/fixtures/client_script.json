@@ -2,6 +2,39 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Job Offer",
+  "enabled": 0,
+  "modified": "2025-05-29 18:41:33.111964",
+  "module": "Contract Management",
+  "name": "Make dates editable",
+  "script": "\nfrappe.ui.form.on('Job Offer', {\n    refresh: function(frm) {\n        // Make the fields editable (remove read-only property)\n        frm.set_df_property('custom_estimated_starting_date', 'read_only', 0);\n        frm.set_df_property('custom_estimated_finish_date', 'read_only', 0);\n        frm.refresh_field('custom_estimated_starting_date');\n        frm.refresh_field('custom_estimated_finish_date');\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Work Team",
+  "enabled": 1,
+  "modified": "2025-06-06 12:57:34.368795",
+  "module": "Contract Management",
+  "name": "SpecializationDropdown",
+  "script": "frappe.ui.form.on('Work Team', {\r\n  onload: function (frm) {\r\n    const html = `\r\n      <label style=\"display:block; margin-bottom:5px;\">Specialization</label>\r\n      <div style=\"margin-bottom:45px;\"  class=\"multi-select-container\">\r\n        <div class=\"multi-select-box\" onclick=\"toggleOptions()\" id=\"multi-select-box\">\r\n          <span class=\"selected-values\" id=\"selected-values\"></span>\r\n        </div>\r\n        <div class=\"multi-select-options\" id=\"multi-select-options\">\r\n          <div class=\"option\" data-value=\"Clearing\">Clearing</div>\r\n          <div class=\"option\" data-value=\"Planting\">Planting</div>\r\n          <div class=\"option\" data-value=\"Planning\">Planning</div>\r\n          <div class=\"option\" data-value=\"Reporting\">Reporting</div>\r\n        </div>\r\n      </div>\r\n    `;\r\n\r\n    const css = `\r\n      <style>\r\n        .multi-select-container {\r\n          position: relative;\r\n          width: 500px;\r\n        }\r\n        .multi-select-box {\r\n          border: 1px solid #f3f3f3;\r\n          padding: 6px;\r\n          background-color: #F3F3F3;\r\n          cursor: pointer;\r\n          border-radius: 8px;\r\n          min-height: 28px;\r\n        }\r\n        .selected-chip {\r\n          display: inline-block;\r\n          background: #dedede;\r\n          color: #333;\r\n          padding: 2px 6px;\r\n          margin-right: 5px;\r\n          margin-bottom: 3px;\r\n          border-radius: 5px;\r\n          font-size: 12px;\r\n          cursor: pointer;\r\n        }\r\n        .multi-select-options {\r\n          display: none;\r\n          border: 1px solid #f3f3f3;\r\n          border-top: none;\r\n          background: #fff;\r\n          position: absolute;\r\n          width: 100%;\r\n          z-index: 100;\r\n          box-shadow: 0 4px 8px rgba(0,0,0,0.1);\r\n          max-height: 150px;\r\n          overflow-y: auto;\r\n        }\r\n        .multi-select-options .option {\r\n          padding: 8px 10px;\r\n          cursor: pointer;\r\n        }\r\n        .multi-select-options .option:hover {\r\n          background: #f0f0f0;\r\n        }\r\n        .multi-select-options .option.hidden {\r\n          display: none;\r\n        }\r\n      </style>\r\n    `;\r\n\r\n    frm.fields_dict.demo.$wrapper.html(css + html);\r\n\r\n    let selected = [];\r\n\r\n    window.toggleOptions = function () {\r\n      const el = document.getElementById('multi-select-options');\r\n      if (el) {\r\n        el.style.display = el.style.display === 'block' ? 'none' : 'block';\r\n      }\r\n    };\r\n\r\n    window.renderSelectedChips = function () {\r\n      const selectedEl = document.getElementById('selected-values');\r\n      selectedEl.innerHTML = '';\r\n\r\n      selected.forEach(value => {\r\n        const chip = document.createElement('span');\r\n        chip.className = 'selected-chip';\r\n        chip.innerText = value;\r\n        chip.onclick = () => {\r\n          updateSelection(value); // Remove on click\r\n        };\r\n        selectedEl.appendChild(chip);\r\n      });\r\n\r\n      frm.set_value('demo', selected.join(', '));\r\n    };\r\n\r\n    window.updateSelection = function (value) {\r\n      if (!selected.includes(value)) {\r\n        selected.push(value);\r\n      } else {\r\n        selected = selected.filter(item => item !== value);\r\n      }\r\n\r\n      renderSelectedChips();\r\n\r\n      // Hide selected options from dropdown\r\n      const options = document.querySelectorAll('.multi-select-options .option');\r\n      options.forEach(opt => {\r\n        const val = opt.getAttribute('data-value');\r\n        opt.classList.toggle('hidden', selected.includes(val));\r\n      });\r\n    };\r\n\r\n    setTimeout(() => {\r\n      const options = document.querySelectorAll('.multi-select-options .option');\r\n      options.forEach(opt => {\r\n        opt.addEventListener('click', function (e) {\r\n          e.stopPropagation(); // Prevent dropdown close\r\n          const value = this.getAttribute('data-value');\r\n          updateSelection(value);\r\n        });\r\n      });\r\n    }, 100);\r\n\r\n    document.addEventListener('click', function (event) {\r\n      const container = document.querySelector('.multi-select-container');\r\n      if (container && !container.contains(event.target)) {\r\n        const dropdown = document.getElementById('multi-select-options');\r\n        if (dropdown) dropdown.style.display = 'none';\r\n      }\r\n    });\r\n  }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Work Team",
+  "enabled": 1,
+  "modified": "2025-06-03 18:21:57.573164",
+  "module": "Contract Management",
+  "name": "Table Employee Id",
+  "script": "frappe.ui.form.on('Work Team', {\r\n  validate: function(frm) {\r\n    let employee_ids = new Set();\r\n    let duplicates = [];\r\n\r\n    frm.doc.team_members_list.forEach(row => {\r\n      if (employee_ids.has(row.employee_id)) {\r\n        duplicates.push(row.employee_id);\r\n      }\r\n      employee_ids.add(row.employee_id);\r\n    });\r\n\r\n    if (duplicates.length > 0) {\r\n      frappe.throw(`Employee ID <b>${duplicates.join(', ')}</b> already exists. Please enter a unique ID.`);\r\n    }\r\n  }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Employee",
   "enabled": 1,
   "modified": "2025-05-08 21:15:53.325418",
@@ -70,10 +103,10 @@
   "doctype": "Client Script",
   "dt": "Project Setup",
   "enabled": 1,
-  "modified": "2025-05-08 21:06:51.698008",
+  "modified": "2025-06-19 12:37:26.133853",
   "module": "Contract Management",
   "name": "Concat Project Name",
-  "script": "// frappe.ui.form.on('Project Setup', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\nfrappe.ui.form.on('Project Setup', {\n    object: function(frm) {\n        update_concat_field(frm);\n    },\n    project_customer: function(frm) {\n        update_concat_field(frm);\n    },\n    refresh: function(frm) {\n        update_concat_field(frm);\n    }\n});\n\nfunction update_concat_field(frm) {\n    let object = frm.doc.object || '';\n    let project_name = frm.doc.project_customer || '';\n    \n    let concatenated_value = project_name + ' - ' + object;\n    \n    frm.set_value('concat_obj_and_proj', concatenated_value.trim());\n}\n",
+  "script": "// frappe.ui.form.on('Project Setup', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\nfrappe.ui.form.on('Project Setup', {\n    object: function(frm) {\n        update_concat_field(frm);\n    },\n    project_customer: function(frm) {\n        update_concat_field(frm);\n    }\n    // refresh: function(frm) {\n    //     update_concat_field(frm);\n    // }\n});\n\nfunction update_concat_field(frm) {\n    let object = frm.doc.object || '';\n    let project_name = frm.doc.project_customer || '';\n    \n    let concatenated_value = project_name + ' - ' + object;\n    \n    frm.set_value('concat_obj_and_proj', concatenated_value.trim());\n}\n",
   "view": "Form"
  },
  {
@@ -81,10 +114,10 @@
   "doctype": "Client Script",
   "dt": "Project Attendance",
   "enabled": 1,
-  "modified": "2025-05-08 21:07:20.677745",
+  "modified": "2025-06-19 19:11:19.601831",
   "module": "Contract Management",
   "name": "Calculate Work",
-  "script": "// frappe.ui.form.on('Project Attendance', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\n\nfrappe.ui.form.on('Project Attendance', {\n    project__client: function(frm) {\n        if (frm.is_new()) {\n            calculate_total_completed_work(frm);\n        }\n    }\n});\n\nfunction calculate_total_completed_work(frm) {\n    if (!frm.doc.project__client) {\n        return;\n    }\n\n    frappe.call({\n        method: \"frappe.client.get_list\",\n        args: {\n            doctype: \"Project Attendance\",\n            filters: {\n                project__client: frm.doc.project__client,\n                docstatus: [\"!=\", 2]  // Exclude canceled documents\n            },\n            fields: [\"area_completed_for_this_submission\"]\n        },\n        callback: function(response) {\n            if (response.message && frm.is_new()) { \n                let total = response.message.reduce((sum, record) => {\n                    return sum + (record.area_completed_for_this_submission || 0);\n                }, 0);\n                frm.set_value(\"total_compleated_work_till_now\", total);\n            }\n        }\n    });\n}\n",
+  "script": "frappe.ui.form.on('Project Attendance', {\n    project__client: function(frm) {\n        if (frm.is_new()) {\n            calculate_total_completed_work(frm);\n        }\n    },\n\n    validate: function(frm) {\n        const total_completed = frm.doc.total_compleated_work_till_now || 0;\n        const new_submission = frm.doc.area_completed_for_this_submission || 0;\n        const total_allowed = frm.doc.total_area_in_hecter || 0;\n\n        const projected_total = total_completed + new_submission;\n\n        if (projected_total > total_allowed) {\n            frappe.throw(__('Total completed area ({0}) cannot exceed allowed area ({1}) in Project Setup.', [projected_total, total_allowed]));\n        }\n    },\n\n\n\n    on_submit: function(frm) {\n        update_total_completed_in_project_setup(frm.doc.project__client);\n    },\n\n    after_cancel: function(frm) {\n        update_total_completed_in_project_setup(frm.doc.project__client);\n    }\n});\n\n// Calculate total completed work till now for display\nfunction calculate_total_completed_work(frm) {\n    if (!frm.doc.project__client) return;\n\n    frappe.call({\n        method: \"frappe.client.get_list\",\n        args: {\n            doctype: \"Project Attendance\",\n            filters: {\n                project__client: frm.doc.project__client,\n                docstatus: [\"!=\", 2]  // Exclude cancelled\n            },\n            fields: [\"area_completed_for_this_submission\"]\n        },\n        callback: function(response) {\n            if (response.message && frm.is_new()) {\n                let total = response.message.reduce((sum, record) => {\n                    return sum + (record.area_completed_for_this_submission || 0);\n                }, 0);\n                frm.set_value(\"total_compleated_work_till_now\", total);\n            }\n        }\n    });\n}\n\n// Update total completed area in Project Setup\nfunction update_total_completed_in_project_setup(project_name) {\n    if (!project_name) return;\n\n    frappe.call({\n        method: \"frappe.client.get_list\",\n        args: {\n            doctype: \"Project Attendance\",\n            filters: {\n                project__client: project_name,\n                docstatus: 1  // Only submitted\n            },\n            fields: [\"area_completed_for_this_submission\"]\n        },\n        callback: function(response) {\n            if (response.message) {\n                let total = response.message.reduce((sum, record) => {\n                    return sum + (record.area_completed_for_this_submission || 0);\n                }, 0);\n\n                frappe.db.set_value(\"Project Setup\", project_name, \"total_compleated_work_till_now\", total)\n                    .then(() => {\n                        console.log(\"Updated Project Setup with new total after submit/cancel:\", total);\n                    });\n            }\n        }\n    });\n}\n",
   "view": "Form"
  },
  {
@@ -124,8 +157,8 @@
   "docstatus": 0,
   "doctype": "Client Script",
   "dt": "Project Setup",
-  "enabled": 1,
-  "modified": "2025-04-26 12:25:02.145048",
+  "enabled": 0,
+  "modified": "2025-06-19 13:52:50.160079",
   "module": "Contract Management",
   "name": "Get Work In Project",
   "script": "// frappe.ui.form.on('Project Setup', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\n\n\nfrappe.ui.form.on(\"Project Setup\", {\n    onload: function(frm) {\n        if (!frm.is_new()) {\n            frappe.db.get_list(\"Project Attendance\", {\n                fields: [\"area_completed_for_this_submission\"],\n                filters: {\n                    docstatus: 1,\n                    project__client: frm.doc.name\n                }\n            }).then(records => {\n                let total = 0;\n                records.forEach(rec => {\n                    total += rec.area_completed_for_this_submission;\n                    // console.log(\"For Each Total: \", total);\n                });\n\n                // Visually update field in the form\n                frm.set_value(\"total_compleated_work_till_now\", total);\n\n                // Save it in the database too\n                frappe.db.set_value('Project Setup', frm.doc.name, 'total_compleated_work_till_now', total)\n                    .then(() => {\n                        console.log(\"Auto-updated in DB:\", total);\n                        // frappe.msgprint(__('Total completed work auto-updated'));\n                    });\n            });\n        }\n    }\n});\n",
@@ -162,6 +195,72 @@
   "module": "Contract Management",
   "name": "Call Token and Email",
   "script": "// // frappe.ui.form.on('Job Offer', {\n// // \trefresh(frm) {\n// // \t\t// your code here\n// // \t}\n// // })\n\n\n\n\n// frappe.ui.form.on('Job Offer', {\n//     refresh: function (frm) {\n//         frm.remove_custom_button(\"Create Employee\");\n//         frm.remove_custom_button(\"Show Employee\");\n        \n//         frm.add_custom_button(__('Send Email'), function () {\n//             // set date time \n//             // frm.set_value('custom_requested_on', frappe.datetime.now_datetime());\n\n//             // call method\n//             frappe.call({\n//                 // apps/contract_management/contract_management/override/custom_job_offer.py\n//                 method: \"contract_management.custom_job_offer.send_email_link\",  // updated to use Server Script API\n//                 // method: \"send_email_to_applicant\",  // updated to use Server Script API\n//                 args: {\n//                     docname: frm.doc.name\n//                 },\n//                 callback: function(response) {\n//                     frappe.msgprint({\n//                         title: __('Success'),\n//                         message: response.message,\n//                         indicator: 'green'\n//                     });\n//                 },\n//                 error: function(err) {\n//                     frappe.msgprint({\n//                         title: __('Error'),\n//                         message: __(\"Failed to send email. Check console for details.\"),\n//                         indicator: 'red'\n//                     });\n//                     console.error(\"Error sending email:\", err);\n//                 }\n//             });\n//         }, __(\"Actions\"));\n//     }\n// });\n\n\n\n\n\n\n\n\n\n\n\n\n\nfrappe.ui.form.on('Job Offer', {\n    refresh: function (frm) {\n        frm.remove_custom_button(\"Create Employee\");\n        frm.remove_custom_button(\"Show Employee\");\n\n        // ✅ Show \"Send Email\" button only if status is \"Accepted\"\n        if (frm.doc.status === \"Accepted\") {\n            frm.add_custom_button(__('Send Email'), function () {\n                // set date time \n                // frm.set_value('custom_requested_on', frappe.datetime.now_datetime());\n\n                // call method\n                frappe.call({\n                    // apps/contract_management/contract_management/override/custom_job_offer.py\n                    method: \"contract_management.custom_job_offer.send_email_link\",\n                    args: {\n                        docname: frm.doc.name\n                    },\n                    callback: function(response) {\n                        frappe.msgprint({\n                            title: __('Success'),\n                            message: response.message,\n                            indicator: 'green'\n                        });\n                    },\n                    error: function(err) {\n                        frappe.msgprint({\n                            title: __('Error'),\n                            message: __(\"Failed to send email. Check console for details.\"),\n                            indicator: 'red'\n                        });\n                        console.error(\"Error sending email:\", err);\n                    }\n                });\n            }, __(\"Actions\"));\n        }\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Employee Contract",
+  "enabled": 1,
+  "modified": "2025-06-12 14:17:42.833868",
+  "module": "Contract Management",
+  "name": "contract timing",
+  "script": "\r\nfrappe.ui.form.on('Employee Contract', {\r\n    // refresh: function (frm) {\r\n    //     // Set creation_time once, using UTC\r\n    //     if (!frm.doc.creation_time) {\r\n    //         frm.set_value('creation_time', get_utc_now());\r\n    //     }\r\n    // },\r\n\r\n    signature_from_employer: function (frm) {\r\n        if (frm.doc.signature_from_employer) {\r\n            frm.set_value('completion_sign_time', get_utc_now());\r\n            frm.set_value('status', 'Approved');\r\n        }\r\n    },\r\n\r\n    validate: function (frm) {\r\n        set_status_if_signed(frm);\r\n    }\r\n});\r\n\r\n// Helper: returns UTC datetime string in \"YYYY-MM-DD HH:mm:ss\" format\r\nfunction get_utc_now() {\r\n    return moment.utc().format('YYYY-MM-DD HH:mm:ss');\r\n}\r\n\r\nfunction set_status_if_signed(frm) {\r\n    if (frm.doc.signature_from_employer && frm.doc.status !== 'Approved') {\r\n        frm.set_value('status', 'Approved');\r\n    }\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Job Offer",
+  "enabled": 1,
+  "modified": "2025-06-23 14:21:08.144173",
+  "module": "Contract Management",
+  "name": "set request time",
+  "script": "frappe.ui.form.on('Job Offer', {\r\n    validate: function(frm) {\r\n        frm.set_value('custom_requested_on', get_utc_datetime_string());\r\n    },\r\n\r\n    before_submit: function(frm) {\r\n        frm.set_value('custom_requested_on', get_utc_datetime_string());\r\n        frm.set_value('status', 'Accepted');\r\n    },\r\n\r\n    after_cancel: function(frm) {\r\n        frm.set_value('status', 'Rejected');\r\n    }\r\n});\r\n\r\n// ✅ Function to get exact current UTC datetime in 'YYYY-MM-DD HH:mm:ss' format\r\nfunction get_utc_datetime_string() {\r\n    const now = new Date();\r\n    const yyyy = now.getUTCFullYear();\r\n    const mm = String(now.getUTCMonth() + 1).padStart(2, '0');\r\n    const dd = String(now.getUTCDate()).padStart(2, '0');\r\n    const hh = String(now.getUTCHours()).padStart(2, '0');\r\n    const mi = String(now.getUTCMinutes()).padStart(2, '0');\r\n    const ss = String(now.getUTCSeconds()).padStart(2, '0');\r\n    return `${yyyy}-${mm}-${dd} ${hh}:${mi}:${ss}`;\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Work Team",
+  "enabled": 0,
+  "modified": "2025-06-23 14:20:43.830898",
+  "module": "Contract Management",
+  "name": "Employee Access to TL",
+  "script": "frappe.ui.form.on('Work Team', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Project Setup",
+  "enabled": 1,
+  "modified": "2025-06-20 17:25:59.088848",
+  "module": "Contract Management",
+  "name": "Send Attendance alert Button",
+  "script": "\r\nfrappe.ui.form.on('Project Setup', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button(__('Send Attendance Reminder'), function() {\r\n            frappe.call({\r\n                method: 'contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders',\r\n                callback: function(r) {\r\n                    frappe.msgprint(__('Reminder email has been sent.'));\r\n                }\r\n            });\r\n        });\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Project Attendance",
+  "enabled": 0,
+  "modified": "2025-06-19 19:04:17.035980",
+  "module": "Contract Management",
+  "name": "Set Total",
+  "script": "\nfrappe.ui.form.on('Project Attendance', {\n    project__client: function(frm) {\n        if (frm.is_new()) {\n            calculate_total_completed_work(frm);\n        }\n    },\n\n    validate: function(frm) {\n        const total_completed = frm.doc.total_compleated_work_till_now || 0;\n        const new_submission = frm.doc.area_completed_for_this_submission || 0;\n        const total_allowed = frm.doc.total_area_in_hecter || 0;\n\n        const projected_total = total_completed + new_submission;\n\n        if (projected_total > total_allowed) {\n            frappe.throw(__('Total completed area ({0}) cannot exceed allowed area ({1}) in Project Setup.', [projected_total, total_allowed]));\n        }\n    },\n\n\n\n    on_submit: function(frm) {\n        update_total_completed_in_project_setup(frm.doc.project__client);\n    },\n\n    after_cancel: function(frm) {\n        update_total_completed_in_project_setup(frm.doc.project__client);\n    }\n});\n\n// Calculate total completed work till now for display\nfunction calculate_total_completed_work(frm) {\n    if (!frm.doc.project__client) return;\n\n    frappe.call({\n        method: \"frappe.client.get_list\",\n        args: {\n            doctype: \"Project Attendance\",\n            filters: {\n                project__client: frm.doc.project__client,\n                docstatus: [\"!=\", 2]  // Exclude cancelled\n            },\n            fields: [\"area_completed_for_this_submission\"]\n        },\n        callback: function(response) {\n            if (response.message && frm.is_new()) {\n                let total = response.message.reduce((sum, record) => {\n                    return sum + (record.area_completed_for_this_submission || 0);\n                }, 0);\n                frm.set_value(\"total_compleated_work_till_now\", total);\n            }\n        }\n    });\n}\n\n// Update total completed area in Project Setup\nfunction update_total_completed_in_project_setup(project_name) {\n    if (!project_name) return;\n\n    frappe.call({\n        method: \"frappe.client.get_list\",\n        args: {\n            doctype: \"Project Attendance\",\n            filters: {\n                project__client: project_name,\n                docstatus: 1  // Only submitted\n            },\n            fields: [\"area_completed_for_this_submission\"]\n        },\n        callback: function(response) {\n            if (response.message) {\n                let total = response.message.reduce((sum, record) => {\n                    return sum + (record.area_completed_for_this_submission || 0);\n                }, 0);\n\n                frappe.db.set_value(\"Project Setup\", project_name, \"total_compleated_work_till_now\", total)\n                    .then(() => {\n                        console.log(\"Updated Project Setup with new total after submit/cancel:\", total);\n                    });\n            }\n        }\n    });\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Project Attendance",
+  "enabled": 1,
+  "modified": "2025-06-23 14:21:20.704403",
+  "module": "Contract Management",
+  "name": "Status Wise Attendance Block",
+  "script": "// frappe.ui.form.on('Project Attendance', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\n\nfrappe.ui.form.on(\"Project Attendance\", {\n    onload: function(frm) {\n        // Restrict project selection to only \"Open\" status\n        frm.set_query(\"project__client\", function() {\n            return {\n                filters: {\n                    status: \"Open\"\n                }\n            };\n        });\n    },\n\n    project__client: function(frm) {\n        if (frm.doc.project__client) {\n            frappe.db.get_value(\"Project Setup\", frm.doc.project__client, \"status\")\n                .then(r => {\n                    const status = r.message.status;\n                    if (status !== \"Open\") {\n                        frappe.msgprint(\"You can only select a project with status 'Open'.\");\n                        frm.set_value(\"project__client\", null);\n                    }\n                });\n        }\n    },\n\n    before_submit: function(frm) {\n        return new Promise((resolve, reject) => {\n            if (!frm.doc.project__client) {\n                return resolve();\n            }\n\n            frappe.db.get_value(\"Project Setup\", frm.doc.project__client, \"status\")\n                .then(r => {\n                    const status = r.message.status;\n                    if (status !== \"Open\") {\n                        frappe.throw(\"Cannot submit: The selected project is not in 'Open' status.\");\n                        reject();\n                    } else {\n                        resolve();\n                    }\n                });\n        });\n    }\n});\n",
   "view": "Form"
  }
 ]

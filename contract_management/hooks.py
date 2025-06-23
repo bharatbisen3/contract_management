@@ -245,7 +245,6 @@ override_doctype_class = {
 #     "cron": {
 #         "29 17 * * *": [
 #             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
-#             # "contract_management.contract_management.doctype.project_setup.project_setup.create_user_permission"
 #             # "contract_management.api.project_email.send_open_project_reminders"
 #         ]
 #     }
@@ -254,7 +253,7 @@ override_doctype_class = {
 
 scheduler_events = {
     "cron": {
-        "00 11 * * *": [
+        "10 08 * * *": [
             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
         ]
     }
@@ -544,7 +543,8 @@ fixtures = [
                 "Job Offer-custom_training",
                 "Job Offer-custom_the_employer_provides_adequate_training",
                 "Job Offer-custom_deviating_regulations_a",
-                "Job Offer-custom_terms_workinghours"
+                "Job Offer-custom_terms_workinghours",
+                "Job Applicant-custom_custom_zippostal_code"
 
 
 
@@ -557,6 +557,12 @@ fixtures = [
         "filters": [
             ["name", "in", [
                 # "field2",
+                "Status Wise Attendance Block",
+                "Set Total",
+                "Send Attendance alert Button",
+                "Employee Access to TL",
+                "set request time",
+                "contract timing",
                 "Call Token and Email",
                 "Button in Applicant",
                 "Set Citizenship",
@@ -571,7 +577,10 @@ fixtures = [
                 "Date Range For Project Attendance",
                 "Fetch Attendance Information",
                 "Contract Status",
-                "Other Bank Validation"
+                "Other Bank Validation",
+                "Table Employee Id",
+                "SpecializationDropdown",
+                "Make dates editable"
             ]]
         ]
     },
@@ -658,12 +667,14 @@ fixtures = [
                 "Employee Contract-status-in_list_view",
                 "Employee Contract-first_name-in_list_view",
                 "Employee Contract-applicant_email-in_list_view",
-                "Job Offer-main-field_order",
                 "Employee-create_user-hidden",
                 "Employee-employee_number-hidden",
                 "Employee-employee_number-reqd",
                 "Employee-naming_series-reqd",
                 "Employee-naming_series-hidden",
+                "Job Offer-job_applicant-read_only",
+                "Employee-date_of_joining-hidden"
+
 
 
             ]]

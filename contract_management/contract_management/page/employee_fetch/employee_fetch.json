@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2025-06-20 17:19:40.522729",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-06-20 17:20:44.009951",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "employee-fetch",
+ "owner": "Administrator",
+ "page_name": "employee-fetch",
+ "roles": [
+  {
+   "role": "Administrator"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Get All Employees"
+}
