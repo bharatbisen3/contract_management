@@ -117,6 +117,7 @@
   "signature_of_emp_section",
   "candidate_column",
   "signature_from_employee",
+  "employee_name",
   "column_break_cwzt",
   "place_a",
   "emp_sign_time",
@@ -126,6 +127,7 @@
   "signature_of_hr_section",
   "hr_column",
   "signature_from_employer",
+  "employer_name",
   "column_break_svdm",
   "place",
   "completion_sign_time",
@@ -676,14 +678,15 @@
    "description": "The agreed conditions in the agreement above are hereby confirmed. The employee also confirms that the employer in accordance with the applicable data protection legislation has informed the employee about the employer's processing of employees' personal data.",
    "fieldname": "signature_of_emp_section",
    "fieldtype": "Section Break",
-   "label": "Signatures"
+   "label": "Signatures",
+   "read_only": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Status",
-   "options": "Request Pending for hr\nApproved",
+   "options": "Request Pending for HR\nApproved",
    "print_hide": 1,
    "report_hide": 1
   },
@@ -701,6 +704,7 @@
    "label": "Accept the Terms and conditions"
   },
   {
+   "default": "Ljungaverk",
    "fieldname": "place",
    "fieldtype": "Data",
    "label": "Place"
@@ -896,7 +900,8 @@
   {
    "fieldname": "completion_sign_time",
    "fieldtype": "Data",
-   "label": "Date"
+   "label": "Date",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -937,11 +942,22 @@
    "fieldname": "new_zip",
    "fieldtype": "Data",
    "label": "ZIP / Postal code"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employer_name",
+   "fieldtype": "Data",
+   "label": "Employer Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-17 18:27:30.621476",
+ "modified": "2025-06-26 16:03:26.775924",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

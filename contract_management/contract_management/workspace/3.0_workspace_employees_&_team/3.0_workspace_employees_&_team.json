@@ -8,15 +8,15 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "share-people",
- "idx": 14,
+ "idx": 17,
  "indicator_color": "",
  "is_hidden": 0,
- "label": "3.0 Workspace Employess & Team",
+ "label": "3.0 Workspace Employees & Team",
  "links": [],
- "modified": "2025-06-11 19:24:08.517684",
+ "modified": "2025-06-26 13:21:06.304281",
  "modified_by": "Administrator",
  "module": "Contract Management",
- "name": "3.0 Workspace Employess & Team",
+ "name": "3.0 Workspace Employees & Team",
  "number_cards": [
   {
    "label": "Teams",
@@ -70,5 +70,5 @@
    "type": "Report"
   }
  ],
- "title": "3.0 Workspace Employess & Team"
+ "title": "3.0 Workspace Employees & Team"
 }

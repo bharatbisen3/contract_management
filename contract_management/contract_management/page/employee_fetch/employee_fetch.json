@@ -4,7 +4,7 @@
  "docstatus": 0,
  "doctype": "Page",
  "idx": 0,
- "modified": "2025-06-20 17:20:44.009951",
+ "modified": "2025-06-24 16:28:34.205165",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "employee-fetch",
@@ -18,6 +18,6 @@
  "script": null,
  "standard": "Yes",
  "style": null,
- "system_page": 0,
+ "system_page": 1,
  "title": "Get All Employees"
 }

@@ -18,53 +18,48 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
-# from frappe.utils import get_url
+from frappe.utils import get_url
 
 class ProjectSetup(Document):
 	pass
-    # def get_doc_status_label(self):
-    #     if self.docstatus == 0:
-    #         return frappe._("In Progress")
-    #     elif self.docstatus == 1:
-    #         return frappe._("Completed")
-    #     elif self.docstatus == 2:
-    #         return frappe._("Cancelled")    
 
-	# pass
+
 
 
 # import frappe
 # from frappe.utils import get_url
-# # @frappe.whitelist()
-# def send_open_project_reminders():
-#     open_projects = frappe.get_all(
-#         "Project Setup",
-#         filters={"status": "Open"},
-#         fields=["name", "team_leader", "object"]
-#     )
+# @frappe.whitelist()
+def send_open_project_reminders():
+    frappe.logger().info("Scheduler: Reminder email function triggered")
+    open_projects = frappe.get_all(
+        "Project Setup",
+        # filters={"status": "Open"},
+        fields=["name", "team_leader", "object"]
+    )
 
-#     for project in open_projects:
-#         if not project.team_leader:
-#             continue
+    for project in open_projects:
+        if not project.team_leader:
+            continue
 
-#         subject = f"Reminder: Attendance for Project '{project.name}'"
-#         message = f"""
-#         Dear Team Leader,<br><br>
+        # subject = f"Reminder: Attendance for Project '{project.name}'"
+        subject = f"Reminder: Attendance for Project"
+        message = f"""
+        Dear Team Leader,<br><br>
         
-#         Kindly log attendance upto last week for the project you have been assigned<br>
-#         Thank You!<br><br>
+        Kindly log attendance upto last week for the project you have been assigned<br>
+        Thank You!<br><br>
 
-#         HR Department<br>
-#         Ljunganforestry
-#         """
+        HR Department<br>
+        Ljunganforestry
+        """
 
-#         frappe.sendmail(
-#             recipients=project.team_leader,
-#             subject=subject,
-#             message=message,
-#             delayed=False
+        frappe.sendmail(
+            recipients=project.team_leader,
+            subject=subject,
+            message=message,
+            delayed=False
 
-#         )
+        )
 
 
 
@@ -117,43 +112,43 @@ def create_user_permission(doc_name):
 
 
 
-def send_open_project_reminders():
-    open_projects = frappe.get_all(
-        "Project Setup",
-        filters={"status": "Open"},
-        fields=["name", "team_leader", "object"]
-    )
+# def send_open_project_reminders():
+#     open_projects = frappe.get_all(
+#         "Project Setup",
+#         filters={"status": "Open"},
+#         fields=["name", "team_leader", "object"]
+#     )
     
 
-    # for project in open_projects:
-    #     if not project.team_leader:
-    #         continue
+#     # for project in open_projects:
+#     #     if not project.team_leader:
+#     #         continue
 
-    for i in (1,8):
-        # if not project.team_leader:
-        #     continue
+#     for i in (1,8):
+#         # if not project.team_leader:
+#         #     continue
 
 
-        # subject = f"Reminder: Attendance for Project '{project.name}'"
-        subject = f"Reminder: Attendance for Project"
-        message = f"""
-        Dear Team Leader,<br><br>
+#         # subject = f"Reminder: Attendance for Project '{project.name}'"
+#         subject = f"Reminder: Attendance for Project"
+#         message = f"""
+#         Dear Team Leader,<br><br>
         
-        Kindly log attendance up to last week for the project you have been assigned.<br>
-        Thank You!<br><br>
+#         Kindly log attendance up to last week for the project you have been assigned.<br>
+#         Thank You!<br><br>
 
-        HR Department<br>
-        Ljunganforestry
-        """
+#         HR Department<br>
+#         Ljunganforestry
+#         """
 
-        # Enqueue the mail sending as a background job
-        frappe.enqueue(
-            method="frappe.core.doctype.communication.email.sendmail",
-            queue="default",
-            timeout=300,
-            now=False,
-            recipients="bharat@algoware.in",
-            subject=subject,
-            message=message,
-            delayed=False
-        )
+#         # Enqueue the mail sending as a background job
+#         frappe.enqueue(
+#             method="frappe.core.doctype.communication.email.sendmail",
+#             queue="default",
+#             timeout=300,
+#             now=False,
+#             recipients="bharat@algoware.in",
+#             subject=subject,
+#             message=message,
+#             delayed=False
+#         )

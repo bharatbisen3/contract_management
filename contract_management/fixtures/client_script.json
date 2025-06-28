@@ -262,5 +262,16 @@
   "name": "Status Wise Attendance Block",
   "script": "// frappe.ui.form.on('Project Attendance', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\n\nfrappe.ui.form.on(\"Project Attendance\", {\n    onload: function(frm) {\n        // Restrict project selection to only \"Open\" status\n        frm.set_query(\"project__client\", function() {\n            return {\n                filters: {\n                    status: \"Open\"\n                }\n            };\n        });\n    },\n\n    project__client: function(frm) {\n        if (frm.doc.project__client) {\n            frappe.db.get_value(\"Project Setup\", frm.doc.project__client, \"status\")\n                .then(r => {\n                    const status = r.message.status;\n                    if (status !== \"Open\") {\n                        frappe.msgprint(\"You can only select a project with status 'Open'.\");\n                        frm.set_value(\"project__client\", null);\n                    }\n                });\n        }\n    },\n\n    before_submit: function(frm) {\n        return new Promise((resolve, reject) => {\n            if (!frm.doc.project__client) {\n                return resolve();\n            }\n\n            frappe.db.get_value(\"Project Setup\", frm.doc.project__client, \"status\")\n                .then(r => {\n                    const status = r.message.status;\n                    if (status !== \"Open\") {\n                        frappe.throw(\"Cannot submit: The selected project is not in 'Open' status.\");\n                        reject();\n                    } else {\n                        resolve();\n                    }\n                });\n        });\n    }\n});\n",
   "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Employee",
+  "enabled": 1,
+  "modified": "2025-06-28 19:01:25.810255",
+  "module": "Contract Management",
+  "name": "Ins BL Into Emp",
+  "script": "// frappe.ui.form.on('Employee', {\r\n// \trefresh(frm) {\r\n// \t\t// your code here\r\n// \t}\r\n// })\r\n \r\n \r\n \r\nfrappe.ui.form.on('Employee', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button('Import Employee from API', function () {\r\n            frappe.call({\r\n                method: \"contract_management.CustomEmployee.insert_employee_from_json\",\r\n                // method: \"erpnext.setup.doctype.employee.employee\",\r\n                // dev-bench/apps/erpnext/erpnext/setup/doctype/employee/employee.py\r\n                callback: function(r) {\r\n                    frappe.msgprint(\"Employee created successfully.\");\r\n                    frappe.show_alert({ message: 'Done!', indicator: 'green' });\r\n                },\r\n                error: function(err) {\r\n                    frappe.msgprint(\"Something went wrong.\");\r\n                }\r\n            });\r\n        });\r\n    }\r\n});",
+  "view": "Form"
  }
 ]

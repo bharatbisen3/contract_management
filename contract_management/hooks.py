@@ -201,7 +201,8 @@ app_license = "mit"
 
 override_doctype_class = {
 # 	"Job Offer": "override.custom_job_offer.custom_job_offer"
-	"Job Offer": "contract_management.custom_job_offer.custom_job_offer"
+	"Job Offer": "contract_management.custom_job_offer.custom_job_offer",
+	"Employee": "contract_management.CustomEmployee.CustomEmployee"
 }
 # apps/contract_management/contract_management/custom_job_offer.py
 
@@ -253,11 +254,13 @@ override_doctype_class = {
 
 scheduler_events = {
     "cron": {
-        "10 08 * * *": [
+        "*/2 * * * *": [
             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
         ]
     }
 }
+
+# apps/contract_management/contract_management/contract_management/doctype/project_setup/project_setup.py
 
 # scheduler_events = {
 #     "hourly": [
@@ -580,7 +583,8 @@ fixtures = [
                 "Other Bank Validation",
                 "Table Employee Id",
                 "SpecializationDropdown",
-                "Make dates editable"
+                "Make dates editable",
+                "Ins BL Into Emp"
             ]]
         ]
     },
