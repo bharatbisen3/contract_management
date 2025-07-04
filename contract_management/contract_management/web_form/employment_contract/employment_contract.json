@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 100,
- "modified": "2025-06-25 16:44:47.863902",
+ "modified": "2025-07-01 13:42:20.366469",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "employment-contract",
@@ -406,7 +406,7 @@
    "max_value": 0,
    "precision": "",
    "read_only": 1,
-   "reqd": 1,
+   "reqd": 0,
    "show_in_filter": 0
   },
   {

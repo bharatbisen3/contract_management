@@ -242,23 +242,25 @@ override_doctype_class = {
 # 	],
 # }
 
+
+
 # scheduler_events = {
 #     "cron": {
-#         "29 17 * * *": [
+#         "30 09 * * 1": [
 #             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
-#             # "contract_management.api.project_email.send_open_project_reminders"
 #         ]
 #     }
 # }
 
 
-scheduler_events = {
-    "cron": {
-        "*/2 * * * *": [
-            "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
-        ]
-    }
-}
+
+# scheduler_events = {
+#     "cron": {
+#         "*/2 * * * *": [
+#             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
+#         ]
+#     }
+# }
 
 # apps/contract_management/contract_management/contract_management/doctype/project_setup/project_setup.py
 
@@ -267,6 +269,17 @@ scheduler_events = {
 #             "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
 #     ]
 # }
+
+
+
+scheduler_events = {
+    "cron": {
+        "30 09 * * 1": [
+            "contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders"
+        ]
+    }
+}
+
 
 
 
@@ -547,7 +560,9 @@ fixtures = [
                 "Job Offer-custom_the_employer_provides_adequate_training",
                 "Job Offer-custom_deviating_regulations_a",
                 "Job Offer-custom_terms_workinghours",
-                "Job Applicant-custom_custom_zippostal_code"
+                "Job Applicant-custom_custom_zippostal_code",
+                "Employee-custom_entity_id",
+                "Employee-custom_blid"
 
 
 
