@@ -234,8 +234,8 @@
   "docstatus": 0,
   "doctype": "Client Script",
   "dt": "Project Setup",
-  "enabled": 1,
-  "modified": "2025-06-20 17:25:59.088848",
+  "enabled": 0,
+  "modified": "2025-07-01 13:38:30.240398",
   "module": "Contract Management",
   "name": "Send Attendance alert Button",
   "script": "\r\nfrappe.ui.form.on('Project Setup', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button(__('Send Attendance Reminder'), function() {\r\n            frappe.call({\r\n                method: 'contract_management.contract_management.doctype.project_setup.project_setup.send_open_project_reminders',\r\n                callback: function(r) {\r\n                    frappe.msgprint(__('Reminder email has been sent.'));\r\n                }\r\n            });\r\n        });\r\n    }\r\n});\r\n",
@@ -268,10 +268,10 @@
   "doctype": "Client Script",
   "dt": "Employee",
   "enabled": 1,
-  "modified": "2025-06-28 19:01:25.810255",
+  "modified": "2025-07-02 11:43:12.788490",
   "module": "Contract Management",
   "name": "Ins BL Into Emp",
-  "script": "// frappe.ui.form.on('Employee', {\r\n// \trefresh(frm) {\r\n// \t\t// your code here\r\n// \t}\r\n// })\r\n \r\n \r\n \r\nfrappe.ui.form.on('Employee', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button('Import Employee from API', function () {\r\n            frappe.call({\r\n                method: \"contract_management.CustomEmployee.insert_employee_from_json\",\r\n                // method: \"erpnext.setup.doctype.employee.employee\",\r\n                // dev-bench/apps/erpnext/erpnext/setup/doctype/employee/employee.py\r\n                callback: function(r) {\r\n                    frappe.msgprint(\"Employee created successfully.\");\r\n                    frappe.show_alert({ message: 'Done!', indicator: 'green' });\r\n                },\r\n                error: function(err) {\r\n                    frappe.msgprint(\"Something went wrong.\");\r\n                }\r\n            });\r\n        });\r\n    }\r\n});",
+  "script": "// frappe.ui.form.on('Employee', {\r\n// \trefresh(frm) {\r\n// \t\t// your code here\r\n// \t}\r\n// })\r\n \r\n \r\n \r\nfrappe.ui.form.on('Employee', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button('Import Employee', function () {\r\n            frappe.call({\r\n                method: \"contract_management.CustomEmployee.insert_employee_from_json\",\r\n                // method: \"erpnext.setup.doctype.employee.employee\",\r\n                // dev-bench/apps/erpnext/erpnext/setup/doctype/employee/employee.py\r\n                callback: function(r) {\r\n                    frappe.msgprint(\"Employee created successfully.\");\r\n                    frappe.show_alert({ message: 'Done!', indicator: 'green' });\r\n                },\r\n                error: function(err) {\r\n                    frappe.msgprint(\"Something went wrong.\");\r\n                }\r\n            });\r\n        });\r\n    }\r\n});",
   "view": "Form"
  }
 ]
