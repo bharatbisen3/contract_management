@@ -24,7 +24,7 @@ frappe.ui.form.on("Employee Contract", {
                         frappe.throw(__("An Employee record already exists for this contract."));
                     } else {
                         frappe.new_doc("Employee", {
-                            select_candidate: frm.doc.name,
+                            custom_contract_id: frm.doc.name,
                             first_name: frm.doc.first_name,
                             middle_name: frm.doc.middle_name,
                             last_name: frm.doc.last_name,  

@@ -562,7 +562,8 @@ fixtures = [
                 "Job Offer-custom_terms_workinghours",
                 "Job Applicant-custom_custom_zippostal_code",
                 "Employee-custom_entity_id",
-                "Employee-custom_blid"
+                "Employee-custom_blid",
+                "Employee-custom_contract_id"
 
 
 
