@@ -5,7 +5,7 @@
    "label": "Employee Attendance"
   }
  ],
- "content": "[{\"id\":\"HZfbC7PHF2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">A. Project Administrator Workspace</span>\",\"col\":12}},{\"id\":\"9JpVJiaEv_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.0 Create New Project\",\"col\":3}},{\"id\":\"Xfpow6zpeU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2.0 View Project List\",\"col\":3}},{\"id\":\"ufw9iaQlh-\",\"type\":\"paragraph\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"RCYxOU1yqt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View attendance Summary\",\"col\":3}},{\"id\":\"P481hwyK3x\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View Attendance Report\",\"col\":4}},{\"id\":\"uJshham6Ad\",\"type\":\"paragraph\",\"data\":{\"text\":\"Charts\",\"col\":12}},{\"id\":\"g9-47r5EFd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Employee Attendance\",\"col\":6}},{\"id\":\"zc1XBOVRZh\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "content": "[{\"id\":\"HZfbC7PHF2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">A. Project Administrator Workspace</span>\",\"col\":12}},{\"id\":\"6hbHwiQs7W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.1 Create New Project\",\"col\":3}},{\"id\":\"NV_DF2jlMO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.2 View Project\",\"col\":3}},{\"id\":\"9JpVJiaEv_\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2.1 Create New Project Setup\",\"col\":3}},{\"id\":\"Xfpow6zpeU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2.2 View Project Setup List\",\"col\":3}},{\"id\":\"ufw9iaQlh-\",\"type\":\"paragraph\",\"data\":{\"text\":\"Reports\",\"col\":12}},{\"id\":\"RCYxOU1yqt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View attendance Summary\",\"col\":3}},{\"id\":\"P481hwyK3x\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View Attendance Report\",\"col\":4}},{\"id\":\"uJshham6Ad\",\"type\":\"paragraph\",\"data\":{\"text\":\"Charts\",\"col\":12}},{\"id\":\"g9-47r5EFd\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Employee Attendance\",\"col\":6}},{\"id\":\"zc1XBOVRZh\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
  "creation": "2025-02-17 15:02:29.077965",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "2.0 Workspace Project",
  "links": [],
- "modified": "2025-06-11 19:23:58.381758",
+ "modified": "2025-07-16 16:11:18.611888",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "2.0 Workspace Project",
@@ -39,6 +39,14 @@
  "shortcuts": [
   {
    "color": "Grey",
+   "doc_view": "New",
+   "label": "1.1 Create New Project",
+   "link_to": "Project",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
    "doc_view": "List",
    "label": "View attendance Summary",
    "link_to": "Employee Wise Attendance Summary",
@@ -47,8 +55,16 @@
   },
   {
    "color": "Grey",
+   "doc_view": "List",
+   "label": "1.2 View Project",
+   "link_to": "Project",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
    "doc_view": "New",
-   "label": "1.0 Create New Project",
+   "label": "2.1 Create New Project Setup",
    "link_to": "Project Setup",
    "stats_filter": "[]",
    "type": "DocType"
@@ -56,7 +72,7 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "2.0 View Project List",
+   "label": "2.2 View Project Setup List",
    "link_to": "Project Setup",
    "stats_filter": "[]",
    "type": "DocType"
