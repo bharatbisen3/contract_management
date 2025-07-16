@@ -2,6 +2,17 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Demooooo",
+  "enabled": 0,
+  "modified": "2025-07-07 16:25:14.284286",
+  "module": "Practice App",
+  "name": "childdemo",
+  "script": "// Client Script\r\n\r\nfrappe.ui.form.on('Demooooo', {\r\n    refresh(frm) {\r\n        calc_total_distance(frm);\r\n        check_charges(frm);          // make sure charges are sane on load\r\n    },\r\n\r\n    child_table_add(frm) {\r\n        calc_total_distance(frm);\r\n    },\r\n\r\n    child_table_remove(frm) {\r\n        calc_total_distance(frm);\r\n    },\r\n\r\n    // fire whenever either charge field changes\r\n    waiting_charges(frm) {\r\n        check_charges(frm);\r\n    },\r\n\r\n    holting_charges(frm) {\r\n        check_charges(frm);\r\n    }\r\n});\r\n\r\nfrappe.ui.form.on('child_table', {\r\n    distance(frm, cdt, cdn) {\r\n        calc_total_distance(frm);\r\n    }\r\n});\r\n\r\n// ---------- helpers ----------\r\n\r\n// sum Distance column in the child table\r\nfunction calc_total_distance(frm) {\r\n    const total = (frm.doc.child_table || []).reduce(\r\n        (sum, row) => sum + (parseFloat(row.distance) || 0),\r\n        0\r\n    );\r\n    frm.set_value('total_distance', total);\r\n}\r\n\r\n// enforce “only one charge” rule\r\nfunction check_charges(frm) {\r\n    const waiting = parseFloat(frm.doc.waiting_charges) || 0;\r\n    const holting = parseFloat(frm.doc.holting_charges) || 0;\r\n\r\n    if (waiting && holting) {\r\n        // both entered – not allowed\r\n        frappe.msgprint({\r\n            title: __('Only One Charge Allowed'),\r\n            indicator: 'red',\r\n            message: __('Enter a value in either <b>Waiting Charges</b> or <b>Holting Charges</b>, not both. <br>Waiting Charges has been reset to 0.')\r\n        });\r\n        frm.set_value('waiting_charges', 0);   // keep holting_charges, zero waiting_charges\r\n    } else if (waiting && !holting) {\r\n        // waiting entered alone – zero holting\r\n        frm.set_value('holting_charges', 0);\r\n    } else if (holting && !waiting) {\r\n        // holting entered alone – zero waiting\r\n        frm.set_value('waiting_charges', 0);\r\n    }\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Job Offer",
   "enabled": 0,
   "modified": "2025-05-29 18:41:33.111964",
@@ -14,8 +25,8 @@
   "docstatus": 0,
   "doctype": "Client Script",
   "dt": "Work Team",
-  "enabled": 1,
-  "modified": "2025-06-06 12:57:34.368795",
+  "enabled": 0,
+  "modified": "2025-07-14 19:40:20.962892",
   "module": "Contract Management",
   "name": "SpecializationDropdown",
   "script": "frappe.ui.form.on('Work Team', {\r\n  onload: function (frm) {\r\n    const html = `\r\n      <label style=\"display:block; margin-bottom:5px;\">Specialization</label>\r\n      <div style=\"margin-bottom:45px;\"  class=\"multi-select-container\">\r\n        <div class=\"multi-select-box\" onclick=\"toggleOptions()\" id=\"multi-select-box\">\r\n          <span class=\"selected-values\" id=\"selected-values\"></span>\r\n        </div>\r\n        <div class=\"multi-select-options\" id=\"multi-select-options\">\r\n          <div class=\"option\" data-value=\"Clearing\">Clearing</div>\r\n          <div class=\"option\" data-value=\"Planting\">Planting</div>\r\n          <div class=\"option\" data-value=\"Planning\">Planning</div>\r\n          <div class=\"option\" data-value=\"Reporting\">Reporting</div>\r\n        </div>\r\n      </div>\r\n    `;\r\n\r\n    const css = `\r\n      <style>\r\n        .multi-select-container {\r\n          position: relative;\r\n          width: 500px;\r\n        }\r\n        .multi-select-box {\r\n          border: 1px solid #f3f3f3;\r\n          padding: 6px;\r\n          background-color: #F3F3F3;\r\n          cursor: pointer;\r\n          border-radius: 8px;\r\n          min-height: 28px;\r\n        }\r\n        .selected-chip {\r\n          display: inline-block;\r\n          background: #dedede;\r\n          color: #333;\r\n          padding: 2px 6px;\r\n          margin-right: 5px;\r\n          margin-bottom: 3px;\r\n          border-radius: 5px;\r\n          font-size: 12px;\r\n          cursor: pointer;\r\n        }\r\n        .multi-select-options {\r\n          display: none;\r\n          border: 1px solid #f3f3f3;\r\n          border-top: none;\r\n          background: #fff;\r\n          position: absolute;\r\n          width: 100%;\r\n          z-index: 100;\r\n          box-shadow: 0 4px 8px rgba(0,0,0,0.1);\r\n          max-height: 150px;\r\n          overflow-y: auto;\r\n        }\r\n        .multi-select-options .option {\r\n          padding: 8px 10px;\r\n          cursor: pointer;\r\n        }\r\n        .multi-select-options .option:hover {\r\n          background: #f0f0f0;\r\n        }\r\n        .multi-select-options .option.hidden {\r\n          display: none;\r\n        }\r\n      </style>\r\n    `;\r\n\r\n    frm.fields_dict.demo.$wrapper.html(css + html);\r\n\r\n    let selected = [];\r\n\r\n    window.toggleOptions = function () {\r\n      const el = document.getElementById('multi-select-options');\r\n      if (el) {\r\n        el.style.display = el.style.display === 'block' ? 'none' : 'block';\r\n      }\r\n    };\r\n\r\n    window.renderSelectedChips = function () {\r\n      const selectedEl = document.getElementById('selected-values');\r\n      selectedEl.innerHTML = '';\r\n\r\n      selected.forEach(value => {\r\n        const chip = document.createElement('span');\r\n        chip.className = 'selected-chip';\r\n        chip.innerText = value;\r\n        chip.onclick = () => {\r\n          updateSelection(value); // Remove on click\r\n        };\r\n        selectedEl.appendChild(chip);\r\n      });\r\n\r\n      frm.set_value('demo', selected.join(', '));\r\n    };\r\n\r\n    window.updateSelection = function (value) {\r\n      if (!selected.includes(value)) {\r\n        selected.push(value);\r\n      } else {\r\n        selected = selected.filter(item => item !== value);\r\n      }\r\n\r\n      renderSelectedChips();\r\n\r\n      // Hide selected options from dropdown\r\n      const options = document.querySelectorAll('.multi-select-options .option');\r\n      options.forEach(opt => {\r\n        const val = opt.getAttribute('data-value');\r\n        opt.classList.toggle('hidden', selected.includes(val));\r\n      });\r\n    };\r\n\r\n    setTimeout(() => {\r\n      const options = document.querySelectorAll('.multi-select-options .option');\r\n      options.forEach(opt => {\r\n        opt.addEventListener('click', function (e) {\r\n          e.stopPropagation(); // Prevent dropdown close\r\n          const value = this.getAttribute('data-value');\r\n          updateSelection(value);\r\n        });\r\n      });\r\n    }, 100);\r\n\r\n    document.addEventListener('click', function (event) {\r\n      const container = document.querySelector('.multi-select-container');\r\n      if (container && !container.contains(event.target)) {\r\n        const dropdown = document.getElementById('multi-select-options');\r\n        if (dropdown) dropdown.style.display = 'none';\r\n      }\r\n    });\r\n  }\r\n});\r\n",
@@ -272,6 +283,17 @@
   "module": "Contract Management",
   "name": "Ins BL Into Emp",
   "script": "// frappe.ui.form.on('Employee', {\r\n// \trefresh(frm) {\r\n// \t\t// your code here\r\n// \t}\r\n// })\r\n \r\n \r\n \r\nfrappe.ui.form.on('Employee', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button('Import Employee', function () {\r\n            frappe.call({\r\n                method: \"contract_management.CustomEmployee.insert_employee_from_json\",\r\n                // method: \"erpnext.setup.doctype.employee.employee\",\r\n                // dev-bench/apps/erpnext/erpnext/setup/doctype/employee/employee.py\r\n                callback: function(r) {\r\n                    frappe.msgprint(\"Employee created successfully.\");\r\n                    frappe.show_alert({ message: 'Done!', indicator: 'green' });\r\n                },\r\n                error: function(err) {\r\n                    frappe.msgprint(\"Something went wrong.\");\r\n                }\r\n            });\r\n        });\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Project",
+  "enabled": 1,
+  "modified": "2025-07-14 17:58:02.759206",
+  "module": "Contract Management",
+  "name": "Concate Title",
+  "script": "// frappe.ui.form.on('Project', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\nfrappe.ui.form.on('Project', {\n    // refresh: function(frm) {\n    //     set_project_name(frm);\n    // },\n    naming_series: function(frm) {\n        set_project_name(frm);\n    },\n    customer: function(frm) {\n        set_project_name(frm);\n    }\n});\n\nfunction set_project_name(frm) {\n    if (frm.doc.naming_series && frm.doc.customer) {\n        frm.set_value('project_name', `${frm.doc.naming_series}-${frm.doc.customer}`);\n    }\n}\n\n\n",
   "view": "Form"
  }
 ]
