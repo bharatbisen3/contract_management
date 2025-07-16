@@ -563,7 +563,8 @@ fixtures = [
                 "Job Applicant-custom_custom_zippostal_code",
                 "Employee-custom_entity_id",
                 "Employee-custom_blid",
-                "Employee-custom_contract_id"
+                "Employee-custom_contract_id",
+                "Project-custom_task"
 
 
 
@@ -575,7 +576,9 @@ fixtures = [
         "doctype": "Client Script",
         "filters": [
             ["name", "in", [
-                # "field2",
+                # "field2",                 
+                "Concate Title",
+                "Ins BL Into Emp",
                 "Status Wise Attendance Block",
                 "Set Total",
                 "Send Attendance alert Button",
@@ -600,7 +603,9 @@ fixtures = [
                 "Table Employee Id",
                 "SpecializationDropdown",
                 "Make dates editable",
-                "Ins BL Into Emp"
+                "childdemo"
+
+
             ]]
         ]
     },
@@ -693,9 +698,56 @@ fixtures = [
                 "Employee-naming_series-reqd",
                 "Employee-naming_series-hidden",
                 "Job Offer-job_applicant-read_only",
-                "Employee-date_of_joining-hidden"
-
-
+                "Employee-date_of_joining-hidden",
+                "Project-main-title_field",
+                "Project-main-search_fields",
+                "Project-main-quick_entry",
+                "Project-priority-in_standard_filter",
+                "Project-naming_series-report_hide",
+                "Project-naming_series-hidden",
+                "Project-project_name-report_hide",
+                "Project-project_name-print_hide",
+                "Project-project_name-hidden",
+                "Project-project_name-unique",
+                "Project-project_name-default",
+                "Project-main-autoname",
+                "Project-main-naming_rule",
+                "Project-main-field_order",
+                "Project-customer_details-read_only",
+                "Project-customer_details-report_hide",
+                "Project-customer_details-hidden",
+                "Project-department-report_hide",
+                "Project-department-print_hide",
+                "Project-department-hidden",
+                "Project-priority-report_hide",
+                "Project-priority-print_hide",
+                "Project-priority-hidden",
+                "Project-expected_end_date-report_hide",
+                "Project-expected_end_date-print_hide",
+                "Project-expected_end_date-hidden",
+                "Project-expected_start_date-report_hide",
+                "Project-expected_start_date-print_hide",
+                "Project-expected_start_date-hidden",
+                "Project-project_template-report_hide",
+                "Project-project_template-hidden",
+                "Project-percent_complete-report_hide",
+                "Project-percent_complete-hidden",
+                "Project-percent_complete_method-report_hide",
+                "Project-percent_complete_method-hidden",
+                "Project-is_active-report_hide",
+                "Project-is_active-hidden",
+                "Project-project_type-report_hide",
+                "Project-project_type-hidden",
+                "Project-project_type-in_standard_filter",
+                "Project-project_type-in_list_view",
+                "Project-project_name-label",
+                "Project-monitor_progress-hidden",
+                "Project-margin-hidden",
+                "Project-project_details-hidden",
+                "Project-section_break_18-hidden",
+                "Project-section_break0-hidden",
+                "Project-users_section-hidden",
+                
 
             ]]
         ]
