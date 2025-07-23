@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class ObjectTable(Document):
+class EvenDistributionListTable(Document):
 	pass

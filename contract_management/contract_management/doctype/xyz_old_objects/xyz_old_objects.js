@@ -1,7 +1,7 @@
 // Copyright (c) 2025, bharat and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Objects", {
+// frappe.ui.form.on("Xyz Old Objects", {
 // 	refresh(frm) {
 
 // 	},

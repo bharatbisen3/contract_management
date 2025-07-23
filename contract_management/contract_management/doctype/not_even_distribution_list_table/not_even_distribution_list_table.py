@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class Objects(Document):
+class NotEvenDistributionListTable(Document):
 	pass

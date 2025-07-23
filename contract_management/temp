@@ -1,0 +1,28 @@
+
+frappe.ui.form.on('Project Setup', {
+    after_save(frm) {
+        frm.reload_doc();  // reloads the full form to get fresh DB values
+        // OR just:
+        // frm.refresh_field("object_title");
+    },
+     before_submit(frm) {
+        frm.set_value('completion_date', frappe.datetime.now_date());
+    },
+        sla_class: function(frm) {
+        set_price_per_hecter(frm);
+    }
+
+});
+
+
+function set_price_per_hecter(frm) {
+    if (frm.doc.task === "Forest Clearing" && frm.doc.clearing_cost) {
+        frm.set_value("project__object_price_per_hecter", frm.doc.clearing_cost);
+        frm.set_df_property("project__object_price_per_hecter", "read_only", 1);
+    } else if (frm.doc.task === "Forest Planting" && frm.doc.planting_cost) {
+        frm.set_value("project__object_price_per_hecter", frm.doc.planting_cost);
+        frm.set_df_property("project__object_price_per_hecter", "read_only", 1);
+    } else {
+        frm.set_df_property("project__object_price_per_hecter", "read_only", 0);
+    }
+}

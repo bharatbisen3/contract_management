@@ -99,7 +99,7 @@
    "fieldname": "object",
    "fieldtype": "Link",
    "label": "Object",
-   "options": "Objects"
+   "options": "Xyz Old Objects"
   },
   {
    "fieldname": "classified_sla_class",
@@ -116,13 +116,14 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-17 12:34:46.270788",
+ "modified": "2025-07-22 11:25:58.998037",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Marked Allowance Data",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

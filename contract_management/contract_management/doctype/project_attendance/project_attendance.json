@@ -229,9 +229,10 @@
   {
    "fetch_from": "project__client.project_customer",
    "fieldname": "project_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "hidden": 1,
-   "label": "Project Name"
+   "label": "Project Name",
+   "options": "Project"
   },
   {
    "fetch_from": "project__client.total_compleated_work_till_now",
@@ -244,7 +245,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-06-19 13:20:14.737118",
+ "modified": "2025-07-17 15:57:01.459851",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Attendance",

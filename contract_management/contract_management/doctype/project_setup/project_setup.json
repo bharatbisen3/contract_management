@@ -1,24 +1,26 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format:OBJ-{####}",
  "creation": "2025-02-13 13:47:04.925426",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "customer_details_section",
-  "project_customer",
   "naming_series",
+  "project_customer",
+  "project_name",
+  "distribution_type",
   "column_break_uhai",
-  "sales_order",
-  "project__object_name",
-  "section_break_dbng",
+  "object_title",
   "object",
-  "concat_obj_and_proj",
+  "sales_order",
   "section_break_ujxv",
   "task",
   "column_break_hixy",
   "sla_class",
+  "clearing_cost",
+  "planting_cost",
   "new_proect__object_section",
   "expected_start_date",
   "expected_end_date",
@@ -28,6 +30,7 @@
   "department",
   "is_active",
   "_complete_method",
+  "completion_date",
   "section_break_lhdl",
   "project__object_size_in_hecter",
   "total_compleated_work_till_now",
@@ -38,14 +41,9 @@
   "column_break_ubtk",
   "team_leader",
   "gross_salary_staff_compansation_section",
-  "will_be_added_later",
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_dbng",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "expected_start_date",
    "fieldtype": "Date",
@@ -73,8 +71,7 @@
   },
   {
    "fieldname": "new_proect__object_section",
-   "fieldtype": "Section Break",
-   "label": "New Proect / Object"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "is_active",
@@ -100,7 +97,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "project_customer.sales_order",
+   "fetch_from": "project_customer.custom_sales_order_2",
    "fieldname": "sales_order",
    "fieldtype": "Data",
    "label": "Sales Order"
@@ -141,20 +138,14 @@
   },
   {
    "fieldname": "gross_salary_staff_compansation_section",
-   "fieldtype": "Section Break",
-   "label": "Gross salary Staff Compansation"
-  },
-  {
-   "fieldname": "will_be_added_later",
-   "fieldtype": "Data",
-   "label": "Will be added later"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "naming_series",
-   "options": "PROJ-"
+   "options": "OBJ-"
   },
   {
    "fetch_from": "work_team.team_leader",
@@ -185,35 +176,18 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "object",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Object",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_hixy",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "concat_obj_and_proj",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Project / Object",
-   "print_hide": 1,
-   "report_hide": 1
   },
   {
    "fieldname": "project_customer",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Project / Customer ",
+   "label": "Project",
    "options": "Project",
    "reqd": 1
   },
   {
-   "fetch_from": "project_customer.custom_task",
    "fieldname": "task",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -224,9 +198,9 @@
   },
   {
    "fieldname": "sla_class",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "SLA Class",
-   "options": "\nSLA Class 1\nSLA Class 2\nSLA Class 3\nSLA Class 4\nSLA Class 5\nSLA Class 6\nSLA Class 7\nSLA Class 8\nSLA Class 9\nSLA Class 10\nSLA Class 11\nSLA Class 12",
+   "options": "SLA Class",
    "reqd": 1
   },
   {
@@ -236,34 +210,72 @@
    "read_only": 1
   },
   {
-   "fieldname": "project__object_name",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nCompleted\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "project_customer.project_name",
+   "fieldname": "project_name",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "project__object_name",
+   "label": "Project Title",
    "print_hide": 1,
    "report_hide": 1
   },
   {
-   "fetch_from": "project_customer.status",
-   "fieldname": "status",
+   "fieldname": "object_title",
+   "fieldtype": "Data",
+   "label": "Object Title",
+   "read_only": 1
+  },
+  {
+   "fieldname": "object",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Object",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date"
+  },
+  {
+   "fetch_from": "project_customer.custom_distribution_type_",
+   "fieldname": "distribution_type",
    "fieldtype": "Select",
-   "label": "Status",
-   "options": "\nOpen\nCompleted\nCancelled",
-   "reqd": 1
+   "label": "Distribution Type ",
+   "options": "\nEven\nNot Even"
+  },
+  {
+   "depends_on": "eval:doc.task == \"Forest Clearing\" && doc.sla_class != \"\" && doc.sla_class != \" \"\r\n",
+   "fetch_from": "sla_class.price_clearing",
+   "fieldname": "clearing_cost",
+   "fieldtype": "Data",
+   "label": "Clearing Cost"
+  },
+  {
+   "depends_on": "eval:doc.task == \"Forest Planting\"",
+   "fetch_from": "sla_class.price_planting",
+   "fieldname": "planting_cost",
+   "fieldtype": "Data",
+   "label": "Planting Cost"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-16 16:17:09.033956",
+ "modified": "2025-07-22 15:54:39.650481",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
@@ -278,7 +290,15 @@
   {
    "color": "Red",
    "title": "Cancelled"
+  },
+  {
+   "color": "Red",
+   "title": "Even"
+  },
+  {
+   "color": "Green",
+   "title": "Not Even"
   }
  ],
- "title_field": "concat_obj_and_proj"
+ "title_field": "object_title"
 }

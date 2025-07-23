@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{object}-CLT{####}",
+ "creation": "2025-07-18 17:42:33.054956",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "object",
+  "object_title",
+  "task",
+  "completion_type",
+  "sla_class",
+  "quantity_hectare_or_plants",
+  "completion_date",
+  "total_compensation"
+ ],
+ "fields": [
+  {
+   "fieldname": "object",
+   "fieldtype": "Link",
+   "label": "Object",
+   "options": "Project Setup"
+  },
+  {
+   "fetch_from": "object.task",
+   "fieldname": "task",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Task",
+   "options": "\nForest Clearing\nForest Planting\nForest Planning\nWork Report"
+  },
+  {
+   "fieldname": "completion_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Distribution Type ",
+   "options": "\nEven\nNot Even"
+  },
+  {
+   "fieldname": "sla_class",
+   "fieldtype": "Link",
+   "label": "SLA Class",
+   "options": "SLA Class"
+  },
+  {
+   "fieldname": "quantity_hectare_or_plants",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Hectare Quantity"
+  },
+  {
+   "fieldname": "total_compensation",
+   "fieldtype": "Currency",
+   "label": "Total Compensation"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Completion Date "
+  },
+  {
+   "fetch_from": "object.object_title",
+   "fieldname": "object_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Object Title"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-22 15:39:23.011752",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Completed Objects List",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
