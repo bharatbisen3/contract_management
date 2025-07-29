@@ -564,7 +564,9 @@ fixtures = [
                 "Employee-custom_entity_id",
                 "Employee-custom_blid",
                 "Employee-custom_contract_id",
-                "Project-custom_task"
+                "Project-custom_distribution_type_",
+                "Project-custom_sales_order_2",
+                "Project-total_expense_claim"
 
 
 
