@@ -616,6 +616,17 @@ fixtures = [
         ]
     },
     {
+        "doctype": "Server Script",
+        "filters": [
+            ["name", "in", [
+                "Obj title list",
+                "project tile"
+                # "field2",
+
+            ]]
+        ]
+    },
+    {
         "doctype": "Property Setter",
         "filters": [
             ["name", "in", [
