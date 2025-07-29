@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2025-07-26 15:05:05.490204",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "object",
+  "column_break_lgbx",
+  "value"
+ ],
+ "fields": [
+  {
+   "fieldname": "object",
+   "fieldtype": "Data",
+   "label": "Object"
+  },
+  {
+   "fieldname": "column_break_lgbx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Data",
+   "label": "Value"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-26 16:19:23.296180",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Test Doctype",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

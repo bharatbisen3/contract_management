@@ -112,17 +112,6 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
-  "dt": "Project Setup",
-  "enabled": 1,
-  "modified": "2025-06-19 12:37:26.133853",
-  "module": "Contract Management",
-  "name": "Concat Project Name",
-  "script": "// frappe.ui.form.on('Project Setup', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\nfrappe.ui.form.on('Project Setup', {\n    object: function(frm) {\n        update_concat_field(frm);\n    },\n    project_customer: function(frm) {\n        update_concat_field(frm);\n    }\n    // refresh: function(frm) {\n    //     update_concat_field(frm);\n    // }\n});\n\nfunction update_concat_field(frm) {\n    let object = frm.doc.object || '';\n    let project_name = frm.doc.project_customer || '';\n    \n    let concatenated_value = project_name + ' - ' + object;\n    \n    frm.set_value('concat_obj_and_proj', concatenated_value.trim());\n}\n",
-  "view": "Form"
- },
- {
-  "docstatus": 0,
-  "doctype": "Client Script",
   "dt": "Project Attendance",
   "enabled": 1,
   "modified": "2025-06-19 19:11:19.601831",
@@ -294,6 +283,61 @@
   "module": "Contract Management",
   "name": "Concate Title",
   "script": "// frappe.ui.form.on('Project', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\nfrappe.ui.form.on('Project', {\n    // refresh: function(frm) {\n    //     set_project_name(frm);\n    // },\n    naming_series: function(frm) {\n        set_project_name(frm);\n    },\n    customer: function(frm) {\n        set_project_name(frm);\n    }\n});\n\nfunction set_project_name(frm) {\n    if (frm.doc.naming_series && frm.doc.customer) {\n        frm.set_value('project_name', `${frm.doc.naming_series}-${frm.doc.customer}`);\n    }\n}\n\n\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Project",
+  "enabled": 1,
+  "modified": "2025-07-17 13:56:12.701839",
+  "module": "Contract Management",
+  "name": "Project view",
+  "script": "frappe.ui.form.on('Project', {\r\n    refresh(frm) {\r\n        // Wait a bit to ensure dashboard is rendered\r\n        setTimeout(() => {\r\n            // Select and hide the progress section\r\n            const progress_section = frm.fields_dict.dashboard.wrapper.querySelector('.form-dashboard-section.progress-area');\r\n            if (progress_section) {\r\n                progress_section.style.display = 'none';\r\n            }\r\n        }, 300);\r\n    },\r\n    \r\n    after_save(frm) {\r\n        frm.reload_doc();  // reloads the full form to get fresh DB values\r\n        // OR just:\r\n        // frm.refresh_field(\"object_title\");\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Project Setup",
+  "enabled": 1,
+  "modified": "2025-07-19 17:25:48.378063",
+  "module": "Contract Management",
+  "name": "Set Title Naming",
+  "script": "// // frappe.ui.form.on('Project Setup', {\n// // \trefresh(frm) {\n// // \t\t// your code here\n// // \t}\n// // })\n\n\n// frappe.ui.form.on('Project Setup', {\n//     after_save(frm) {\n//         frm.reload_doc();  // reloads the full form to get fresh DB values\n//         // OR just:\n//         // frm.refresh_field(\"object_title\");\n//     },\n//      before_submit(frm) {\n//         frm.set_value('completion_date', frappe.datetime.now_date());\n//     }\n// });\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfrappe.ui.form.on('Project Setup', {\n    after_save(frm) {\n        frm.reload_doc();  // reloads the full form to get fresh DB values\n        // OR just:\n        // frm.refresh_field(\"object_title\");\n    },\n     before_submit(frm) {\n        frm.set_value('completion_date', frappe.datetime.now_date());\n    },\n        task: function(frm) {\n        set_price_per_hecter(frm);\n    },\n        sla_class: function(frm) {\n        set_price_per_hecter(frm);\n    }\n\n});\n\n\nfunction set_price_per_hecter(frm) {\n    let price = 0;\n    if (frm.doc.task === \"Forest Clearing\" && frm.doc.clearing_cost) {\n        frm.set_value(\"project__object_price_per_hecter\", frm.doc.clearing_cost);\n        frm.set_df_property(\"project__object_price_per_hecter\", \"read_only\", 1);\n    } else if (frm.doc.task === \"Forest Planting\" && frm.doc.planting_cost) {\n        frm.set_value(\"project__object_price_per_hecter\", frm.doc.planting_cost);\n        frm.set_df_property(\"project__object_price_per_hecter\", \"read_only\", 1);\n    } else {\n        frm.set_value(\"project__object_price_per_hecter\", price);\n        frm.set_df_property(\"project__object_price_per_hecter\", \"read_only\", 0);\n    }\n}\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Total Compensation",
+  "enabled": 1,
+  "modified": "2025-07-22 15:39:49.382311",
+  "module": "Contract Management",
+  "name": "Add Objects in Conpens",
+  "script": "// // frappe.ui.form.on('Total Compensation', {\r\n// // \trefresh(frm) {\r\n// // \t\t// your code here\r\n// // \t}\r\n// // })\r\n\r\n\r\n\r\n\r\n\r\nfrappe.ui.form.on('Total Compensation', {\r\n    work_team: function(frm) {\r\n        populate_object_list(frm);\r\n    }\r\n});\r\n\r\nfunction populate_object_list(frm) {\r\n    let work_team = frm.doc.work_team;\r\n\r\n    if (!work_team) return;\r\n\r\n    // Optional message\r\n    frappe.msgprint(`Loading objects for Work Team: ${work_team}`);\r\n\r\n    frm.clear_table(\"object_list\");\r\n\r\n    frappe.call({\r\n        method: \"frappe.client.get_list\",\r\n        args: {\r\n            doctype: \"Project Setup\",\r\n            filters: {\r\n                work_team: work_team,\r\n                status: \"Completed\"\r\n            },\r\n            fields: [\r\n                \"name\", \"object_title\", \"task\", \"distribution_type\", \"sla_class\",\r\n                \"project__object_size_in_hecter\", \"completion_date\", \"clearing_cost\", \"planting_cost\"\r\n            ],\r\n            limit_page_length: 100\r\n        },\r\n        callback: function(r) {\r\n            if (!r.message) return;\r\n\r\n            r.message.forEach(project => {\r\n                let total_comp = 0;\r\n                if (project.task === \"Forest Clearing\") {\r\n                    total_comp = parseFloat(project.clearing_cost || 0);\r\n                } else if (project.task === \"Forest Planting\") {\r\n                    total_comp = parseFloat(project.planting_cost || 0);\r\n                }\r\n\r\n                frm.add_child(\"object_list\", {\r\n                    object: project.name,\r\n                    object_title: project.object_title,\r\n                    // task: project.task === \"Forest Clearing\" ? \"Clearing\" : \"Planting\",\r\n                    completion_type: project.distribution_type,\r\n                    sla_class: project.sla_class,\r\n                    quantity_hectare_or_plants: project.project__object_size_in_hecter,\r\n                    completion_date: project.completion_date,\r\n                    total_compensation: total_comp\r\n                });\r\n            });\r\n\r\n            frm.refresh_field(\"object_list\");\r\n        }\r\n    });\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Total Compensation",
+  "enabled": 1,
+  "modified": "2025-07-23 13:36:13.117991",
+  "module": "Contract Management",
+  "name": "Not Even Distribution",
+  "script": "// frappe.ui.form.on('Total Compensation', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\n\nfrappe.ui.form.on(\"Total Compensation\", {\n    get_members: function(frm) {\n        frm.clear_table(\"not_even_distribution\");\n\n        // Loop through each object\n        (frm.doc.object_list || []).forEach(obj => {\n            if (!obj.object || obj.completion_type !== \"Not Even\") return;\n\n            // Fetch object to get work_team\n            frappe.db.get_doc(\"Project Setup\", obj.object).then(project_setup => {\n                const work_team = project_setup.work_team;\n\n                if (!work_team) return;\n\n                // Fetch team members\n                frappe.db.get_doc(\"Work Team\", work_team).then(team => {\n                    (team.team_members_list || []).forEach(member => {\n                        frm.add_child(\"not_even_distribution\", {\n                            employee: member.employee_id,\n                            object: obj.object,\n                            object_title: obj.object_title,\n                            task: obj.task\n                        });\n                        frm.refresh_field(\"not_even_distribution\");\n                    });\n                });\n            });\n        });\n\n        frappe.show_alert(\"Members loaded for Not Even distribution\");\n    }\n});\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Total Compensation",
+  "enabled": 1,
+  "modified": "2025-07-23 13:36:24.326813",
+  "module": "Contract Management",
+  "name": "Employee Compensation List",
+  "script": "// frappe.ui.form.on('Total Compensation', {\n// \trefresh(frm) {\n// \t\t// your code here\n// \t}\n// })\n\n\n\n\n\nfrappe.ui.form.on(\"Total Compensation\", {\n    calculate: function(frm) {\n        frm.clear_table(\"employee_compensation_list\");\n\n        const objectMap = {};\n\n        // Group Not-Even distribution by object\n        (frm.doc.not_even_distribution || []).forEach(entry => {\n            if (!objectMap[entry.object]) objectMap[entry.object] = [];\n            objectMap[entry.object].push(entry);\n        });\n\n        // Loop through each object in object_list\n        (frm.doc.object_list || []).forEach(obj => {\n            if (!obj.object || !obj.total_compensation) return;\n\n            const totalComp = flt(obj.total_compensation);\n            const object_id = obj.object;\n\n            if (obj.completion_type === \"Not Even\") {\n                const entries = objectMap[object_id] || [];\n\n                // Calculate total %\n                const totalPercent = entries.reduce((sum, e) => sum + flt(e.percentage), 0);\n                if (Math.abs(totalPercent - 100) > 0.01) {\n                    frappe.throw(`Total % for object \"${obj.object_title}\" is not 100% (currently ${totalPercent}%)`);\n                }\n\n                entries.forEach(entry => {\n                    const comp = (flt(entry.percentage) / 100) * totalComp;\n                    frm.add_child(\"employee_compensation_list\", {\n                        employee: entry.employee,\n                        object: obj.object,\n                        object_title: obj.object_title,\n                        task: obj.task,\n                        percentage: entry.percentage,\n                        compensation: comp\n                    });\n                });\n\n            } else if (obj.completion_type === \"Even\") {\n                // Get team from Project Setup\n                frappe.db.get_doc(\"Project Setup\", object_id).then(project_setup => {\n                    const work_team = project_setup.work_team;\n                    if (!work_team) return;\n\n                    frappe.db.get_doc(\"Work Team\", work_team).then(team => {\n                        const members = team.team_members_list || [];\n                        const evenPercent = 100 / members.length;\n\n                        members.forEach(member => {\n                            const comp = (evenPercent / 100) * totalComp;\n                            frm.add_child(\"employee_compensation_list\", {\n                                employee: member.employee_id,\n                                object: obj.object,\n                                object_title: obj.object_title,\n                                task: obj.task,\n                                percentage: evenPercent,\n                                compensation: comp\n                            });\n                            frm.refresh_field(\"employee_compensation_list\");\n                        });\n                    });\n                });\n            }\n        });\n\n        frappe.show_alert(\"Employee Compensation calculated.\");\n    }\n});\n",
   "view": "Form"
  }
 ]
