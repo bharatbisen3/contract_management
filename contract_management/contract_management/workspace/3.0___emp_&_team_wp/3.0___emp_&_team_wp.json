@@ -8,15 +8,15 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "share-people",
- "idx": 17,
+ "idx": 19,
  "indicator_color": "",
  "is_hidden": 0,
- "label": "3.0 Workspace Employees & Team",
+ "label": "3.0 - EMP & Team WP",
  "links": [],
- "modified": "2025-06-26 13:21:06.304281",
+ "modified": "2025-07-23 23:15:14.751501",
  "modified_by": "Administrator",
  "module": "Contract Management",
- "name": "3.0 Workspace Employees & Team",
+ "name": "3.0 - EMP & Team WP",
  "number_cards": [
   {
    "label": "Teams",
@@ -70,5 +70,5 @@
    "type": "Report"
   }
  ],
- "title": "3.0 Workspace Employees & Team"
+ "title": "3.0 - EMP & Team WP"
 }

@@ -17,10 +17,10 @@
   "sales_order",
   "section_break_ujxv",
   "task",
-  "column_break_hixy",
-  "sla_class",
   "clearing_cost",
   "planting_cost",
+  "column_break_hixy",
+  "sla_class",
   "new_proect__object_section",
   "expected_start_date",
   "expected_end_date",
@@ -36,6 +36,7 @@
   "total_compleated_work_till_now",
   "column_break_enpp",
   "project__object_price_per_hecter",
+  "object_compensation",
   "work_team_planning_section",
   "work_team",
   "column_break_ubtk",
@@ -255,20 +256,25 @@
    "fetch_from": "sla_class.price_clearing",
    "fieldname": "clearing_cost",
    "fieldtype": "Data",
-   "label": "Clearing Cost"
+   "label": "Cost"
   },
   {
    "depends_on": "eval:doc.task == \"Forest Planting\"",
    "fetch_from": "sla_class.price_planting",
    "fieldname": "planting_cost",
    "fieldtype": "Data",
-   "label": "Planting Cost"
+   "label": "Cost"
+  },
+  {
+   "fieldname": "object_compensation",
+   "fieldtype": "Currency",
+   "label": "Object Compensation"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-22 15:54:39.650481",
+ "modified": "2025-07-30 13:15:09.116094",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

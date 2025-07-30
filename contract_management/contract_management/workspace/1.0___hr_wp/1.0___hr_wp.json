@@ -11,12 +11,12 @@
  "idx": 5,
  "indicator_color": "",
  "is_hidden": 0,
- "label": "1.0) Workspace HR",
+ "label": "1.0 - HR WP",
  "links": [],
- "modified": "2025-07-03 12:13:49.524924",
+ "modified": "2025-07-17 18:34:24.619859",
  "modified_by": "Administrator",
  "module": "Contract Management",
- "name": "1.0) Workspace HR",
+ "name": "1.0 - HR WP",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -124,5 +124,5 @@
    "type": "DocType"
   }
  ],
- "title": "1.0) Workspace HR"
+ "title": "1.0 - HR WP"
 }
