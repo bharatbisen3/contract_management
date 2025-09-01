@@ -71,7 +71,13 @@ app_license = "mit"
 # }
 
 
+doc_events = {
+    "Net Compensation": {
+        "on_submit": "contract_management.contract_management.doctype.net_compensation.net_compensation.on_submit"
+    }
+}
 
+# linga-bench/apps/contract_management/contract_management/contract_management/doctype/net_compensation/net_compensation.py
 
 
 
@@ -415,6 +421,7 @@ fixtures = [
                 "Job Applicant-custom_last_name",
                 "Job Applicant-custom_middle_name",
                 "Job Applicant-custom_column_break_s4gps",
+                "Job Applicant-custom_custom_zippostal_code",
                 "Job Offer-custom_column_break_bjkjr",
                 "Job Offer-custom_other_conditions",
                 "Job Offer-custom_termination_of_the_employment__copy",
@@ -508,6 +515,19 @@ fixtures = [
                 "Job Offer-custom_token",
                 "Job Offer-custom_section_break_q2yiq",
                 "Job Offer-custom_staff_personal_data",
+                "Job Offer-custom_estimated_dates",
+                "Job Offer-custom_basis_for_time_limitation_a",
+                "Job Offer-custom___",
+                "Job Offer-custom______",
+                "Job Offer-custom_jd_agriment",
+                "Job Offer-custom_requested_on",
+                "Job Offer-custom_number_of_paid_holiday_days",
+                "Job Offer-custom_workspace_new",
+                "Job Offer-custom_collective_agreement_gs_union",
+                "Job Offer-custom_training",
+                "Job Offer-custom_the_employer_provides_adequate_training",
+                "Job Offer-custom_deviating_regulations_a",
+                "Job Offer-custom_terms_workinghours",
                 "Employee-custom_email_address",
                 "Employee-custom_contact_number",
                 "Employee-custom_citizenship",
@@ -547,26 +567,42 @@ fixtures = [
                 "Employee-grade",
                 "Employee-job_applicant",
                 "Employee-employment_type",
-                "Job Offer-custom_estimated_dates",
-                "Job Offer-custom_basis_for_time_limitation_a",
-                "Job Offer-custom___",
-                "Job Offer-custom______",
-                "Job Offer-custom_jd_agriment",
-                "Job Offer-custom_requested_on",
-                "Job Offer-custom_number_of_paid_holiday_days",
-                "Job Offer-custom_workspace_new",
-                "Job Offer-custom_collective_agreement_gs_union",
-                "Job Offer-custom_training",
-                "Job Offer-custom_the_employer_provides_adequate_training",
-                "Job Offer-custom_deviating_regulations_a",
-                "Job Offer-custom_terms_workinghours",
-                "Job Applicant-custom_custom_zippostal_code",
                 "Employee-custom_entity_id",
                 "Employee-custom_blid",
                 "Employee-custom_contract_id",
                 "Project-custom_distribution_type_",
                 "Project-custom_sales_order_2",
-                "Project-total_expense_claim"
+                "Project-total_expense_claim",
+                "Job Applicant-custom_emergency_contact_mobile_phone_number",
+                "Job Applicant-custom_emergency_contact_last_name",
+                "Job Applicant-custom_emergency_contact_first_name",
+                "Job Applicant-custom_emergency_contact_information",
+                "Job Applicant-custom_preferred_name",
+                "Job Offer-custom_preferred_name",
+                "Job Offer-custom_emergency_contact_mobile_phone_number",
+                "Job Offer-custom_emergency_contact_last_name",
+                "Job Offer-custom_emergency_contact_first_name",
+                "Job Offer-custom_emergency_contact_information",
+                "Employee-custom_code_of_conduct",
+                "Employee-custom_section_break_wmsqd",
+                "Employee-custom_column_break_joffm",
+                "Employee-custom_team_leader",
+                "Employee-custom_fora_fok",
+                "Employee-custom_fora_exception",
+                "Employee-custom_work_place_id",
+                "Employee-custom_end_date",
+                "Employee-custom_tax_column",
+                "Employee-custom_tax_table",
+                "Employee-custom_tax_adjustment__tax_relief",
+                "Employee-custom_asink_tax",
+                "Employee-custom_sink_tax",
+                "Employee-custom_tax_tablebased_taxation",
+                "Employee-custom_project",
+                "Employee-custom_cost_bearer",
+                "Employee-custom_cost_center",
+                "Employee-custom_social_security_number",
+                "Employee-custom_section_break_9mrjl",
+                "Employee-custom_preferred_name"
 
 
 
@@ -609,6 +645,10 @@ fixtures = [
                 "Table Employee Id",
                 "SpecializationDropdown",
                 "Make dates editable",
+                "Add all tot comp",
+                "Calculate Net Comp",
+                "featch number",
+                "Revel Chield Tables",
                 "childdemo"
 
 

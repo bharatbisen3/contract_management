@@ -105,6 +105,18 @@ def fetch_job_offer(verification_id, token):
         "the_employment_protection_act": job_offer.custom_the_employment_protection_act,
         "collective_agreement": job_offer.custom_collective_agreement,
         "other_conditions": job_offer.custom_other_conditions,
-        "requested_from_job_offer": job_offer.custom_requested_on
+        "requested_from_job_offer": job_offer.custom_requested_on,
+
+
+
+
+
+
+                   #code changes or add on by devang
+                "preferred_name": job_offer.custom_preferred_name,
+                "emergency_contact_first_name": job_offer.custom_emergency_contact_first_name,
+        "emergency_contact_last_name": job_offer.custom_emergency_contact_last_name,
+        "emergency_contact_mobile_phone_number": job_offer.custom_emergency_contact_mobile_phone_number
+
         
     }

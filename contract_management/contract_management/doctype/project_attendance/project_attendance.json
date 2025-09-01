@@ -174,9 +174,9 @@
   {
    "fetch_from": "project__client.sla_class",
    "fieldname": "classified_sla_class",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Classified SLA Class ",
-   "options": "\nSLA Class 1\nSLA Class 2\nSLA Class 3\nSLA Class 4\nSLA Class 5\nSLA Class 6\nSLA Class 7\nSLA Class 8\nSLA Class 9\nSLA Class 10\nSLA Class 11\nSLA Class 12",
+   "options": "SLA Class",
    "read_only": 1
   },
   {
@@ -245,7 +245,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-17 15:57:01.459851",
+ "modified": "2025-08-01 11:35:42.266103",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Attendance",

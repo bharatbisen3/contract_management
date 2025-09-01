@@ -28,6 +28,7 @@ frappe.ui.form.on("Employee Contract", {
                             first_name: frm.doc.first_name,
                             middle_name: frm.doc.middle_name,
                             last_name: frm.doc.last_name,  
+                            custom_preferred_name: frm.doc.preferred_name,  
                             date_of_birth: frm.doc.date_of_birth,
                             country_of_birth: frm.doc.country_of_birth,
                             custom_contact_number: frm.doc.applicant_contact_number,

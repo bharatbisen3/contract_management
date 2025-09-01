@@ -142,6 +142,16 @@ frappe.ready(function () {
                     frappe.web_form.set_value("other_conditions", data.other_conditions);
                     frappe.web_form.set_value("requested_from_job_offer", data.requested_from_job_offer);
 
+
+
+                    //code changes or added by devang
+                    frappe.web_form.set_value("preferred_name", data.preferred_name);
+                    frappe.web_form.set_value("emergency_contact_first_name", data.emergency_contact_first_name);
+                    frappe.web_form.set_value("emergency_contact_last_name", data.emergency_contact_last_name);
+                    frappe.web_form.set_value("emergency_contact_mobile_phone_number", data.emergency_contact_mobile_phone_number);
+
+
+
                     // Log for debugging
                     // console.log("Job Offer data loaded:", data);
                     console.log("Data successfully set in the form!");

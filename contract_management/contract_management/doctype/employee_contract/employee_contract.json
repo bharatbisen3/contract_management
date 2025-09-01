@@ -22,6 +22,7 @@
   "first_name",
   "middle_name",
   "last_name",
+  "preferred_name",
   "gender",
   "column_break_sset",
   "date_of_birth",
@@ -45,6 +46,10 @@
   "name_the_other_bank",
   "your_bank_account_number",
   "please_attach_a_picture_your_valid_id_or_passport",
+  "emergency_contact_information_section",
+  "emergency_contact_first_name",
+  "emergency_contact_last_name",
+  "emergency_contact_mobile_phone_number",
   "employment_and_workplace_section",
   "job_duties",
   "the_work_includes_the_following",
@@ -686,7 +691,7 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Status",
-   "options": "Request Pending for HR\nApproved",
+   "options": "Request Pending for HR\nApproved\nRejected",
    "print_hide": 1,
    "report_hide": 1
   },
@@ -953,11 +958,40 @@
    "fieldname": "employer_name",
    "fieldtype": "Data",
    "label": "Employer Name"
+  },
+  {
+   "fieldname": "preferred_name",
+   "fieldtype": "Data",
+   "label": "Preferred Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "emergency_contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Emergency Contact Information"
+  },
+  {
+   "fieldname": "emergency_contact_first_name",
+   "fieldtype": "Data",
+   "label": "Emergency Contact First name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "emergency_contact_last_name",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "emergency_contact_mobile_phone_number",
+   "fieldtype": "Phone",
+   "label": "Emergency Contact Mobile Phone Number",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-26 16:03:26.775924",
+ "modified": "2025-08-20 07:44:27.055872",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

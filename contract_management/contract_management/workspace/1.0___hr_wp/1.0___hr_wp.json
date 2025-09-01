@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"zdd_N2qLFP\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>A. Recruiting</b></span> <span class=\\\"h4\\\"><b>Process</b></span>\",\"col\":12}},{\"id\":\"PfNROyrnkL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.1 ) Email Prospect Applicant\",\"col\":3}},{\"id\":\"IMUYf50SfE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.2 ) View Prospect Applicants\",\"col\":3}},{\"id\":\"tDse0jzqbs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.3 ) Email Queue List\",\"col\":4}},{\"id\":\"UFDweo-SEL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. List New Job Applicants\",\"col\":3}},{\"id\":\"lyEuSRbJ4Q\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"3. List All Job Applicants\",\"col\":4}},{\"id\":\"N9AKbdFYkD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"4. View Job Offers\",\"col\":10}},{\"id\":\"V3zYKwf52c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"5. View Employee Contract\",\"col\":10}},{\"id\":\"V_wO9SsUw7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LCQNDllNh5\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>B. Employees</b></span>&nbsp;<span style=\\\"font-size: 18px;\\\"><b>&amp;</b></span>&nbsp;<span class=\\\"h4\\\"><b>Team</b></span>\",\"col\":12}},{\"id\":\"dN3KK5KxJw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.0 Create New Work Team\",\"col\":3}},{\"id\":\"JxI2Lu7Xrj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2.0 View Work Teams\",\"col\":3}},{\"id\":\"POjT0zz6oH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"3.0 View All Employees\",\"col\":10}},{\"id\":\"xhFRepk_Jz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Get Employees From Bjorn Lunden\",\"col\":3}}]",
+ "content": "[{\"id\":\"zdd_N2qLFP\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>A. Recruiting</b></span> <span class=\\\"h4\\\"><b>Process</b></span>\",\"col\":12}},{\"id\":\"PfNROyrnkL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.1 ) Email Prospect Applicant\",\"col\":3}},{\"id\":\"IMUYf50SfE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.2 ) View Prospect Applicants\",\"col\":3}},{\"id\":\"UFDweo-SEL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. List New Job Applicants\",\"col\":3}},{\"id\":\"lyEuSRbJ4Q\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"3. List All Job Applicants\",\"col\":4}},{\"id\":\"N9AKbdFYkD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"4. View Job Offers\",\"col\":10}},{\"id\":\"V3zYKwf52c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"5. View Employee Contract\",\"col\":10}},{\"id\":\"V_wO9SsUw7\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"LCQNDllNh5\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>B. Employees</b></span>&nbsp;<span style=\\\"font-size: 18px;\\\"><b>&amp;</b></span>&nbsp;<span class=\\\"h4\\\"><b>Team</b></span>\",\"col\":12}},{\"id\":\"JxI2Lu7Xrj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2.0 View Work Teams\",\"col\":3}},{\"id\":\"POjT0zz6oH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"3.0 View All Employees\",\"col\":10}},{\"id\":\"xhFRepk_Jz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Get Employees From Bjorn Lunden\",\"col\":3}},{\"id\":\"muDy-5VWS7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Compensation</b></span>\",\"col\":12}},{\"id\":\"SPTjrArxlK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Total Compensation\",\"col\":3}},{\"id\":\"ieGBjz4O4F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Net Compensation\",\"col\":3}},{\"id\":\"zX029cTkk0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payroll Slip\",\"col\":3}}]",
  "creation": "2025-02-17 14:52:42.484699",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "1.0 - HR WP",
  "links": [],
- "modified": "2025-07-17 18:34:24.619859",
+ "modified": "2025-08-25 13:26:33.492728",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "1.0 - HR WP",
@@ -27,9 +27,6 @@
    "role": "Administrator"
   },
   {
-   "role": "Admin"
-  },
-  {
    "role": "Hr Executive"
   }
  ],
@@ -38,17 +35,33 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Get Employees From Bjorn Lunden",
-   "link_to": "employee-fetch",
-   "type": "Page"
+   "label": "Net Compensation",
+   "link_to": "Net Compensation",
+   "stats_filter": "[]",
+   "type": "DocType"
   },
   {
    "color": "Grey",
-   "doc_view": "New",
-   "label": "1.0 Create New Work Team",
-   "link_to": "Work Team",
+   "doc_view": "List",
+   "label": "Total Compensation",
+   "link_to": "Total Compensation",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Payroll Slip",
+   "link_to": "Payroll Slip",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Get Employees From Bjorn Lunden",
+   "link_to": "employee-fetch",
+   "type": "Page"
   },
   {
    "color": "Blue",
@@ -57,15 +70,6 @@
    "link_to": "Job Applicant",
    "stats_filter": "[[\"Job Applicant\",\"status\",\"=\",\"Open\",false]]",
    "type": "DocType"
-  },
-  {
-   "color": "Blue",
-   "doc_view": "List",
-   "label": "1.3 ) Email Queue List",
-   "link_to": "Email Que Report",
-   "report_ref_doctype": "Email Queue",
-   "stats_filter": "[]",
-   "type": "Report"
   },
   {
    "color": "Blue",

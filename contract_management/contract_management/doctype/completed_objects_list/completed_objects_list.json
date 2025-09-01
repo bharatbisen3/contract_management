@@ -33,6 +33,7 @@
    "options": "\nForest Clearing\nForest Planting\nForest Planning\nWork Report"
   },
   {
+   "fetch_from": "object.distribution_type",
    "fieldname": "completion_type",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -41,6 +42,7 @@
    "options": "\nEven\nNot Even"
   },
   {
+   "fetch_from": "object.sla_class",
    "fieldname": "sla_class",
    "fieldtype": "Link",
    "label": "SLA Class",
@@ -78,7 +80,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-07-22 15:39:23.011752",
+ "modified": "2025-08-08 08:54:18.185492",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Completed Objects List",
