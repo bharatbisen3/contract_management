@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-23 11:11:30.247913",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xuts",
+  "total_compensation",
+  "section_break_sajb",
+  "employee",
+  "employee_name",
+  "year",
+  "from_date",
+  "column_break_ewyt",
+  "work_team",
+  "team_leader",
+  "month",
+  "to_date",
+  "section_break_ylwh",
+  "earnings_table",
+  "section_break_ccqs",
+  "gross_salary",
+  "tax",
+  "column_break_radz",
+  "tax_free_compensation",
+  "payment",
+  "section_break_lhbb",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "work_team",
+   "fieldtype": "Link",
+   "label": "Work Team",
+   "options": "Work Team"
+  },
+  {
+   "fetch_from": "work_team.team_leader",
+   "fieldname": "team_leader",
+   "fieldtype": "Link",
+   "label": "Team Leader",
+   "options": "User"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "To Date"
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "label": "Year",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "column_break_ewyt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xuts",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_ylwh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "earnings_table",
+   "fieldtype": "Table",
+   "label": "Earnings Table",
+   "options": "Payroll Slip Item"
+  },
+  {
+   "fieldname": "section_break_ccqs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gross_salary",
+   "fieldtype": "Currency",
+   "label": "Gross Salary"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "Tax"
+  },
+  {
+   "fieldname": "tax_free_compensation",
+   "fieldtype": "Currency",
+   "label": "Tax Free Compensation"
+  },
+  {
+   "fieldname": "payment",
+   "fieldtype": "Currency",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "section_break_sajb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_lhbb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Status",
+   "options": "Generated\nApproved\nPaid"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payroll Slip",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_radz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_compensation",
+   "fieldtype": "Link",
+   "label": "Total Compensation",
+   "options": "Total Compensation"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-08 09:36:30.555524",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Payroll Slip",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

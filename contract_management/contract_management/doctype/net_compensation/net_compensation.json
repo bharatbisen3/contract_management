@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-18 09:42:24.531440",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ljym",
+  "total_compensation",
+  "section_break_yskt",
+  "work_team",
+  "team_leader",
+  "calculate_button",
+  "column_break_myig",
+  "year",
+  "month",
+  "section_break_nktw",
+  "compensation",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fetch_from": "total_compensation.work_team",
+   "fieldname": "work_team",
+   "fieldtype": "Link",
+   "label": "Work Team",
+   "options": "Work Team",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_team.team_leader",
+   "fieldname": "team_leader",
+   "fieldtype": "Link",
+   "label": "Team Leader",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_myig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "total_compensation.year",
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "label": "Year",
+   "options": "Fiscal Year",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "total_compensation.month",
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calculate_button",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Calculate Net Compensation"
+  },
+  {
+   "fieldname": "section_break_nktw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "compensation",
+   "fieldtype": "Table",
+   "label": "Compensation",
+   "options": "Net Compensation Item"
+  },
+  {
+   "fieldname": "section_break_ljym",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_compensation",
+   "fieldtype": "Link",
+   "label": "Total Compensation",
+   "options": "Total Compensation"
+  },
+  {
+   "fieldname": "section_break_yskt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Net Compensation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-25 15:15:16.751290",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Net Compensation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

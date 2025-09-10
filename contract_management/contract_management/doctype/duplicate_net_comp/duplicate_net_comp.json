@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-03 13:28:37.989585",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ljym",
+  "compensation_table",
+  "custom_data",
+  "total_compensation",
+  "section_break_yskt",
+  "work_team",
+  "team_leader",
+  "calculate_button",
+  "column_break_myig",
+  "year",
+  "month",
+  "section_break_nktw",
+  "compensation",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ljym",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_compensation",
+   "fieldtype": "Link",
+   "label": "Total Compensation",
+   "options": "Total Compensation"
+  },
+  {
+   "fieldname": "section_break_yskt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "total_compensation.work_team",
+   "fieldname": "work_team",
+   "fieldtype": "Link",
+   "label": "Work Team",
+   "options": "Work Team",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_team.team_leader",
+   "fieldname": "team_leader",
+   "fieldtype": "Link",
+   "label": "Team Leader",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calculate_button",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Calculate Net Compensation"
+  },
+  {
+   "fieldname": "column_break_myig",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "total_compensation.year",
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "label": "Year",
+   "options": "Fiscal Year",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "total_compensation.month",
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_nktw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "compensation",
+   "fieldtype": "Table",
+   "label": "Compensation",
+   "options": "Net Compensation Member"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Net Compensation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Net Compensation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "compensation_table",
+   "fieldtype": "HTML",
+   "label": "Compensation Table",
+   "options": "<div id=\"compensation-table-wrapper\" style=\"overflow-x:auto;\">\n\n    <!-- Table -->\n    <table id=\"compensation-table\" border=\"1\" style=\"width:100%; border-collapse:collapse; text-align:center; font-family:Arial, sans-serif; font-size:14px;\">\n        <thead>\n            <tr style=\"background:#f4f4f4; font-weight:bold;\">\n                <th>Employee</th>\n                <th>Attendance</th>\n                <th>Daily Allowance Rate (SEK)</th>\n                <th>Daily Allowance Total (SEK)</th>\n                <th>Piecework Compensation</th>\n                <th>Total Net Compensation</th>\n                <th>Net Compensation Excluding Daily Allowance</th>\n                <th>Tax Table</th>\n                <th>Tax Column</th>\n                <th>Tax Percentage</th>\n                <th>Tax Amount</th>\n                <th>Gross Salary Total</th>\n                <th>Holiday Compensation (13%)</th>\n                <th>Reduction in Working Hours (3.62%)</th>\n                <th>Total Hours</th>\n            </tr>\n        </thead>\n        <tbody id=\"compensation-table-body\">\n            <tr>\n                <td colspan=\"15\" style=\"padding:10px; text-align:center;\"></td>\n            </tr>\n        </tbody>\n    </table>\n\n</div>\n"
+  },
+  {
+   "fieldname": "custom_data",
+   "fieldtype": "Long Text",
+   "hidden": 1,
+   "label": "data save"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-09 15:14:19.333207",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Duplicate Net Comp",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

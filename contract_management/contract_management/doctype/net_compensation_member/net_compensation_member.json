@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-18 11:00:15.181041",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "attendance",
+  "daily_allowance_rate_sek",
+  "daily_allowance_total_sek",
+  "column_break_howo",
+  "piecework_compensation",
+  "total_net_compensation",
+  "net_compensation_excluding_daily_allowance",
+  "tax_information_section",
+  "tax_table",
+  "tax_column",
+  "tax_percentage",
+  "tax_amount",
+  "column_break_bnde",
+  "gross_salary_total",
+  "holiday_compensation_13",
+  "reduction_in_working_hours_362",
+  "total_hours"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "attendance",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Attendance"
+  },
+  {
+   "fieldname": "daily_allowance_rate_sek",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Daily Allowance Rate (SEK)"
+  },
+  {
+   "fieldname": "daily_allowance_total_sek",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Daily Allowance Total (SEK)"
+  },
+  {
+   "fieldname": "piecework_compensation",
+   "fieldtype": "Currency",
+   "label": "Piecework Compensation"
+  },
+  {
+   "fieldname": "total_net_compensation",
+   "fieldtype": "Currency",
+   "label": "Total Net Compensation"
+  },
+  {
+   "fieldname": "net_compensation_excluding_daily_allowance",
+   "fieldtype": "Currency",
+   "label": "Net Compensation Excluding Daily Allowance"
+  },
+  {
+   "fieldname": "column_break_howo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_information_section",
+   "fieldtype": "Section Break",
+   "label": "Tax Information"
+  },
+  {
+   "fieldname": "tax_table",
+   "fieldtype": "Data",
+   "label": "Tax Table"
+  },
+  {
+   "fieldname": "tax_column",
+   "fieldtype": "Int",
+   "label": "Tax Column"
+  },
+  {
+   "fieldname": "tax_percentage",
+   "fieldtype": "Percent",
+   "label": "Tax Percentage"
+  },
+  {
+   "fieldname": "tax_amount",
+   "fieldtype": "Currency",
+   "label": "Tax Amount"
+  },
+  {
+   "fieldname": "gross_salary_total",
+   "fieldtype": "Currency",
+   "label": "Gross Salary Total"
+  },
+  {
+   "fieldname": "column_break_bnde",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "holiday_compensation_13",
+   "fieldtype": "Currency",
+   "label": "Holiday Compensation (13%)"
+  },
+  {
+   "fieldname": "reduction_in_working_hours_362",
+   "fieldtype": "Currency",
+   "label": "Reduction in Working Hours (3.62%)"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "Total Hours"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-20 13:10:37.565070",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Net Compensation Member",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

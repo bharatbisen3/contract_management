@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "autoincrement",
+ "creation": "2025-08-14 12:40:26.699136",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "income_year",
+  "period_start",
+  "period_end",
+  "full_day",
+  "half_day_50",
+  "after_3_months_70",
+  "after_2_years_50",
+  "night_stencil_50"
+ ],
+ "fields": [
+  {
+   "fieldname": "income_year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Income Year"
+  },
+  {
+   "fieldname": "period_start",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Period Start"
+  },
+  {
+   "fieldname": "period_end",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Period End"
+  },
+  {
+   "fieldname": "full_day",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Full Day"
+  },
+  {
+   "fieldname": "half_day_50",
+   "fieldtype": "Currency",
+   "label": "Half Day (50%)"
+  },
+  {
+   "fieldname": "after_3_months_70",
+   "fieldtype": "Currency",
+   "label": "After 3 months (70%)"
+  },
+  {
+   "fieldname": "after_2_years_50",
+   "fieldtype": "Currency",
+   "label": "After 2 Years (50%)"
+  },
+  {
+   "fieldname": "night_stencil_50",
+   "fieldtype": "Currency",
+   "label": "Night Stencil (50%)"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-14 12:56:21.209863",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Daily Allowance",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

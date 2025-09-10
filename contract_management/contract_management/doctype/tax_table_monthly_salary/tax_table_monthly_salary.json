@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-08-14 12:46:23.303896",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "year",
+  "antal_dgr",
+  "table",
+  "inkomst_from",
+  "inkomst_tom",
+  "kolumn_1"
+ ],
+ "fields": [
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "label": "Year"
+  },
+  {
+   "fieldname": "antal_dgr",
+   "fieldtype": "Data",
+   "label": "Antal dgr"
+  },
+  {
+   "fieldname": "table",
+   "fieldtype": "Int",
+   "label": "Table"
+  },
+  {
+   "fieldname": "inkomst_from",
+   "fieldtype": "Int",
+   "label": "Inkomst fr.o.m."
+  },
+  {
+   "fieldname": "inkomst_tom",
+   "fieldtype": "Int",
+   "label": "Inkomst t.o.m."
+  },
+  {
+   "fieldname": "kolumn_1",
+   "fieldtype": "Int",
+   "label": "Kolumn 1"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-14 12:48:09.218276",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Tax Table Monthly Salary",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
