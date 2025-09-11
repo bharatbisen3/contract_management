@@ -1,3 +1,18 @@
+// // // Copyright (c) 2025, bharat and contributors
+// // // For license information, please see license.txt
+
+// // // frappe.ui.form.on("Total Compensation", {
+// // // 	refresh(frm) {
+
+// // // 	},
+// // // });
+
+
+
+
+
+
+
 // // Copyright (c) 2025, bharat and contributors
 // // For license information, please see license.txt
 
@@ -156,7 +171,14 @@
 //     setTimeout(function () {
 //       frm.trigger("summery_of_employee");
 //       frm.refresh_fields();
+
+//       setTimeout(function () {
+//         frm.trigger("generate_net_compensation");
+//         frm.refresh_fields();
+//       }, 2000);
+
 //     }, 2000);
+
 //   },
 
 //   summery_of_employee: function (frm) {
@@ -247,30 +269,30 @@
 //   //   });
 //   // },
 
-//   generate_net_compensation: function (frm) {
-//   frappe.call({
-//     method: "generate_net_compensation", // method inside total_compensation.py
-//     doc: frm.doc,
-//     callback: function (r) {
-//       // Refresh the specific field first
-//       frm.refresh_field("net_compensation");
+//   //   generate_net_compensation: function (frm) {
+//   //   frappe.call({
+//   //     method: "generate_net_compensation", // method inside total_compensation.py
+//   //     doc: frm.doc,
+//   //     callback: function (r) {
+//   //       // Refresh the specific field first
+//   //       frm.refresh_field("net_compensation");
 
-//       // Show the net compensation section if data exists
-//       if ((frm.doc.net_compensation || []).length > 0) {
-//         frm.set_df_property("net_compensation_section", "hidden", 0);
-//       }
+//   //       // Show the net compensation section if data exists
+//   //       if ((frm.doc.net_compensation || []).length > 0) {
+//   //         frm.set_df_property("net_compensation_section", "hidden", 0);
+//   //       }
 
-//       // Refresh all fields to ensure UI updates
-//       frm.refresh_fields();
+//   //       // Refresh all fields to ensure UI updates
+//   //       frm.refresh_fields();
 
-//       // Then reload the document to ensure all data is synced
-//       frm.reload_doc();
-//     },
-//     error: function(r) {
-//       frappe.msgprint(__("Error generating net compensation. Please try again."));
-//     }
-//   });
-// },
+//   //       // Then reload the document to ensure all data is synced
+//   //       frm.reload_doc();
+//   //     },
+//   //     error: function(r) {
+//   //       frappe.msgprint(__("Error generating net compensation. Please try again."));
+//   //     }
+//   //   });
+//   // },
 
 //   // generate_net_compensation: function (frm) {
 //   //   frappe.call({
@@ -282,6 +304,72 @@
 //   //   });
 //   // },
 
+//   generate_net_compensation: async function (frm) {
+//     if (!(frm.doc.year && frm.doc.month)) {
+//       frappe.msgprint(
+//         "Please set Fiscal Year and Month before generating Net Compensation."
+//       );
+//       return;
+//     }
+
+//     // Clear table before regeneration
+//     frm.clear_table("net_compensation");
+
+//     // Loop over summary employees
+//     for (let row of frm.doc.employee_compensetion_summery || []) {
+//       let emp = row.employee_id;
+
+//       // Fetch attendance + piecework data from backend
+//       let r = await frappe.call({
+//         method:
+//           "contract_management.contract_management.doctype.net_compensation.net_compensation.get_employee_attendance",
+//         args: {
+//           employee: emp,
+//           month: frm.doc.month,
+//           year: frm.doc.year,
+//         },
+//       });
+
+//       let data = r.message || {};
+
+//       // 🧮 Perform calculations (JS version of your Python formulas)
+//       let attendance = data.attendance || 0;
+//       let total_hours = data.total_hours || 0;
+//       let daily_allowance_rate = data.daily_allowance_rate || 0;
+//       let daily_allowance_total = attendance * daily_allowance_rate;
+
+//       let piecework = data.piecework_compensation || 0;
+
+//       let holiday_comp = piecework * 0.13;
+//       let reduction_hours = piecework * 0.0362;
+
+//       let gross_salary = piecework + holiday_comp + reduction_hours;
+//       let tax_percentage = 30;
+//       let tax_amount = (gross_salary * tax_percentage) / 100;
+
+//       let net_excl_allowance = gross_salary - tax_amount;
+//       let total_net = net_excl_allowance + daily_allowance_total;
+
+//       // Append to child table
+//       let child = frm.add_child("net_compensation");
+//       child.employee = emp;
+//       child.attendance = attendance;
+//       child.total_hours = total_hours;
+//       child.daily_allowance_rate_sek = daily_allowance_rate;
+//       child.daily_allowance_total_sek = daily_allowance_total;
+//       child.piecework_compensation = piecework;
+//       child.holiday_compensation_13 = holiday_comp;
+//       child.reduction_in_working_hours_362 = reduction_hours;
+//       child.gross_salary_total = gross_salary;
+//       child.tax_percentage = tax_percentage;
+//       child.tax_amount = tax_amount;
+//       child.net_compensation_excluding_daily_allowance = net_excl_allowance;
+//       child.total_net_compensation = total_net;
+//     }
+
+//     frm.refresh_field("net_compensation");
+//     frappe.msgprint("Net Compensation calculated instantly (JS)");
+//   },
 // });
 
 // function populate_object_list(frm) {
@@ -515,6 +603,56 @@
 //   });
 // }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Copyright (c) 2025, bharat and contributors
+// // For license information, please see license.txt
+
+// // frappe.ui.form.on("Total Compensation", {
+// // 	refresh(frm) {
+
+// // 	},
+// // });
+
+
+
+
+
+
+
 // Copyright (c) 2025, bharat and contributors
 // For license information, please see license.txt
 
@@ -555,13 +693,24 @@ frappe.ui.form.on("Total Compensation", {
     frm.refresh_fields();
   },
 
-  month: function (frm) {
-    if (frm.doc.month) {
-      frm.set_df_property("obj_list_section_section", "hidden", 0);
-    }
-    populate_object_list(frm);
-    frm.refresh_fields();
-  },
+  // month: function (frm) {
+  //   if (!work_team || !year) return;
+  //   populate_object_list(frm);
+
+  //   // if (frm.doc.month) {
+  //   //   frm.set_df_property("obj_list_section_section", "hidden", 0);
+  //   // }
+  //   // populate_object_list(frm);
+  //   // frm.refresh_fields();
+  // },
+
+    month: function(frm) {
+        populate_object_list(frm);
+    },
+    year: function(frm) { // trigger when fiscal year changes
+        populate_object_list(frm);
+    },
+
 
   get_members: function (frm) {
     const objectList = frm.doc.object_list || [];
@@ -730,81 +879,6 @@ frappe.ui.form.on("Total Compensation", {
     frm.refresh_fields();
   },
 
-  // validate: function(frm) {
-  //     // Validate not even distribution percentages
-  //     let not_even_objects = frm.doc.not_even_distribution || [];
-  //     let object_percentages = {};
-
-  //     // Group by object and sum percentages
-  //     not_even_objects.forEach(obj => {
-  //         if (obj.object && obj.percentage) {
-  //             if (!object_percentages[obj.object]) {
-  //                 object_percentages[obj.object] = 0;
-  //             }
-  //             object_percentages[obj.object] += obj.percentage;
-  //         }
-  //     });
-
-  //     // Check if any object has percentage != 100%
-  //     for (let object in object_percentages) {
-  //         if (Math.abs(object_percentages[object] - 100) > 0.01) {
-  //             frappe.validated = false;
-  //             frappe.msgprint(__('Total percentage for object {0} should be 100%. Current total: {1}%',
-  //                 [object, object_percentages[object]]));
-  //             return;
-  //         }
-  //     }
-  // }
-
-  // generate_net_compensation: function (frm) {
-  //   // frm.call("generate_net_compensation").then(() => {
-  //   //     frm.reload_doc();
-  //   // });
-
-  //   frappe.call({
-  //     method:
-  //       "contract_management.contract_management.doctype.total_compensation.total_compensation.TotalCompensation.generate_net_compensation",
-  //     doc: frm.doc,
-  //     callback: function () {
-  //       frm.reload_doc();
-  //     },
-  //   });
-  // },
-
-  //   generate_net_compensation: function (frm) {
-  //   frappe.call({
-  //     method: "generate_net_compensation", // method inside total_compensation.py
-  //     doc: frm.doc,
-  //     callback: function (r) {
-  //       // Refresh the specific field first
-  //       frm.refresh_field("net_compensation");
-
-  //       // Show the net compensation section if data exists
-  //       if ((frm.doc.net_compensation || []).length > 0) {
-  //         frm.set_df_property("net_compensation_section", "hidden", 0);
-  //       }
-
-  //       // Refresh all fields to ensure UI updates
-  //       frm.refresh_fields();
-
-  //       // Then reload the document to ensure all data is synced
-  //       frm.reload_doc();
-  //     },
-  //     error: function(r) {
-  //       frappe.msgprint(__("Error generating net compensation. Please try again."));
-  //     }
-  //   });
-  // },
-
-  // generate_net_compensation: function (frm) {
-  //   frappe.call({
-  //     method: "generate_net_compensation", // method inside total_compensation.py
-  //     doc: frm.doc,
-  //     callback: function () {
-  //       frm.reload_doc();
-  //     },
-  //   });
-  // },
 
   generate_net_compensation: async function (frm) {
     if (!(frm.doc.year && frm.doc.month)) {
@@ -874,75 +948,265 @@ frappe.ui.form.on("Total Compensation", {
   },
 });
 
+
+
+
+// function populate_object_list(frm) {
+//   let work_team = frm.doc.work_team;
+//   let month = frm.doc.month;
+
+//   if (!work_team) return;
+
+//   // Optional message
+//   // frappe.msgprint(`Loading objects for Work Team: ${work_team} for ${month} Month`);
+
+//   frm.clear_table("object_list");
+
+//   frappe.call({
+//     method: "frappe.client.get_list",
+//     args: {
+//       doctype: "Project Setup",
+//       filters: {
+//         work_team: work_team,
+//         status: "Completed",
+//         completion_month: month,
+//       },
+//       fields: [
+//         "name",
+//         "object_title",
+//         "task",
+//         "distribution_type",
+//         "sla_class",
+//         "project__object_size_in_hecter",
+//         "completion_date",
+//         "clearing_cost",
+//         "planting_cost",
+//         "completion_month",
+//       ],
+//       limit_page_length: 100,
+//     },
+//     callback: function (r) {
+//       if (!r.message) return;
+
+//       r.message.forEach((project) => {
+//         let total_comp = 0;
+//         if (project.task === "Forest Clearing") {
+//           total_comp = parseFloat(project.clearing_cost || 0);
+//         } else if (project.task === "Forest Planting") {
+//           total_comp = parseFloat(project.planting_cost || 0);
+//         }
+
+//         frm.add_child("object_list", {
+//           object: project.name,
+//           object_title: project.object_title,
+//           // task: project.task === "Forest Clearing" ? "Clearing" : "Planting",
+//           task: project.task,
+//           completion_type: project.distribution_type,
+//           sla_class: project.sla_class,
+//           quantity_hectare_or_plants: project.project__object_size_in_hecter,
+//           completion_date: project.completion_date,
+//           total_compensation: total_comp,
+//         });
+//       });
+
+//       frm.refresh_field("object_list");
+
+//       // Show the object list section and calculate button section if data exists
+//       if ((frm.doc.object_list || []).length > 0) {
+//         frm.set_df_property("obj_list_section_section", "hidden", 0);
+//         frm.set_df_property("section_break_qjwb", "hidden", 0);
+//       }
+//       frm.refresh_fields();
+//     },
+//   });
+// }
+
+
+frappe.ui.form.on('Total Compensation', {
+    month: function(frm) {
+        populate_object_list(frm);
+    },
+    year: function(frm) { // trigger when fiscal year changes
+        populate_object_list(frm);
+    }
+});
+
 function populate_object_list(frm) {
-  let work_team = frm.doc.work_team;
-  let month = frm.doc.month;
+    let work_team = frm.doc.work_team;
+    let month = frm.doc.month;
 
-  if (!work_team) return;
+    if (!work_team || !month) return;
 
-  // Optional message
-  // frappe.msgprint(`Loading objects for Work Team: ${work_team} for ${month} Month`);
+    const months = [
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
+    ];
 
-  frm.clear_table("object_list");
+    let selectedIndex = months.indexOf(month);
+    if (selectedIndex === -1) return;
 
-  frappe.call({
-    method: "frappe.client.get_list",
-    args: {
-      doctype: "Project Setup",
-      filters: {
-        work_team: work_team,
-        status: "Completed",
-        completion_month: month,
-      },
-      fields: [
-        "name",
-        "object_title",
-        "task",
-        "distribution_type",
-        "sla_class",
-        "project__object_size_in_hecter",
-        "completion_date",
-        "clearing_cost",
-        "planting_cost",
-        "completion_month",
-      ],
-      limit_page_length: 100,
-    },
-    callback: function (r) {
-      if (!r.message) return;
+    // previous month index (0-11)
+    let prevIndex = (selectedIndex - 1 + 12) % 12;
+    let prevMonthName = months[prevIndex];
 
-      r.message.forEach((project) => {
-        let total_comp = 0;
-        if (project.task === "Forest Clearing") {
-          total_comp = parseFloat(project.clearing_cost || 0);
-        } else if (project.task === "Forest Planting") {
-          total_comp = parseFloat(project.planting_cost || 0);
+    // Determine which calendar year the SELECTED month belongs to.
+    // If fiscal year is selected (fy_start present), use that mapping.
+    let selectedMonthYear = (new Date()).getFullYear(); // fallback
+    if (frm.doc && frm.doc.fy_start) {
+        let fyStart = new Date(frm.doc.fy_start);
+        let fyStartMonthIdx = fyStart.getMonth(); // 0-based
+        let fyStartYear = fyStart.getFullYear();
+        // months from fy_start month .. Dec => belong to fyStartYear
+        // months from Jan .. month before fy_start => belong to fyStartYear + 1
+        if (selectedIndex >= fyStartMonthIdx) {
+            selectedMonthYear = fyStartYear;
+        } else {
+            selectedMonthYear = fyStartYear + 1;
         }
+    } else {
+        // No fiscal year provided: assume selected month belongs to current calendar year
+        selectedMonthYear = (new Date()).getFullYear();
+    }
 
-        frm.add_child("object_list", {
-          object: project.name,
-          object_title: project.object_title,
-          // task: project.task === "Forest Clearing" ? "Clearing" : "Planting",
-          task: project.task,
-          completion_type: project.distribution_type,
-          sla_class: project.sla_class,
-          quantity_hectare_or_plants: project.project__object_size_in_hecter,
-          completion_date: project.completion_date,
-          total_compensation: total_comp,
-        });
-      });
+    // Compute the year for the previous month (handles January -> December previous year)
+    let prevMonthYear = (prevIndex > selectedIndex) ? (selectedMonthYear - 1) : selectedMonthYear;
 
-      frm.refresh_field("object_list");
+    // Build start and end dates for previous month (YYYY-MM-DD)
+    let startDate = new Date(prevMonthYear, prevIndex, 1);
+    let endDate = new Date(prevMonthYear, prevIndex + 1, 0); // last day of prevMonth
 
-      // Show the object list section and calculate button section if data exists
-      if ((frm.doc.object_list || []).length > 0) {
-        frm.set_df_property("obj_list_section_section", "hidden", 0);
-        frm.set_df_property("section_break_qjwb", "hidden", 0);
-      }
-      frm.refresh_fields();
-    },
-  });
+    function formatDate(d) {
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${dd}`;
+    }
+
+    const startDateStr = formatDate(startDate);
+    const endDateStr = formatDate(endDate);
+
+    frappe.msgprint(`Loading objects for Work Team: ${work_team} — previous month: ${prevMonthName} ${prevMonthYear} (from ${startDateStr} to ${endDateStr})`);
+
+    frm.clear_table("object_list");
+
+    frappe.call({
+        method: "frappe.client.get_list",
+        args: {
+            doctype: "Project Setup",
+            filters: [
+                ["work_team", "=", work_team],
+                ["status", "=", "Completed"],
+                ["completion_date", "between", [startDateStr, endDateStr]]
+            ],
+            fields: [
+                "name", "object_title", "task", "distribution_type", "sla_class",
+                "project__object_size_in_hecter", "completion_date", "clearing_cost", "planting_cost","completion_month"
+            ],
+            limit_page_length: 100
+        },
+        callback: function(r) {
+            if (!r.message || !r.message.length) {
+                frm.refresh_field("object_list");
+                return;
+            }
+
+            r.message.forEach(project => {
+                let total_comp = 0;
+                if (project.task === "Forest Clearing") {
+                    total_comp = parseFloat(project.clearing_cost || 0);
+                } else if (project.task === "Forest Planting") {
+                    total_comp = parseFloat(project.planting_cost || 0);
+                }
+
+                frm.add_child("object_list", {
+                    object: project.name,
+                    object_title: project.object_title,
+                    task: project.task,
+                    completion_type: project.distribution_type,
+                    sla_class: project.sla_class,
+                    quantity_hectare_or_plants: project.project__object_size_in_hecter,
+                    completion_date: project.completion_date,
+                    total_compensation: total_comp
+                });
+            });
+
+            frm.refresh_field("object_list");
+        }
+    });
 }
+
+
+
+// function populate_object_list(frm) {
+//     let work_team = frm.doc.work_team;
+//     let month = frm.doc.month;
+
+//     if (!work_team || !month) return;
+
+//     // Convert month to previous month
+//     let months = [
+//         "January","February","March","April","May","June",
+//         "July","August","September","October","November","December"
+//     ];
+
+//     let selectedIndex = months.indexOf(month);
+//     if (selectedIndex === -1) return;  // safety check
+
+//     // Calculate previous month index
+//     let prevIndex = (selectedIndex - 1 + 12) % 12;
+//     let prevMonth = months[prevIndex];
+
+//     frappe.msgprint(`Loading objects for Work Team: ${work_team} of PREVIOUS month (${prevMonth})`);
+
+//     frm.clear_table("object_list");
+
+//     frappe.call({
+//         method: "frappe.client.get_list",
+//         args: {
+//             doctype: "Project Setup",
+//             filters: {
+//                 work_team: work_team,
+//                 status: "Completed",
+//                 completion_month: prevMonth   // ✅ using previous month here
+//             },
+//             fields: [
+//                 "name", "object_title", "task", "distribution_type", "sla_class",
+//                 "project__object_size_in_hecter", "completion_date",
+//                 "clearing_cost", "planting_cost", "completion_month"
+//             ],
+//             limit_page_length: 100
+//         },
+//         callback: function(r) {
+//             if (!r.message) return;
+
+//             r.message.forEach(project => {
+//                 let total_comp = 0;
+//                 if (project.task === "Forest Clearing") {
+//                     total_comp = parseFloat(project.clearing_cost || 0);
+//                 } else if (project.task === "Forest Planting") {
+//                     total_comp = parseFloat(project.planting_cost || 0);
+//                 }
+
+//                 frm.add_child("object_list", {
+//                     object: project.name,
+//                     object_title: project.object_title,
+//                     task: project.task,
+//                     completion_type: project.distribution_type,
+//                     sla_class: project.sla_class,
+//                     quantity_hectare_or_plants: project.project__object_size_in_hecter,
+//                     completion_date: project.completion_date,
+//                     total_compensation: total_comp
+//                 });
+//             });
+
+//             frm.refresh_field("object_list");
+//         }
+//     });
+// }
+
+
+
+
 
 function calculate_compensation(frm) {
   // Clear existing data in employee_compensation_list
