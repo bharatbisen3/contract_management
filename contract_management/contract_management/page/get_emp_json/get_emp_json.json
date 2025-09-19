@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2025-09-15 11:37:31.877787",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-09-15 11:49:41.040003",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "get-emp-json",
+ "owner": "Administrator",
+ "page_name": "get-emp-json",
+ "roles": [
+  {
+   "role": "Administrator"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 1,
+ "title": "Employee Json"
+}

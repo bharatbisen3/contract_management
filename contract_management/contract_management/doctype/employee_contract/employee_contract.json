@@ -117,6 +117,7 @@
   "other_conditions",
   "code_of_cunduct_section",
   "language",
+  "contract_url",
   "section_break_wixk",
   "terms_and_conditions",
   "signature_of_emp_section",
@@ -298,7 +299,7 @@
    "fieldname": "bank",
    "fieldtype": "Select",
    "label": "Bank Name",
-   "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nOther",
+   "options": "\nBANCA TRANSILVANIA S.A.\nBanca Comerciala Romana S.A.\nBRD - Groupe Societe Generale S.A.\nCEC BANK S.A.\nNG Bank NV, Amsterdam - Bucharest Branch\nUniCredit Bank S.A.\nRAIFFEISEN BANK S.A.\nSwedbank\nOther",
    "reqd": 1
   },
   {
@@ -987,11 +988,16 @@
    "fieldtype": "Phone",
    "label": "Emergency Contact Mobile Phone Number",
    "reqd": 1
+  },
+  {
+   "fieldname": "contract_url",
+   "fieldtype": "Data",
+   "label": "contract_url"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-20 07:44:27.055872",
+ "modified": "2025-09-19 08:10:51.011125",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",

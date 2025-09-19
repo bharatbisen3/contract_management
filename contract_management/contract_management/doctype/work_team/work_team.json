@@ -20,8 +20,10 @@
   {
    "fieldname": "team_leader",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Team Leader",
-   "options": "User"
+   "options": "User",
+   "reqd": 1
   },
   {
    "fieldname": "department",
@@ -71,7 +73,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-06-03 14:24:37.654502",
+ "modified": "2025-09-18 13:37:43.486213",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Work Team",
