@@ -9,6 +9,14 @@ app_license = "mit"
 # web_include_css = "/assets/contract_management/css/asdfad.css"
 # app_include_js = "/assets/contract_management/js/project_setup.js"
 
+# Make sure patch runs at startup
+# app_include = "contract_management.employee_patch"
+# on_app_start = "contract_management.employee_patch.apply_patch"
+
+
+	# "Employee": "contract_management.CustomEmployee.CustomEmployee"
+
+
 # web_include_css = "/assets/contract_management/css/workteam.css"
 
 

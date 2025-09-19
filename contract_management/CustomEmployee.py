@@ -396,8 +396,64 @@ from contract_management.contract_management.api.grist_api import get_employees_
 
 
 class CustomEmployee(Employee):
-    """Extend ERPNext Employee if needed"""
-    pass
+    # pass
+
+    # """Extend ERPNext Employee if needed"""
+
+    # def validate(self):
+    #     # Call original validation first
+    #     super().validate()
+
+    #     # Disable ERPNext's requirement for relieving_date
+    #     # Even if status = "Left", we ignore that check
+    #     # (ERPNext normally enforces this)
+    #     if "relieving_date" in self.meta.fields_map:
+    #         self.meta.get_field("relieving_date").reqd = 0
+    #     return
+    
+    # pass
+
+
+    def validate(self):
+        """
+        Custom Employee validate without enforcing relieving_date.
+        """
+
+        from erpnext.controllers.status_updater import validate_status
+
+        # keep ERPNext allowed statuses
+        validate_status(self.status, ["Active", "Inactive", "Suspended", "Left"])
+
+        self.employee = self.name
+        self.set_employee_name()
+        self.validate_date()
+        self.validate_email()
+
+        # 🚫 we skip the original validate_status() that enforces relieving_date
+        self.custom_validate_status()
+
+        self.validate_reports_to()
+        self.set_preferred_email()
+        self.validate_preferred_email()
+
+        if self.user_id:
+            self.validate_user_details()
+        else:
+            existing_user_id = frappe.db.get_value("Employee", self.name, "user_id")
+            if existing_user_id:
+                user = frappe.get_doc("User", existing_user_id)
+                from erpnext.setup.doctype.employee.employee import validate_employee_role
+                validate_employee_role(user, ignore_emp_check=True)
+                user.save(ignore_permissions=True)
+                from frappe.utils.user import remove_user_permission
+                remove_user_permission("Employee", self.name, existing_user_id)
+
+    def custom_validate_status(self):
+        """
+        Replace ERPNext's validate_status that enforces relieving_date.
+        Do nothing here to bypass the check.
+        """
+        return
 
 
 @frappe.whitelist()

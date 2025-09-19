@@ -49,12 +49,14 @@
   {
    "fieldname": "expected_start_date",
    "fieldtype": "Date",
-   "label": "Expected Start Date"
+   "label": "Expected Start Date",
+   "reqd": 1
   },
   {
    "fieldname": "expected_end_date",
    "fieldtype": "Date",
-   "label": "Expected End Date"
+   "label": "Expected End Date",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_wuzp",
@@ -285,7 +287,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-02 15:02:26.542945",
+ "modified": "2025-09-19 10:36:24.153989",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

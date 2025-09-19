@@ -25,6 +25,7 @@
   "deviant_sla_class",
   "time_and_daily_allowance_section",
   "start_date",
+  "object_start_date",
   "column_break_fvcp",
   "end_date",
   "naming",
@@ -240,12 +241,19 @@
    "fieldtype": "Int",
    "label": "Total Completed Work Till Now",
    "read_only": 1
+  },
+  {
+   "fetch_from": "project__client.expected_start_date",
+   "fieldname": "object_start_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Object Start Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-08-01 11:35:42.266103",
+ "modified": "2025-09-19 10:00:05.632359",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Attendance",

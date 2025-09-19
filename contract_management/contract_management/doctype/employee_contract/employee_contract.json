@@ -992,12 +992,12 @@
   {
    "fieldname": "contract_url",
    "fieldtype": "Data",
-   "label": "contract_url"
+   "label": "Contract Url"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-19 08:10:51.011125",
+ "modified": "2025-09-19 08:55:19.223645",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Employee Contract",
