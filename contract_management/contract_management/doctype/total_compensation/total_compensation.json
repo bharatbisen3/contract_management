@@ -35,20 +35,26 @@
   {
    "fieldname": "work_team",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Work Team",
-   "options": "Work Team"
+   "options": "Work Team",
+   "reqd": 1
   },
   {
    "fieldname": "year",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Year",
-   "options": "Fiscal Year"
+   "options": "Fiscal Year",
+   "reqd": 1
   },
   {
    "fieldname": "month",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Month",
-   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_hvbe",
@@ -182,7 +188,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-09 09:54:50.744363",
+ "modified": "2025-09-21 14:16:44.722918",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Total Compensation",

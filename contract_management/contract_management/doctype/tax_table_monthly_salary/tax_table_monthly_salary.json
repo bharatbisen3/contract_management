@@ -1,6 +1,7 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "allow_import": 1,
+ "autoname": "autoincrement",
  "creation": "2025-08-14 12:46:23.303896",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -10,7 +11,13 @@
   "table",
   "inkomst_from",
   "inkomst_tom",
-  "kolumn_1"
+  "column_1",
+  "column_2",
+  "column_3",
+  "column_4",
+  "column_5",
+  "column_6",
+  "avg"
  ],
  "fields": [
   {
@@ -26,31 +33,70 @@
   {
    "fieldname": "table",
    "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Table"
   },
   {
    "fieldname": "inkomst_from",
    "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Inkomst fr.o.m."
   },
   {
    "fieldname": "inkomst_tom",
    "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Inkomst t.o.m."
   },
   {
-   "fieldname": "kolumn_1",
+   "fieldname": "avg",
+   "fieldtype": "Data",
+   "label": "AVG."
+  },
+  {
+   "fieldname": "column_1",
    "fieldtype": "Int",
-   "label": "Kolumn 1"
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Column 1"
+  },
+  {
+   "fieldname": "column_2",
+   "fieldtype": "Int",
+   "label": "Column 2"
+  },
+  {
+   "fieldname": "column_3",
+   "fieldtype": "Int",
+   "label": "Column 3"
+  },
+  {
+   "fieldname": "column_4",
+   "fieldtype": "Int",
+   "label": "Column 4"
+  },
+  {
+   "fieldname": "column_5",
+   "fieldtype": "Int",
+   "label": "Column 5"
+  },
+  {
+   "fieldname": "column_6",
+   "fieldtype": "Int",
+   "label": "Column 6"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-14 12:48:09.218276",
+ "modified": "2025-09-24 15:28:42.932464",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Tax Table Monthly Salary",
+ "naming_rule": "Autoincrement",
  "owner": "Administrator",
  "permissions": [
   {
@@ -58,10 +104,12 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   }

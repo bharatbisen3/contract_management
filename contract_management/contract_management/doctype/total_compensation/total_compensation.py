@@ -16,16 +16,18 @@
 
 
 
+
+
 import frappe
 from frappe.model.document import Document
 from frappe.utils import get_first_day, get_last_day
 import calendar
 
 
-# ✅ Reuse your already-working logic from Net Compensation
-from contract_management.contract_management.doctype.net_compensation.net_compensation import (
-    get_employee_attendance,
-)
+# # ✅ Reuse your already-working logic from Net Compensation
+# from contract_management.contract_management.doctype.net_compensation.net_compensation import (
+#     get_employee_attendance,
+# )
 
 class TotalCompensation(Document):
 
@@ -36,10 +38,6 @@ class TotalCompensation(Document):
 
 
     def generate_payroll_slips(self):
-        # Determine month start & end date for slips
-        # from_date = get_first_day(f"{self.month} {self.year}")
-        # to_date = get_last_day(f"{self.month} {self.year}")
-
 
         month_num, year_val = self.get_month_year()
 
@@ -149,56 +147,6 @@ class TotalCompensation(Document):
             return month_num, start_year
         else:  # Jan-Mar → belongs to end year
             return month_num, end_year
-
-
-
-
-
-
-    # def generate_payroll_slips(self):
-    #     for item in self.net_compensation:  # use Net Compensation Item table
-    #         payroll_slip = frappe.new_doc("Payroll Slip")
-    #         payroll_slip.total_compensation = self.name
-    #         payroll_slip.employee = item.employee
-    #         payroll_slip.employee_name = frappe.db.get_value("Employee", item.employee, "employee_name")
-    #         payroll_slip.work_team = self.work_team
-    #         payroll_slip.team_leader = self.team_leader
-    #         payroll_slip.month = self.month
-    #         payroll_slip.year = self.year
-
-    #         # Earnings breakdown
-    #         payroll_slip.append("earnings_table", {
-    #             "description": "Piecework",
-    #             "number_of_units": item.total_hours or 0,
-    #             "total_amount": item.piecework_compensation
-    #         })
-
-    #         payroll_slip.append("earnings_table", {
-    #             "description": "Holiday Comp. 13 %",
-    #             "total_amount": item.holiday_compensation_13 or 0
-    #         })
-
-    #         payroll_slip.append("earnings_table", {
-    #             "description": "Red. in Working Hours 3,62 %",
-    #             "total_amount": item.reduction_in_working_hours_362 or 0
-    #         })
-
-    #         payroll_slip.append("earnings_table", {
-    #             "description": "Daily Allowance",
-    #             "number_of_units": item.attendance or 0,
-    #             "rate_sek": item.daily_allowance_rate_sek or 0,
-    #             "total_amount": item.daily_allowance_total_sek or 0
-    #         })
-
-    #         # Totals
-    #         payroll_slip.gross_salary = item.gross_salary_total or 0
-    #         payroll_slip.tax = item.tax_amount or 0
-    #         payroll_slip.tax_free_compensation = item.daily_allowance_total_sek or 0
-    #         payroll_slip.payment = item.total_net_compensation or 0
-
-    #         payroll_slip.insert(ignore_permissions=True)
-
-    #     frappe.db.commit()
 
 
 

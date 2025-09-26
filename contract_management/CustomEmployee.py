@@ -583,13 +583,16 @@ def _insert_single_employee(data):
         emp.custom_tax_tablebased_taxation = _boolean_to_string(data.get("Tax_Table_Based_Taxation2"))
         emp.custom_sink_tax = _boolean_to_string(data.get("SINK_Tax2") or data.get("SINK_Tax"))
         emp.custom_asink_tax = _boolean_to_string(data.get("ASINK_Tax"))
-        emp.custom_tax_adjustment__tax_relief = _boolean_to_string(data.get("Tax_adjustment_tax_relief"))
+        # emp.custom_tax_adjustment__tax_relief = _boolean_to_string(data.get("Tax_adjustment_tax_relief"))
         emp.custom_team_leader = _boolean_to_string(data.get("Team_Leader"))
         emp.custom_fora_exception = _boolean_to_string(data.get("FORA_Exception"))
 
         emp.custom_tax_table = data.get("Tax_Table") or ""
-        tax_col = data.get("Tax_Column", "")
-        emp.custom_tax_column = ", ".join(tax_col) if isinstance(tax_col, list) else (tax_col or "")
+        # tax_col = data.get("Tax_Column", "")
+        # emp.custom_tax_column = ", ".join(tax_col) if isinstance(tax_col, list) else (tax_col or "")
+        tax_col = data.get("Tax_Column", [])
+        emp.custom_tax_column = tax_col[1] if isinstance(tax_col, list) and len(tax_col) > 1 else ""
+
         emp.custom_end_date = _convert_unix_to_date(data.get("End_Date"))
         emp.custom_work_place_id = data.get("Work_Place_ID") or ""
         emp.custom_fora_fok = data.get("ForaFOK") or ""

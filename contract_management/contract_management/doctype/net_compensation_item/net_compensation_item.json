@@ -18,11 +18,11 @@
   "tax_table",
   "tax_column",
   "tax_percentage",
-  "holiday_compensation_13",
-  "column_break_bnde",
-  "reduction_in_working_hours_362",
-  "gross_salary_total",
   "tax_amount",
+  "column_break_bnde",
+  "gross_salary_total",
+  "holiday_compensation_13",
+  "reduction_in_working_hours_362",
   "total_hours"
  ],
  "fields": [
@@ -78,14 +78,15 @@
    "label": "Tax Information"
   },
   {
-   "default": "35",
+   "fetch_from": "employee.custom_tax_table",
    "fieldname": "tax_table",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Tax Table"
   },
   {
+   "fetch_from": "employee.custom_tax_column",
    "fieldname": "tax_column",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Tax Column"
   },
   {
@@ -133,7 +134,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-08-25 13:00:01.346534",
+ "modified": "2025-09-24 15:12:23.400902",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Net Compensation Item",
