@@ -1936,14 +1936,43 @@ frappe.ui.form.on("Total Compensation", {
 //       });
 //       let data = r.message || {};
 
-//       console.log(data)
+
+//   //     for (let row of frm.doc.employee_compensetion_summery || []) {
+//   // let emp = row.employee_id;
+
+//   // 🔹 Get attendance records for this employee within selected month/year
+//   let startDate = frappe.datetime.month_start(frm.doc.month + " " + frm.doc.year);
+//   let endDate = frappe.datetime.month_end(frm.doc.month + " " + frm.doc.year);
+
+//   let attendanceRecords = await frappe.db.get_list("Employee Attendance Master", {
+//     filters: {
+//       employee: emp,
+//       present: "Yes",
+//       date: ["between", [startDate, endDate]]
+//     },
+//     fields: ["date", "duration", "present"]
+//   });
+
+//   // 🔹 Attendance count = number of present days
+//   let attendance = attendanceRecords.length;
+
+//   // 🔹 Total hours = sum of durations (convert string to int)
+//   let total_hours = attendanceRecords.reduce((sum, rec) => {
+//     return sum + (parseFloat(rec.duration) || 0);
+//   }, 0);
+
+//   // Now you can use these:
+//   // attendance -> number of present days
+//   // total_hours -> sum of hours worked
+
+
 
 //       // 2️⃣ Get employee info (for tax fields)
 //       let empDoc = await frappe.db.get_doc("Employee", emp);
 
 //       // Base salary calculations
-//       let attendance = data.attendance || 0;
-//       let total_hours = data.total_hours || 0;
+//       // let attendance = data.attendance || 0;
+//       // let total_hours = data.total_hours || 0;
 //       let daily_allowance_rate = data.daily_allowance_rate || 0;
 //       let daily_allowance_total = attendance * daily_allowance_rate;
 
@@ -2067,6 +2096,9 @@ frappe.ui.form.on("Total Compensation", {
 
 
 
+
+
+
   generate_net_compensation: async function (frm) {
     debugger;
     if (!(frm.doc.year && frm.doc.month)) {
@@ -2118,18 +2150,29 @@ frappe.ui.form.on("Total Compensation", {
   // attendance -> number of present days
   // total_hours -> sum of hours worked
 
+  console.log("Available fields in employee_compensetion_summery row:", Object.keys(row));
+  
+  
+  
+  
+  
+  // 2️⃣ Get employee info (for tax fields)
+  let empDoc = await frappe.db.get_doc("Employee", emp);
+  // console.log("Available fields in employee doc:", Object.keys(empDoc));
 
-
-      // 2️⃣ Get employee info (for tax fields)
-      let empDoc = await frappe.db.get_doc("Employee", emp);
+      let clearing_price = row.clearing_compensation;
+      let planting_price = row.planting_compensation;
 
       // Base salary calculations
       // let attendance = data.attendance || 0;
       // let total_hours = data.total_hours || 0;
       let daily_allowance_rate = data.daily_allowance_rate || 0;
+      console.log("daily allowance rate", daily_allowance_rate)
       let daily_allowance_total = attendance * daily_allowance_rate;
 
-      let piecework = data.piecework_compensation || 0;
+      // let piecework = data.piecework_compensation || 0;
+      let piecework = clearing_price + planting_price;
+      // console.log(piecework)
       let holiday_comp = piecework * 0.13;
       let reduction_hours = piecework * 0.0362;
       let gross_salary = piecework + holiday_comp + reduction_hours;
@@ -2241,14 +2284,6 @@ frappe.ui.form.on("Total Compensation", {
     frm.refresh_field("net_compensation");
     frappe.msgprint("Net Compensation recalculated with updated Tax rules.");
   },
-
-
-
-
-
-
-
-
 
 
 

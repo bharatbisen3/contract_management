@@ -1,0 +1,15 @@
+{
+  "attendance": 1,
+  "total_hours": 8,
+  "daily_allowance_rate": 290,
+  "daily_allowance_total_sek": 290,
+  "clearing_compensation": 400,
+  "planting_compensation": 0.25,
+  "total_net_compensation": 690.25,
+  "net_compensation_excluding_daily_allowance": 400.25,
+  "piecework_compensation": 400.25,
+  "holiday_compensation_13": 52.0325,
+  "reduction_in_working_hours_362": 14,
+  "gross_salary_total": 466.2825,
+  "tax_amount": 139.88475
+}
