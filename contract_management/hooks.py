@@ -660,6 +660,9 @@ fixtures = [
                 # "Revel Chield Tables",
                 # "childdemo"
 
+                "start date end date project setup",
+                "Estimate start date end date",
+                "Total Compensation year selection",
                 "net in total",
                 "Duplicate Net Comp",
                 "Hide checkboxand nos on net comp",
@@ -700,7 +703,14 @@ fixtures = [
                 "Table Employee Id",
                 "SpecializationDropdown",
                 "Make dates editable",
-                "childdemo"
+                "childdemo",
+                "Empty Attendance not marked",
+                "Attendance before start date",
+                "Code of Condact",
+                "total compensation calculation button click",
+                "work team blank row",
+                "Button Emp List",
+                "Ins Grist Emp"
 
 
 
