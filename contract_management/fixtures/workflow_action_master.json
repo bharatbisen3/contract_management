@@ -1,0 +1,72 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-04 16:34:16.198455",
+  "name": "Approve",
+  "workflow_action_name": "Approve"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-04 16:34:16.201230",
+  "name": "Reject",
+  "workflow_action_name": "Reject"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-04 16:34:16.203186",
+  "name": "Review",
+  "workflow_action_name": "Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-10-09 14:42:27.478374",
+  "name": "Open",
+  "workflow_action_name": "Open"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-10-09 15:49:44.665176",
+  "name": "Reopen",
+  "workflow_action_name": "Reopen"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-10-09 15:50:47.597319",
+  "name": "Restore",
+  "workflow_action_name": "Restore"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-10-08 13:07:17.756487",
+  "name": "Submit",
+  "workflow_action_name": "Submit"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-10-09 15:34:32.233366",
+  "name": "Completed",
+  "workflow_action_name": "Completed"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-10-08 13:05:25.933999",
+  "name": "Save",
+  "workflow_action_name": "Save"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-10-08 13:12:45.425942",
+  "name": "Cancel",
+  "workflow_action_name": "Cancel"
+ }
+]
