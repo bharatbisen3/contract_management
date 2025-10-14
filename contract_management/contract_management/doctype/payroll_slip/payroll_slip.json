@@ -2,6 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "creation": "2025-08-23 11:11:30.247913",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -41,6 +42,7 @@
    "fetch_from": "employee.employee_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Employee Name"
   },
   {
@@ -105,6 +107,7 @@
   {
    "fieldname": "gross_salary",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Gross Salary"
   },
   {
@@ -120,6 +123,7 @@
   {
    "fieldname": "payment",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Payment"
   },
   {
@@ -161,7 +165,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-18 11:32:15.096219",
+ "modified": "2025-10-13 10:05:43.559157",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Payroll Slip",
@@ -181,7 +185,10 @@
   }
  ],
  "row_format": "Dynamic",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "employee",
+ "translated_doctype": 1
 }

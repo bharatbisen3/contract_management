@@ -10,11 +10,11 @@
   "naming_series",
   "project_customer",
   "project_name",
-  "distribution_type",
+  "object",
   "column_break_uhai",
   "object_title",
-  "object",
   "sales_order",
+  "distribution_type",
   "section_break_ujxv",
   "task",
   "clearing_cost",
@@ -80,6 +80,7 @@
   {
    "fieldname": "is_active",
    "fieldtype": "Select",
+   "hidden": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Is Active",
@@ -88,6 +89,7 @@
   {
    "fieldname": "_complete_method",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "% Complete Method",
    "options": "\nManual\nTask Completion\nTask Progress\nTask Weight"
   },
@@ -104,7 +106,8 @@
    "fetch_from": "project_customer.custom_sales_order_2",
    "fieldname": "sales_order",
    "fieldtype": "Data",
-   "label": "Sales Order"
+   "label": "Sales Order",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_lhdl",
@@ -188,8 +191,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Project",
-   "options": "Project",
-   "reqd": 1
+   "options": "Project"
   },
   {
    "fieldname": "task",
@@ -226,6 +228,7 @@
    "fieldtype": "Data",
    "label": "Project Title",
    "print_hide": 1,
+   "read_only": 1,
    "report_hide": 1
   },
   {
@@ -243,6 +246,7 @@
    "report_hide": 1
   },
   {
+   "depends_on": "eval:doc.status == 'Completed';",
    "fieldname": "completion_date",
    "fieldtype": "Date",
    "label": "Completion Date"
@@ -252,7 +256,8 @@
    "fieldname": "distribution_type",
    "fieldtype": "Select",
    "label": "Distribution Type ",
-   "options": "\nEven\nNot Even"
+   "options": "\nEven\nNot Even",
+   "read_only": 1
   },
   {
    "depends_on": "eval:doc.task == \"Forest Clearing\" && doc.sla_class != \"\" && doc.sla_class != \" \"\r\n",
@@ -287,7 +292,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-19 10:36:24.153989",
+ "modified": "2025-10-09 15:09:02.266820",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

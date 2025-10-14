@@ -38,16 +38,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 # import frappe
 # from erpnext.setup.doctype.employee.employee import Employee
 # import pycountry
@@ -56,29 +46,10 @@
 
 
 # class CustomEmployee(Employee):
-#     # pass
-
-#     # """Extend ERPNext Employee if needed"""
-
-#     # def validate(self):
-#     #     # Call original validation first
-#     #     super().validate()
-
-#     #     # Disable ERPNext's requirement for relieving_date
-#     #     # Even if status = "Left", we ignore that check
-#     #     # (ERPNext normally enforces this)
-#     #     if "relieving_date" in self.meta.fields_map:
-#     #         self.meta.get_field("relieving_date").reqd = 0
-#     #     return
-    
-#     # pass
-
-
 #     def validate(self):
 #         """
 #         Custom Employee validate without enforcing relieving_date.
 #         """
-
 #         from erpnext.controllers.status_updater import validate_status
 
 #         # keep ERPNext allowed statuses
@@ -118,17 +89,31 @@
 
 # @frappe.whitelist()
 # def insert_employee_from_json():
-#     """Entry point for Import Employee button"""
-#     return insert_employee_from_grist()
+#     """Entry point for Import Employee button - queues background job"""
+    
+#     # Enqueue the actual import as a background job
+#     frappe.enqueue(
+#         method='contract_management.CustomEmployee.insert_employee_from_grist',
+#         queue='long',  # Use 'long' queue for time-consuming tasks
+#         timeout=3600,  # 1 hour timeout
+#         is_async=True,
+#         job_name='employee_import',
+#         now=False
+#     )
+    
+#     return {
+#         "status": "queued",
+#         "message": "Employee import has been queued. You will receive a notification when it completes."
+#     }
 
 
 # def insert_employee_from_grist():
-#     """Fetch employees from Grist API and insert them in bulk"""
+#     """Fetch employees from Grist API and insert them in bulk (runs in background)"""
 #     employees = get_employees_from_grist()  # returns a list now
 #     total = len(employees)
 #     already_exist, newly_added, errors = 0, 0, []
 
-#     for record in employees:
+#     for idx, record in enumerate(employees, 1):
 #         if not isinstance(record, dict):
 #             continue
 
@@ -143,10 +128,21 @@
 #                 already_exist += 1
 #             elif result == "created":
 #                 newly_added += 1
+                
+#             # Commit every 10 records to avoid long transactions
+#             if idx % 10 == 0:
+#                 frappe.db.commit()
+                
 #         except Exception as e:
 #             frappe.log_error(frappe.get_traceback(), "Employee Import Error")
 #             errors.append(str(e))
 
+#     # Final commit
+#     frappe.db.commit()
+    
+#     # Send notification to user
+#     _send_completion_notification(total, already_exist, newly_added, errors)
+    
 #     return {
 #         "total_fetched": total,
 #         "already_exist": already_exist,
@@ -154,6 +150,34 @@
 #         "errors": errors,
 #         "message": "Employee bulk import completed."
 #     }
+
+
+# def _send_completion_notification(total, already_exist, newly_added, errors):
+#     """Send notification to user when import completes"""
+#     try:
+#         message = f"""
+#         <h4>Employee Import Completed</h4>
+#         <ul>
+#             <li><b>Total Fetched:</b> {total}</li>
+#             <li><b>Already Exist:</b> {already_exist}</li>
+#             <li><b>Newly Added:</b> {newly_added}</li>
+#             <li><b>Errors:</b> {len(errors)}</li>
+#         </ul>
+#         """
+        
+#         if errors:
+#             message += f"<p><b>Error Details:</b><br>{'<br>'.join(errors[:5])}</p>"
+#             if len(errors) > 5:
+#                 message += f"<p>...and {len(errors) - 5} more errors</p>"
+        
+#         frappe.publish_realtime(
+#             event='msgprint',
+#             message=message,
+#             user=frappe.session.user
+#         )
+        
+#     except Exception as e:
+#         frappe.log_error(frappe.get_traceback(), "Notification Error")
 
 
 # def _boolean_to_string(value):
@@ -211,6 +235,7 @@
 
 #         # Optional custom fields
 #         emp.custom_blid = data.get("BL_ID") or ""
+#         emp.custom_employeeid = "EMP - " + data.get("BL_ID") or ""      #this is added by concating bl_id
 #         emp.custom_entity_id = data.get("ERPNext_ID") or ""
 #         emp.date_of_joining = _convert_unix_to_date(data.get("Date_of_Joining"))
 #         emp.date_of_birth = _convert_unix_to_date(data.get("Date_of_Birth")) or "2000-01-01"
@@ -243,13 +268,10 @@
 #         emp.custom_tax_tablebased_taxation = _boolean_to_string(data.get("Tax_Table_Based_Taxation2"))
 #         emp.custom_sink_tax = _boolean_to_string(data.get("SINK_Tax2") or data.get("SINK_Tax"))
 #         emp.custom_asink_tax = _boolean_to_string(data.get("ASINK_Tax"))
-#         # emp.custom_tax_adjustment__tax_relief = _boolean_to_string(data.get("Tax_adjustment_tax_relief"))
 #         emp.custom_team_leader = _boolean_to_string(data.get("Team_Leader"))
 #         emp.custom_fora_exception = _boolean_to_string(data.get("FORA_Exception"))
 
 #         emp.custom_tax_table = data.get("Tax_Table") or ""
-#         # tax_col = data.get("Tax_Column", "")
-#         # emp.custom_tax_column = ", ".join(tax_col) if isinstance(tax_col, list) else (tax_col or "")
 #         tax_col = data.get("Tax_Column", [])
 #         emp.custom_tax_column = tax_col[1] if isinstance(tax_col, list) and len(tax_col) > 1 else ""
 
@@ -259,7 +281,6 @@
 #         emp.custom_code_of_conduct = data.get("Code_of_Conduct") or ""
 
 #         emp.insert(ignore_permissions=True)
-#         frappe.db.commit()
 #         return "created"
 
 #     except Exception:
@@ -292,7 +313,6 @@
 #     except Exception:
 #         pass
 #     return ""
-
 
 
 
@@ -477,13 +497,23 @@ def _insert_single_employee(data):
             return code
 
     try:
+        # ✅ CHECK UNIQUENESS BY BL_ID ONLY
+        bl_id = (data.get("BL_ID") or "").strip()
+        
+        # Skip if no BL_ID provided
+        if not bl_id:
+            frappe.log_error(
+                f"Skipping employee - No BL_ID provided: {data.get('Full_Name') or data.get('Email_Address')}",
+                "Employee Import - Missing BL_ID"
+            )
+            return "exists"
+        
+        # Check if employee with this BL_ID already exists
+        if frappe.db.exists("Employee", {"custom_blid": bl_id}):
+            return "exists"
+
         email = (data.get("Email_Address") or data.get("Email") or "").strip()
         full_name = (data.get("Full_Name") or "").strip()
-
-        # Avoid duplicates
-        if (email and frappe.db.exists("Employee", {"custom_email_address": email})) or \
-           (not email and full_name and frappe.db.exists("Employee", {"employee_name": full_name})):
-            return "exists"
 
         emp = frappe.new_doc("Employee")
 
@@ -504,7 +534,8 @@ def _insert_single_employee(data):
         emp.custom_email_address = email
 
         # Optional custom fields
-        emp.custom_blid = data.get("BL_ID") or ""
+        emp.custom_blid = bl_id
+        emp.custom_employeeid = "EMP - " + bl_id      #this is added by concating bl_id
         emp.custom_entity_id = data.get("ERPNext_ID") or ""
         emp.date_of_joining = _convert_unix_to_date(data.get("Date_of_Joining"))
         emp.date_of_birth = _convert_unix_to_date(data.get("Date_of_Birth")) or "2000-01-01"
@@ -555,7 +586,7 @@ def _insert_single_employee(data):
     except Exception:
         frappe.log_error(
             frappe.get_traceback(),
-            f"Failed to insert employee {data.get('Email_Address') or data.get('Email')}"
+            f"Failed to insert employee {data.get('BL_ID')} - {data.get('Email_Address') or data.get('Email')}"
         )
         return "error"
 

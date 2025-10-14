@@ -65,6 +65,7 @@ def send_open_project_reminders():
 
 
 
+
 @frappe.whitelist()
 def create_user_permission(doc_name):
     doc = frappe.get_doc("Project Setup", doc_name)
@@ -72,28 +73,98 @@ def create_user_permission(doc_name):
     if not doc.work_team:
         frappe.throw(_("Work Team is mandatory to save the Project Setup"))
 
+    # Check if user permission already exists (using only standard fields)
     user_permission_exists = frappe.db.exists("User Permission", {
-        # "user": frappe.session.user,
         "user": doc.team_leader,
         "allow": "Project Setup",
-        "for_value": doc.name,
-        "project_setup": doc.name
+        "for_value": doc.name
     })
 
     if not user_permission_exists:
-        user_permission = frappe.get_doc({
-            "doctype": "User Permission",
-            # "user": frappe.session.user,
-            "user": doc.team_leader,
-            "allow": "Project Setup",
-            "for_value": doc.name,
-            "project_setup": doc.name,
-            "apply_to_all_doctypes": 1
-        })
-        user_permission.insert(ignore_permissions=True)
-        return _("User Permission created successfully for Project {0}").format(doc.name)
-    # else:
-    #     return _("Thank You Project {0}").format(doc.name)
+        try:
+            user_permission = frappe.get_doc({
+                "doctype": "User Permission",
+                "user": doc.team_leader,
+                "allow": "Project Setup",
+                "for_value": doc.name,
+                "apply_to_all_doctypes": 1
+            })
+            user_permission.insert(ignore_permissions=True)
+            return _("User Permission created successfully for Project {0}").format(doc.name)
+        except frappe.DuplicateEntryError:
+            return _("User Permission already exists for Project {0}").format(doc.name)
+    else:
+        return _("User Permission already exists for Project {0}").format(doc.name)
+
+
+
+
+# @frappe.whitelist()
+# def create_user_permission(doc_name):
+#     doc = frappe.get_doc("Project Setup", doc_name)
+
+#     if not doc.work_team:
+#         frappe.throw(_("Work Team is mandatory to save the Project Setup"))
+
+#     user_permission_exists = frappe.db.exists("User Permission", {
+#         # "user": frappe.session.user,
+#         "user": doc.team_leader,
+#         "allow": "Project Setup",
+#         "for_value": doc.name,
+#         "project_setup": doc.name
+#     })
+
+#     if not user_permission_exists:
+#         user_permission = frappe.get_doc({
+#             "doctype": "User Permission",
+#             # "user": frappe.session.user,
+#             "user": doc.team_leader,
+#             "allow": "Project Setup",
+#             "for_value": doc.name,
+#             "project_setup": doc.name,
+#             "apply_to_all_doctypes": 1
+#         })
+#         try:
+#             user_permission.insert(ignore_permissions=True)
+#             return _("User Permission created successfully for Project {0}").format(doc.name)
+#         except frappe.DuplicateEntryError:
+#             pass  # Silently ignore if permission already exists
+#     # else:
+#     #     return _("Thank You Project {0}").format(doc.name)
+
+
+
+
+
+# @frappe.whitelist()
+# def create_user_permission(doc_name):
+#     doc = frappe.get_doc("Project Setup", doc_name)
+
+#     if not doc.work_team:
+#         frappe.throw(_("Work Team is mandatory to save the Project Setup"))
+
+#     user_permission_exists = frappe.db.exists("User Permission", {
+#         # "user": frappe.session.user,
+#         "user": doc.team_leader,
+#         "allow": "Project Setup",
+#         "for_value": doc.name,
+#         "project_setup": doc.name
+#     })
+
+#     if not user_permission_exists:
+#         user_permission = frappe.get_doc({
+#             "doctype": "User Permission",
+#             # "user": frappe.session.user,
+#             "user": doc.team_leader,
+#             "allow": "Project Setup",
+#             "for_value": doc.name,
+#             "project_setup": doc.name,
+#             "apply_to_all_doctypes": 1
+#         })
+#         user_permission.insert(ignore_permissions=True)
+#         return _("User Permission created successfully for Project {0}").format(doc.name)
+#     # else:
+#     #     return _("Thank You Project {0}").format(doc.name)
 
 
 

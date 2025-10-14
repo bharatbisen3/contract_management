@@ -133,6 +133,14 @@ class TotalCompensation(Document):
         frappe.db.commit()
 
 
+        frappe.msgprint(
+        msg=f"✅ Payroll slips have been generated successfully for team <b>{self.work_team}</b>.",
+        title="Payroll Generation Complete",
+        indicator="green"
+        )
+
+
+
 
 
     def get_month_year(self):

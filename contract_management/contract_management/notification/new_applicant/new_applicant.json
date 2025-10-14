@@ -12,7 +12,7 @@
  "is_standard": 1,
  "message": "Hi \nCongrats for your new postiton \nplease fill out your Form using the link given below\n\nLink: http://fixture.local:8001/application-form/new\n\nBest Regards\nAlgoware Techworks",
  "message_type": "Plain Text",
- "modified": "2025-05-16 12:19:21.736887",
+ "modified": "2025-10-09 08:46:44.389651",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "New Applicant",
@@ -25,7 +25,7 @@
  ],
  "send_system_notification": 1,
  "send_to_all_assignees": 1,
- "sender": "Bharat",
- "sender_email": "bharat@algoware.in",
+ "sender": "Deva",
+ "sender_email": "kakdedevang@gmail.com",
  "subject": "Wellcome to Forest Department"
 }
