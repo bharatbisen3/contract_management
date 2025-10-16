@@ -24,29 +24,46 @@ class ProjectSetup(Document):
 	pass
 
 
-
-
-# import frappe
-# from frappe.utils import get_url
-# @frappe.whitelist()
 def send_open_project_reminders():
     frappe.logger().info("Scheduler: Reminder email function triggered")
+    
+    # Get base site URL
+    site_url = frappe.utils.get_url()
+    # site_url = "23.94.61.169:9005"
+    
+    # Filter only Open projects
     open_projects = frappe.get_all(
         "Project Setup",
-        # filters={"status": "Open"},
-        fields=["name", "team_leader", "object"]
+        filters={"status": "Open"},
+        fields=["name", "team_leader", "object", "project_customer", "project_name"]
     )
 
     for project in open_projects:
         if not project.team_leader:
             continue
 
-        # subject = f"Reminder: Attendance for Project '{project.name}'"
+        # Create link for new attendance with project pre-filled
+        attendance_link = f"{site_url}/app/project-attendance/new?project__client={project.name}"
+        # attendance_link = f"http://23.94.61.169:9005/app/project-attendance/new?project__client={project.name}"
+        # http://23.94.61.169:9005/app/project-attendance/new-project-attendance-xdhbbjuivl
+        
+        
         subject = f"Reminder: Attendance for Project"
+
+        # <strong>Project:</strong> {project.name}<br><br>
+        # <strong>Project Customer:</strong> {project.project_customer}<br>
+
         message = f"""
         Dear Team Leader,<br><br>
         
-        Kindly log attendance upto last week for the project you have been assigned<br>
+        Kindly log attendance up to last week for the project you have been assigned.<br><br>
+        
+
+        <strong>Project:</strong> {project.project_name}<br><br>
+        
+        <a href="{attendance_link}" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Create New Attendance</a>
+        <br><br>
+        
         Thank You!<br><br>
 
         HR Department<br>
@@ -58,8 +75,42 @@ def send_open_project_reminders():
             subject=subject,
             message=message,
             delayed=False
-
         )
+        
+        frappe.logger().info(f"Reminder sent to {project.team_leader} for project {project.name}")
+
+
+# def send_open_project_reminders():
+#     frappe.logger().info("Scheduler: Reminder email function triggered")
+#     open_projects = frappe.get_all(
+#         "Project Setup",
+#         # filters={"status": "Open"},
+#         fields=["name", "team_leader", "object"]
+#     )
+
+#     for project in open_projects:
+#         if not project.team_leader:
+#             continue
+
+#         # subject = f"Reminder: Attendance for Project '{project.name}'"
+#         subject = f"Reminder: Attendance for Project"
+#         message = f"""
+#         Dear Team Leader,<br><br>
+        
+#         Kindly log attendance upto last week for the project you have been assigned<br>
+#         Thank You!<br><br>
+
+#         HR Department<br>
+#         Ljunganforestry
+#         """
+
+#         frappe.sendmail(
+#             recipients=project.team_leader,
+#             subject=subject,
+#             message=message,
+#             delayed=False
+
+#         )
 
 
 

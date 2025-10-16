@@ -49,32 +49,17 @@ frappe.ui.form.on("Project Setup", {
             frappe.msgprint(__('You can only submit this document when the Project is "Completed".'));
             frappe.validated = false;  // Prevent submission
         }
-    }
+    },
 
+    status: function(frm) {
+        if (frm.doc.status === "Completed" && !frm.doc.completion_date) {
+            frm.set_value("completion_date", frappe.datetime.get_today());
+        }
+    }
 
 });
 
 
-
-
-// frappe.ui.form.on('Project Setup', {
-//     refresh: function(frm) {
-//         // Override the status indicator to show custom status
-//         update_status_indicator(frm);
-//     },
-    
-//     status: function(frm) {
-//         // Update indicator when user changes status manually
-//         update_status_indicator(frm);
-//     },
-    
-//     onload: function(frm) {
-//         // Set default status to Open for new documents
-//         if (frm.is_new() && !frm.doc.status) {
-//             frm.set_value('status', 'Open');
-//         }
-//     }
-// });
 
 function update_status_indicator(frm) {
     if (frm.doc.status) {

@@ -246,6 +246,7 @@
    "report_hide": 1
   },
   {
+   "default": "Today",
    "depends_on": "eval:doc.status == 'Completed';",
    "fieldname": "completion_date",
    "fieldtype": "Date",
@@ -292,7 +293,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-09 15:09:02.266820",
+ "modified": "2025-10-15 09:10:24.982645",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",
