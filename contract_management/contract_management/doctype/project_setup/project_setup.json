@@ -40,6 +40,7 @@
   "object_compensation",
   "work_team_planning_section",
   "work_team",
+  "team_name",
   "column_break_ubtk",
   "team_leader",
   "gross_salary_staff_compansation_section",
@@ -288,12 +289,20 @@
    "label": "Completion Month",
    "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
    "read_only": 1
+  },
+  {
+   "fetch_from": "work_team.team_name",
+   "fieldname": "team_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Team Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-15 09:10:24.982645",
+ "modified": "2025-10-22 15:01:50.140736",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",
