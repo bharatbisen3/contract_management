@@ -366,7 +366,8 @@ class CustomEmployee(Employee):
                 from erpnext.setup.doctype.employee.employee import validate_employee_role
                 validate_employee_role(user, ignore_emp_check=True)
                 user.save(ignore_permissions=True)
-                from frappe.utils.user import remove_user_permission
+                # from frappe.utils.user import remove_user_permission
+                from frappe.permissions import remove_user_permission
                 remove_user_permission("Employee", self.name, existing_user_id)
 
     def custom_validate_status(self):

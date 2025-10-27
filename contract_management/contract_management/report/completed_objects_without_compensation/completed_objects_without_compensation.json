@@ -1,0 +1,47 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-10-23 15:43:39.839184",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "work_team",
+   "fieldtype": "Link",
+   "label": "Work Team",
+   "mandatory": 0,
+   "options": "Work Team",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 5,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-10-25 13:06:57.585867",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Completed Objects Without Compensation",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    ps.name AS \"Project ID:Link/Project Setup:120\",\n    ps.project_name AS \"Project Name::200\",\n    ps.work_team AS \"Work Team:Link/Work Team:120\",\n    ps.team_leader AS \"Team Leader:Link/User:120\",\n    ps.status AS \"Status::100\",\n    ps.completion_date AS \"Completion Date:Date:100\",\n    CONCAT(MONTHNAME(ps.completion_date), ' ', YEAR(ps.completion_date)) AS \"Completion Month::120\"\nFROM\n    `tabProject Setup` ps\nWHERE\n    ps.status = 'Completed'\n    AND ps.name NOT IN (\n        SELECT\n            col.object\n        FROM\n            `tabCompleted Objects List` col\n        INNER JOIN\n            `tabTotal Compensation` tc\n        ON\n            col.parent = tc.name\n        WHERE\n            tc.docstatus = 1\n    )\n    /* Filters */\n    AND (%(completion_month)s IS NULL OR CONCAT(MONTHNAME(ps.completion_date), ' ', YEAR(ps.completion_date)) = %(completion_month)s)\n    AND (%(work_team)s IS NULL OR ps.work_team = %(work_team)s)\n    AND (%(team_leader)s IS NULL OR ps.team_leader = %(team_leader)s)\n    AND (%(project_name)s IS NULL OR ps.project_name = %(project_name)s)\nORDER BY\n    ps.completion_date DESC;\n",
+ "ref_doctype": "Project Setup",
+ "report_name": "Completed Objects Without Compensation",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Hr Executive"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Team Leader"
+  },
+  {
+   "role": "Projects Manager"
+  }
+ ],
+ "timeout": 0
+}
