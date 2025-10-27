@@ -1,0 +1,91 @@
+{
+ "charts": [
+  {
+   "chart_name": "All Object Chart",
+   "label": "Project Chart"
+  }
+ ],
+ "content": "[{\"id\":\"xzKe3DQhDR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Compensation</b><b></b></span>\",\"col\":12}},{\"id\":\"7WN7F7sBWZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1. Create Total Compensation\",\"col\":3}},{\"id\":\"alS8mBohIp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"All Object Status last month\",\"col\":3}},{\"id\":\"5WCYbRb4XO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"List of Total Compensation\",\"col\":3}},{\"id\":\"5Hr6l3odD9\",\"type\":\"spacer\",\"data\":{\"col\":3}},{\"id\":\"GBZWyKxSMZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. Payroll Slip\",\"col\":3}},{\"id\":\"gxPQbRX7cZ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"List of Payroll Slip\",\"col\":3}},{\"id\":\"Y98jyZ85BA\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"List of All Projects\",\"col\":3}},{\"id\":\"qDgAz8pRKx\",\"type\":\"paragraph\",\"data\":{\"text\":\"List of teams with completed projects last month but pending payroll.\",\"col\":12}},{\"id\":\"5VpBv0JEzw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Pending Payroll\",\"col\":3}},{\"id\":\"DnIsynbUI_\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Project Chart\",\"col\":12}}]",
+ "creation": "2025-10-22 15:24:26.518102",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "dialpad",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "HR Payroll Workspace",
+ "links": [],
+ "modified": "2025-10-27 13:21:06.488182",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "HR Payroll Workspace",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 46.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Pending Payroll",
+   "link_to": "Completed Objects Without Compensation",
+   "report_ref_doctype": "Project Setup",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "1. Create Total Compensation",
+   "link_to": "Total Compensation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "List of All Projects",
+   "link_to": "Project",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "List of Total Compensation",
+   "link_to": "Total Compensation",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "All Object Status last month",
+   "link_to": "HR Payroll View All Object Status Last Month",
+   "report_ref_doctype": "Project Setup",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "2. Payroll Slip",
+   "link_to": "Payroll Slip",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "List of Payroll Slip",
+   "link_to": "Payroll Slip",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "HR Payroll Workspace"
+}

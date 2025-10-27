@@ -1,0 +1,70 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"PEhC78nceZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Project\",\"col\":3}},{\"id\":\"dxtTVwdLo1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"view open project\",\"col\":3}},{\"id\":\"JF7mv0x9iO\",\"type\":\"spacer\",\"data\":{\"col\":6}},{\"id\":\"kyrfeqlzA6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Timesheet\",\"col\":3}},{\"id\":\"Xq9VIIQM7V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View Timesheet\",\"col\":3}},{\"id\":\"T-WjRVQUJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Total Compensation</span>\",\"col\":12}},{\"id\":\"NwnaUhETom\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Total Compensation\",\"col\":4}},{\"id\":\"g_2VM15doI\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Payroll Slip\",\"col\":4}}]",
+ "creation": "2025-10-22 09:44:05.827939",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "indicator_color": "pink",
+ "is_hidden": 0,
+ "label": "Team Leader Dashboard",
+ "links": [],
+ "modified": "2025-10-27 13:21:37.561369",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Team Leader Dashboard",
+ "number_cards": [
+  {
+   "label": "Open Project",
+   "number_card_name": "TLW openprojectcount"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Total Compensation",
+   "label": "List of Total Compensation",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Payroll Slip",
+   "label": "List of Payroll Slip",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 44.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "View Timesheet",
+   "link_to": "Project Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "view open project",
+   "link_to": "TLW Open project link",
+   "report_ref_doctype": "Project Setup",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Create Timesheet",
+   "link_to": "Project Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Team Leader Dashboard"
+}

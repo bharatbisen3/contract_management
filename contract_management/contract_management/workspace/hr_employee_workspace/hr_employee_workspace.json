@@ -1,0 +1,172 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"euIMp5780-\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Todo</b></span>\",\"col\":12}},{\"id\":\"j7nayilEJi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Applicant Pending on HR\",\"col\":3}},{\"id\":\"ieaVz0mdYi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Contract Pending on HR\",\"col\":3}},{\"id\":\"Wimsg9jYkz\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Actions Pending on HR\",\"col\":4}},{\"id\":\"F6aRhk6I7B\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0kdD-qyu4_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">New Employee Recruitment<b></b></span>\",\"col\":12}},{\"id\":\"Squhmj1yIN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\" \ud83d\ude80 Send Email to New Prospect Applicant\",\"col\":3}},{\"id\":\"P2p501RUJX\",\"type\":\"spacer\",\"data\":{\"col\":9}},{\"id\":\"vbndWwfKtH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1.1 ) View Prospect Applicants\",\"col\":4}},{\"id\":\"KnruLNBDbU\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"1.2 ) List of Prospect Applicant\",\"col\":4}},{\"id\":\"yR69X7Zvul\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"1lXdvizigP\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2.1) List All Job Applicants\",\"col\":4}},{\"id\":\"_-FBs36y18\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"2.2) List of Job Applicants, Pending on HR\",\"col\":4}},{\"id\":\"sBZ8GJVDHv\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"HSbqTZt3NX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"3.1) View All Job Offers\",\"col\":4}},{\"id\":\"k_elz8KRub\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"3.2) List of Job Offers, Contract Not signed\",\"col\":4}},{\"id\":\"X5GjWyGeni\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"H77dC15fti\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"4.1) View All Employee Contracts\",\"col\":4}},{\"id\":\"e5MBDhLAYS\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"4.2) List of Employee Contracts, Pending on HR\",\"col\":4}},{\"id\":\"T63RTAvIdV\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"u2PH2nOJxk\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Employee Creation</b><b></b></span>\",\"col\":12}},{\"id\":\"dVf3zdKNZJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create New Employee\",\"col\":4}},{\"id\":\"9IdK1cFSD-\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Employee\",\"col\":4}},{\"id\":\"SzMkWv3tXA\",\"type\":\"spacer\",\"data\":{\"col\":4}},{\"id\":\"iltYT28xlP\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Count of Employee with No role\",\"col\":4}},{\"id\":\"Qnl3rzUyNa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"List of Employee with No role\",\"col\":4}},{\"id\":\"YXF2VCeRfO\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"OJnmzmqtic\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Project Manager\",\"col\":4}},{\"id\":\"Z8icAYwaHF\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Team Leader\",\"col\":4}},{\"id\":\"UhCsbxy-QV\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Hr Executive\",\"col\":4}},{\"id\":\"MHNFGFKPeE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Import Employees From Grist\",\"col\":3}},{\"id\":\"ndLKjx9K8C\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Team Onboarding<b></b></span>\",\"col\":12}},{\"id\":\"GN00AeUQSp\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create New Work Team\",\"col\":3}},{\"id\":\"vgzfeqYuPx\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Work Team\",\"col\":4}}]",
+ "creation": "2025-10-22 10:45:09.777008",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "unhide",
+ "idx": 1,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "HR Employee Workspace",
+ "links": [],
+ "modified": "2025-10-27 13:21:26.418707",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "HR Employee Workspace",
+ "number_cards": [
+  {
+   "label": "Count of Employee with No role",
+   "number_card_name": "count for no rule of employee"
+  },
+  {
+   "label": "Actions Pending on HR",
+   "number_card_name": "Total count for Actions Pending on HR"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "User",
+   "label": "List of Project Manager",
+   "quick_list_filter": "[[\"User\",\"role_profile_name\",\"=\",\"Project Manager\",false]]"
+  },
+  {
+   "document_type": "Job Applicant",
+   "label": "2.2) List of Job Applicants, Pending on HR",
+   "quick_list_filter": "[[\"Job Applicant\",\"status\",\"=\",\"Open\",false]]"
+  },
+  {
+   "document_type": "Work Team",
+   "label": "List of Work Team",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Job Offer",
+   "label": "3.2) List of Job Offers, Contract Not signed",
+   "quick_list_filter": "[[\"Job Offer\",\"status\",\"=\",\"Awaiting Response\",false]]"
+  },
+  {
+   "document_type": "Employee",
+   "label": "List of All Employee",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Prospect Applicant",
+   "label": "1.2 ) List of Prospect Applicant",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "User",
+   "label": "List of Team Leader",
+   "quick_list_filter": "[[\"User\",\"role_profile_name\",\"=\",\"Team Leader\",false]]"
+  },
+  {
+   "document_type": "Employee Contract",
+   "label": "4.2) List of Employee Contracts, Pending on HR",
+   "quick_list_filter": "[[\"Employee Contract\",\"status\",\"=\",\"Request Pending for HR\",false]]"
+  },
+  {
+   "document_type": "User",
+   "label": "List of Hr Executive",
+   "quick_list_filter": "[[\"User\",\"role_profile_name\",\"=\",\"Hr Executive\",false]]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 45.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "2.1) List All Job Applicants",
+   "link_to": "Job Applicant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Create New Employee",
+   "link_to": "Employee",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Create New Work Team",
+   "link_to": "Work Team",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Import Employees From Grist",
+   "link_to": "employee-fetch",
+   "type": "Page"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee Contract Pending on HR",
+   "link_to": "Employee Contract",
+   "stats_filter": "[[\"Employee Contract\",\"status\",\"=\",\"Request Pending for HR\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Job Applicant Pending on HR",
+   "link_to": "Job Applicant",
+   "stats_filter": "[[\"Job Applicant\",\"status\",\"=\",\"Open\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": " \ud83d\ude80 Send Email to New Prospect Applicant",
+   "link_to": "Prospect Applicant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "3.1) View All Job Offers",
+   "link_to": "Job Offer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "1.1 ) View Prospect Applicants",
+   "link_to": "Prospect Applicant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "List of Employee with No role",
+   "link_to": "Employee without any role",
+   "report_ref_doctype": "Employee",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "4.1) View All Employee Contracts",
+   "link_to": "Employee Contract",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "HR Employee Workspace"
+}
