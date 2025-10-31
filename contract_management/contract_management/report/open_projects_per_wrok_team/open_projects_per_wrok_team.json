@@ -1,0 +1,35 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-10-29 12:04:10.031782",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-10-29 12:04:10.031782",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Open projects Per wrok Team",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    wt.name AS \"Work Team ID:Link/Work Team:120\",\n    wt.team_name AS \"Team Name::200\",\n    wt.team_leader AS \"Team Leader:Link/User:150\",\n    COUNT(ps.name) AS \"Total Open Projects:Int:150\"\nFROM\n    `tabWork Team` wt\nLEFT JOIN\n    `tabProject Setup` ps\n    ON wt.name = ps.work_team\n    AND ps.status = 'Open'\nGROUP BY\n    wt.name, wt.team_name, wt.team_leader\nORDER BY\n    wt.creation DESC\nLIMIT 15;\n",
+ "ref_doctype": "Work Team",
+ "report_name": "Open projects Per wrok Team",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Hr Executive"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Team Leader"
+  }
+ ],
+ "timeout": 0
+}

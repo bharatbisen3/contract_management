@@ -1,0 +1,38 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-10-30 08:53:42.674129",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-10-30 13:34:59.628388",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Object wise attendance percentage",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    COALESCE(ps.object_title, eam.project) AS object_name,\n    ps.task AS task,\n    COUNT(DISTINCT eam.employee) AS total_employees,\n    DAY(LAST_DAY(CURDATE())) AS total_working_days,\n    (COUNT(DISTINCT eam.employee) * DAY(LAST_DAY(CURDATE()))) AS total_possible_attendances,\n    SUM(CASE WHEN eam.present = 'Yes' THEN 1 ELSE 0 END) AS marked_present,\n    ROUND(\n        (SUM(CASE WHEN eam.present = 'Yes' THEN 1 ELSE 0 END) * 100.0) / \n        NULLIF((COUNT(DISTINCT eam.employee) * DAY(LAST_DAY(CURDATE()))), 0), \n        2\n    ) AS attendance_percentage,\n    SUM(CASE WHEN eam.present = 'No' THEN 1 ELSE 0 END) AS marked_absent,\n    eam.project AS project_id\nFROM \n    `tabEmployee Attendance Master` eam\nLEFT JOIN \n    `tabProject Setup` ps ON eam.project = ps.name\nWHERE \n    eam.project IS NOT NULL\n    AND MONTH(eam.date) = MONTH(CURDATE())\n    AND YEAR(eam.date) = YEAR(CURDATE())\nGROUP BY \n    eam.project, \n    ps.object_title, \n    ps.task\nORDER BY \n    attendance_percentage DESC",
+ "ref_doctype": "Project Setup",
+ "report_name": "Object wise attendance percentage",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Hr Executive"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Team Leader"
+  },
+  {
+   "role": "Projects Manager"
+  }
+ ],
+ "timeout": 0
+}

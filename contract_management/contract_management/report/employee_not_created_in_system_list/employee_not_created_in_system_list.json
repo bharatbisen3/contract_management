@@ -1,0 +1,38 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-10-28 09:20:03.817397",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-10-30 12:39:10.718812",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "employee not created in system list",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    ec.name AS \"Contract ID:Link/Employee Contract:120\",\r\n    ec.first_name AS \"First Name::150\",\r\n    ec.applicant_email AS \"Applicant Email:Data:200\",\r\n    ec.verification_id AS \"Verification ID::150\",\r\n    ec.status AS \"Status::120\"\r\nFROM\r\n    `tabEmployee Contract` ec\r\nLEFT JOIN\r\n    `tabEmployee` e\r\n    ON LOWER(TRIM(e.first_name)) = LOWER(TRIM(ec.first_name))\r\nWHERE\r\n    e.name IS NULL\r\nORDER BY\r\n    ec.creation DESC;\r\n",
+ "ref_doctype": "Employee Contract",
+ "report_name": "employee not created in system list",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "HR User"
+  },
+  {
+   "role": "Employee"
+  },
+  {
+   "role": "Employee Self Service"
+  }
+ ],
+ "timeout": 0
+}

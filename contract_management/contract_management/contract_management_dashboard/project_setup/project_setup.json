@@ -8,6 +8,22 @@
   {
    "chart": "All Object Chart",
    "width": "Half"
+  },
+  {
+   "chart": "Work Done Per Project",
+   "width": "Half"
+  },
+  {
+   "chart": "Projects Closed This Month: Team_name vs Projects_closed_this_month",
+   "width": "Half"
+  },
+  {
+   "chart": "Project Closed Last Month: Team_name vs Projects_closed_last_month",
+   "width": "Half"
+  },
+  {
+   "chart": "Open projects Per wrok Team: Team_name vs Total_open_projects",
+   "width": "Half"
   }
  ],
  "creation": "2025-03-24 17:12:54.564337",
@@ -17,7 +33,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2025-10-23 09:59:26.211821",
+ "modified": "2025-10-29 12:04:57.649446",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

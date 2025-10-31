@@ -1,6 +1,11 @@
 {
- "charts": [],
- "content": "[{\"id\":\"PEhC78nceZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Project\",\"col\":3}},{\"id\":\"dxtTVwdLo1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"view open project\",\"col\":3}},{\"id\":\"JF7mv0x9iO\",\"type\":\"spacer\",\"data\":{\"col\":6}},{\"id\":\"kyrfeqlzA6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Timesheet\",\"col\":3}},{\"id\":\"Xq9VIIQM7V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View Timesheet\",\"col\":3}},{\"id\":\"T-WjRVQUJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Total Compensation</span>\",\"col\":12}},{\"id\":\"NwnaUhETom\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Total Compensation\",\"col\":4}},{\"id\":\"g_2VM15doI\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Payroll Slip\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Open projects Per wrok Team: Team_name vs Total_open_projects",
+   "label": "Open projects Per wrok Team"
+  }
+ ],
+ "content": "[{\"id\":\"PEhC78nceZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Project\",\"col\":3}},{\"id\":\"dxtTVwdLo1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"view open project\",\"col\":3}},{\"id\":\"JF7mv0x9iO\",\"type\":\"spacer\",\"data\":{\"col\":6}},{\"id\":\"kyrfeqlzA6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Timesheet\",\"col\":3}},{\"id\":\"Xq9VIIQM7V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View Timesheet\",\"col\":3}},{\"id\":\"T-WjRVQUJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Total Compensation</span>\",\"col\":12}},{\"id\":\"NwnaUhETom\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Total Compensation\",\"col\":4}},{\"id\":\"g_2VM15doI\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Payroll Slip\",\"col\":4}},{\"id\":\"lm6PYYrvJp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Open projects Per wrok Team\",\"col\":12}}]",
  "creation": "2025-10-22 09:44:05.827939",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +18,7 @@
  "is_hidden": 0,
  "label": "Team Leader Dashboard",
  "links": [],
- "modified": "2025-10-27 13:21:37.561369",
+ "modified": "2025-10-29 12:06:13.682399",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Team Leader Dashboard",
