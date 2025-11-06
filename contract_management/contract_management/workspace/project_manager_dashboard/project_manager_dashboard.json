@@ -13,7 +13,7 @@
    "label": "Project Closed Last Month"
   }
  ],
- "content": "[{\"id\":\"-djbwzeTPL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1. Create New Project\",\"col\":3}},{\"id\":\"zCI3gzZyVy\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List Of All Open Projects\",\"col\":4}},{\"id\":\"yz1OKinqbn\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Projects\",\"col\":4}},{\"id\":\"5FJQQzvmGe\",\"type\":\"spacer\",\"data\":{\"col\":8}},{\"id\":\"dg-RZf_2ng\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. Create New Object\",\"col\":3}},{\"id\":\"tI5Trc2Up2\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Open Object\",\"col\":4}},{\"id\":\"mLLpyJSJBh\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Object \",\"col\":4}},{\"id\":\"jtK9rd59ku\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Due this month\",\"col\":3}},{\"id\":\"TsppQWaQ8J\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0gAVREOe7M\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Projects Closed This Month\",\"col\":6}},{\"id\":\"-OCHvTiF03\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Project Closed Last Month\",\"col\":6}},{\"id\":\"58P8jwKZcM\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object wise attendance percentage\",\"col\":12}}]",
+ "content": "[{\"id\":\"-djbwzeTPL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1. Create New Project\",\"col\":3}},{\"id\":\"zCI3gzZyVy\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List Of All Open Projects\",\"col\":4}},{\"id\":\"yz1OKinqbn\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Projects\",\"col\":4}},{\"id\":\"dg-RZf_2ng\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. Create New Object\",\"col\":3}},{\"id\":\"tI5Trc2Up2\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Open Object\",\"col\":4}},{\"id\":\"mLLpyJSJBh\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Object \",\"col\":4}},{\"id\":\"jtK9rd59ku\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Due this month\",\"col\":3}},{\"id\":\"TsppQWaQ8J\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0gAVREOe7M\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Projects Closed This Month\",\"col\":6}},{\"id\":\"-OCHvTiF03\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Project Closed Last Month\",\"col\":6}},{\"id\":\"58P8jwKZcM\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object wise attendance percentage\",\"col\":12}}]",
  "creation": "2025-10-22 09:29:36.852968",
  "custom_blocks": [],
  "docstatus": 0,
@@ -26,7 +26,7 @@
  "is_hidden": 0,
  "label": "Project Manager Dashboard",
  "links": [],
- "modified": "2025-11-05 14:02:37.075295",
+ "modified": "2025-11-06 11:40:35.262371",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Manager Dashboard",
