@@ -5,7 +5,7 @@
    "label": "Open projects Per wrok Team"
   }
  ],
- "content": "[{\"id\":\"PEhC78nceZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Project\",\"col\":3}},{\"id\":\"dxtTVwdLo1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"view open project\",\"col\":3}},{\"id\":\"JF7mv0x9iO\",\"type\":\"spacer\",\"data\":{\"col\":6}},{\"id\":\"kyrfeqlzA6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Create Timesheet\",\"col\":3}},{\"id\":\"Xq9VIIQM7V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"View Timesheet\",\"col\":3}},{\"id\":\"T-WjRVQUJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Total Compensation</span>\",\"col\":12}},{\"id\":\"NwnaUhETom\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Total Compensation\",\"col\":4}},{\"id\":\"g_2VM15doI\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Payroll Slip\",\"col\":4}},{\"id\":\"lm6PYYrvJp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Open projects Per wrok Team\",\"col\":12}}]",
+ "content": "[{\"id\":\"31QsfLnaX1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Projects</b></span>\",\"col\":12}},{\"id\":\"PEhC78nceZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Project\",\"col\":3}},{\"id\":\"dxtTVwdLo1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udd2dview open project\",\"col\":3}},{\"id\":\"JF7mv0x9iO\",\"type\":\"spacer\",\"data\":{\"col\":6}},{\"id\":\"lm6PYYrvJp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Open projects Per wrok Team\",\"col\":12}},{\"id\":\"nfBVebM1mL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Mme8hNvxCB\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Time sheets</b></span>\",\"col\":12}},{\"id\":\"kyrfeqlzA6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udcddCreate Timesheet\",\"col\":3}},{\"id\":\"Xq9VIIQM7V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udd2dView Timesheet\",\"col\":3}},{\"id\":\"NG_kZd_oqL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"T-WjRVQUJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Total Compensation</span>\",\"col\":12}},{\"id\":\"NwnaUhETom\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Total Compensation\",\"col\":4}},{\"id\":\"g_2VM15doI\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Payroll Slip\",\"col\":4}}]",
  "creation": "2025-10-22 09:44:05.827939",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "Team Leader Dashboard",
  "links": [],
- "modified": "2025-10-29 12:06:13.682399",
+ "modified": "2025-11-06 08:25:37.489505",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Team Leader Dashboard",
@@ -43,13 +43,20 @@
    "quick_list_filter": "[]"
   }
  ],
- "roles": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Team Leader"
+  }
+ ],
  "sequence_id": 44.0,
  "shortcuts": [
   {
    "color": "Grey",
-   "doc_view": "List",
-   "label": "View Timesheet",
+   "doc_view": "New",
+   "label": "\ud83d\udcddCreate Timesheet",
    "link_to": "Project Attendance",
    "stats_filter": "[]",
    "type": "DocType"
@@ -57,18 +64,18 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "view open project",
+   "label": "\ud83d\udd2dView Timesheet",
+   "link_to": "Project Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "\ud83d\udd2dview open project",
    "link_to": "TLW Open project link",
    "report_ref_doctype": "Project Setup",
    "type": "Report"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "New",
-   "label": "Create Timesheet",
-   "link_to": "Project Attendance",
-   "stats_filter": "[]",
-   "type": "DocType"
   }
  ],
  "title": "Team Leader Dashboard"

@@ -39,15 +39,6 @@
   "docstatus": 0,
   "doctype": "Workflow State",
   "icon": "",
-  "modified": "2025-10-09 11:25:16.617719",
-  "name": "Awaiting Response",
-  "style": "",
-  "workflow_state_name": "Awaiting Response"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow State",
-  "icon": "",
   "modified": "2025-10-09 15:57:21.612159",
   "name": "Reopen",
   "style": "",
@@ -70,6 +61,15 @@
   "name": "Replied",
   "style": "",
   "workflow_state_name": "Replied"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2025-10-09 11:25:16.617719",
+  "name": "Awaiting Response",
+  "style": "",
+  "workflow_state_name": "Awaiting Response"
  },
  {
   "docstatus": 0,

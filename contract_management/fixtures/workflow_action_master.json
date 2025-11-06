@@ -9,13 +9,6 @@
  {
   "docstatus": 0,
   "doctype": "Workflow Action Master",
-  "modified": "2025-07-04 16:34:16.201230",
-  "name": "Reject",
-  "workflow_action_name": "Reject"
- },
- {
-  "docstatus": 0,
-  "doctype": "Workflow Action Master",
   "modified": "2025-07-04 16:34:16.203186",
   "name": "Review",
   "workflow_action_name": "Review"
@@ -40,6 +33,13 @@
   "modified": "2025-10-09 15:50:47.597319",
   "name": "Restore",
   "workflow_action_name": "Restore"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2025-07-04 16:34:16.201230",
+  "name": "Reject",
+  "workflow_action_name": "Reject"
  },
  {
   "docstatus": 0,

@@ -302,7 +302,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-22 15:01:50.140736",
+ "modified": "2025-11-06 10:00:21.663778",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",
@@ -314,7 +314,7 @@
  "sort_order": "DESC",
  "states": [
   {
-   "color": "Blue",
+   "color": "Red",
    "title": "Open"
   },
   {
@@ -330,7 +330,7 @@
    "title": "Even"
   },
   {
-   "color": "Green",
+   "color": "Blue",
    "title": "Not Even"
   }
  ],
