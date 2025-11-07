@@ -18,7 +18,7 @@
  "is_hidden": 0,
  "label": "HR Payroll Workspace",
  "links": [],
- "modified": "2025-10-29 11:18:21.401953",
+ "modified": "2025-11-06 16:27:28.798534",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "HR Payroll Workspace",
@@ -27,7 +27,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Hr Executive"
+  }
+ ],
  "sequence_id": 46.0,
  "shortcuts": [
   {

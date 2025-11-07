@@ -5,7 +5,7 @@
    "label": "Object wise attendance percentage"
   },
   {
-   "chart_name": "Projects Closed This Month: Team_name vs Projects_closed_this_month",
+   "chart_name": "Objects Closed This Month",
    "label": "Projects Closed This Month"
   },
   {
@@ -13,7 +13,7 @@
    "label": "Project Closed Last Month"
   }
  ],
- "content": "[{\"id\":\"-djbwzeTPL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1. Create New Project\",\"col\":3}},{\"id\":\"zCI3gzZyVy\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List Of All Open Projects\",\"col\":4}},{\"id\":\"yz1OKinqbn\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Projects\",\"col\":4}},{\"id\":\"dg-RZf_2ng\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. Create New Object\",\"col\":3}},{\"id\":\"tI5Trc2Up2\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Open Object\",\"col\":4}},{\"id\":\"mLLpyJSJBh\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Object \",\"col\":4}},{\"id\":\"jtK9rd59ku\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Due this month\",\"col\":3}},{\"id\":\"TsppQWaQ8J\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"0gAVREOe7M\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Projects Closed This Month\",\"col\":6}},{\"id\":\"-OCHvTiF03\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Project Closed Last Month\",\"col\":6}},{\"id\":\"58P8jwKZcM\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object wise attendance percentage\",\"col\":12}}]",
+ "content": "[{\"id\":\"6KujjCf73r\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Projects</b></span>\",\"col\":12}},{\"id\":\"-djbwzeTPL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1. Create New Project\",\"col\":3}},{\"id\":\"zCI3gzZyVy\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List Of All Open Projects\",\"col\":4}},{\"id\":\"yz1OKinqbn\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Projects\",\"col\":4}},{\"id\":\"rZQSSBenUh\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"E2D5VQI6dF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Objects</b></span>\",\"col\":12}},{\"id\":\"dg-RZf_2ng\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. Create New Object\",\"col\":3}},{\"id\":\"-ME2Dt6y4H\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Objects Work Started\",\"col\":3}},{\"id\":\"tMyhtlMNca\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Object Work Not Started\",\"col\":3}},{\"id\":\"tI5Trc2Up2\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Objects Due This Month\",\"col\":4}},{\"id\":\"mLLpyJSJBh\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Object \",\"col\":4}},{\"id\":\"0gAVREOe7M\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Projects Closed This Month\",\"col\":6}},{\"id\":\"-OCHvTiF03\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Project Closed Last Month\",\"col\":6}},{\"id\":\"qOppfR5wby\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"P-mg69cEgA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Timesheets</b></span>\",\"col\":12}},{\"id\":\"05j1oy9Se2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Object Wise Timesheets, This Month\",\"col\":4}},{\"id\":\"yhLjLa-MiS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"All Timesheets\",\"col\":3}},{\"id\":\"58P8jwKZcM\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object wise attendance percentage\",\"col\":12}}]",
  "creation": "2025-10-22 09:29:36.852968",
  "custom_blocks": [],
  "docstatus": 0,
@@ -26,7 +26,7 @@
  "is_hidden": 0,
  "label": "Project Manager Dashboard",
  "links": [],
- "modified": "2025-11-06 11:40:35.262371",
+ "modified": "2025-11-07 12:51:35.775001",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Manager Dashboard",
@@ -41,6 +41,11 @@
    "quick_list_filter": "[]"
   },
   {
+   "document_type": "Project Setup",
+   "label": "Objects Due This Month",
+   "quick_list_filter": "[[\"Project Setup\",\"status\",\"=\",\"Open\",false],[\"Project Setup\",\"expected_end_date\",\"Timespan\",\"this month\",false]]"
+  },
+  {
    "document_type": "Project",
    "label": "List Of All Open Projects",
    "quick_list_filter": "[[\"Project\",\"status\",\"=\",\"Open\",false]]"
@@ -49,11 +54,6 @@
    "document_type": "Project Setup",
    "label": "List of All Object ",
    "quick_list_filter": "[]"
-  },
-  {
-   "document_type": "Project Setup",
-   "label": "List of All Open Object",
-   "quick_list_filter": "[[\"Project Setup\",\"status\",\"=\",\"Open\",false]]"
   }
  ],
  "roles": [
@@ -67,6 +67,14 @@
  "sequence_id": 43.0,
  "shortcuts": [
   {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Objects Work Started",
+   "link_to": "Project Setup",
+   "stats_filter": "[[\"Project Setup\",\"total_compleated_work_till_now\",\">\",0,false],[\"Project Setup\",\"status\",\"=\",\"Open\",false]]",
+   "type": "DocType"
+  },
+  {
    "color": "Yellow",
    "doc_view": "New",
    "label": "1. Create New Project",
@@ -77,10 +85,26 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Project Due this month",
-   "link_to": "View Object Attendance",
-   "report_ref_doctype": "Project Attendance",
-   "type": "Report"
+   "label": "Object Wise Timesheets, This Month",
+   "link_to": "Project Attendance",
+   "stats_filter": "[[\"Project Attendance\",\"creation\",\"Timespan\",\"this month\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Object Work Not Started",
+   "link_to": "Project Setup",
+   "stats_filter": "[[\"Project Setup\",\"total_compleated_work_till_now\",\"=\",0,false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "All Timesheets",
+   "link_to": "Project Attendance",
+   "stats_filter": "[]",
+   "type": "DocType"
   },
   {
    "color": "Red",
