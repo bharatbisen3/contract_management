@@ -14,15 +14,15 @@
    "width": "Half"
   },
   {
-   "chart": "Projects Closed This Month: Team_name vs Projects_closed_this_month",
+   "chart": "Object Closed Last Month",
    "width": "Half"
   },
   {
-   "chart": "Project Closed Last Month: Team_name vs Projects_closed_last_month",
+   "chart": "Object Closed This Month",
    "width": "Half"
   },
   {
-   "chart": "Open projects Per wrok Team: Team_name vs Total_open_projects",
+   "chart": "Object wise attendance percentage: Object_name vs Marked_present",
    "width": "Half"
   }
  ],
@@ -33,7 +33,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2025-10-29 12:04:57.649446",
+ "modified": "2025-11-07 10:12:51.994544",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

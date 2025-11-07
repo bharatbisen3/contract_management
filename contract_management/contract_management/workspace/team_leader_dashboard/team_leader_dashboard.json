@@ -2,10 +2,10 @@
  "charts": [
   {
    "chart_name": "Open projects Per wrok Team: Team_name vs Total_open_projects",
-   "label": "Open projects Per wrok Team"
+   "label": "Open Objects Per Work Team"
   }
  ],
- "content": "[{\"id\":\"31QsfLnaX1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Projects</b></span>\",\"col\":12}},{\"id\":\"PEhC78nceZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Project\",\"col\":3}},{\"id\":\"dxtTVwdLo1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udd2dview open project\",\"col\":3}},{\"id\":\"JF7mv0x9iO\",\"type\":\"spacer\",\"data\":{\"col\":6}},{\"id\":\"lm6PYYrvJp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Open projects Per wrok Team\",\"col\":12}},{\"id\":\"nfBVebM1mL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Mme8hNvxCB\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Time sheets</b></span>\",\"col\":12}},{\"id\":\"kyrfeqlzA6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udcddCreate Timesheet\",\"col\":3}},{\"id\":\"Xq9VIIQM7V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udd2dView Timesheet\",\"col\":3}},{\"id\":\"NG_kZd_oqL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"T-WjRVQUJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Total Compensation</span>\",\"col\":12}},{\"id\":\"NwnaUhETom\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Total Compensation\",\"col\":4}},{\"id\":\"g_2VM15doI\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Payroll Slip\",\"col\":4}}]",
+ "content": "[{\"id\":\"31QsfLnaX1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Objects</b></span>\",\"col\":12}},{\"id\":\"PEhC78nceZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Open Objects\",\"col\":3}},{\"id\":\"pKLXvwUrLQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Objects Work Started\",\"col\":3}},{\"id\":\"ywOBepC-1v\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Object Work Not Started\",\"col\":3}},{\"id\":\"lm6PYYrvJp\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Open Objects Per Work Team\",\"col\":12}},{\"id\":\"nfBVebM1mL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Mme8hNvxCB\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Time sheets</b></span>\",\"col\":12}},{\"id\":\"kyrfeqlzA6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udcddCreate Timesheet\",\"col\":3}},{\"id\":\"Xq9VIIQM7V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\ud83d\udd2dView Timesheet\",\"col\":3}},{\"id\":\"NG_kZd_oqL\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"T-WjRVQUJR\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Total Compensation</span>\",\"col\":12}},{\"id\":\"NwnaUhETom\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Total Compensation\",\"col\":4}},{\"id\":\"g_2VM15doI\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of Payroll Slip\",\"col\":4}}]",
  "creation": "2025-10-22 09:44:05.827939",
  "custom_blocks": [],
  "docstatus": 0,
@@ -18,14 +18,14 @@
  "is_hidden": 0,
  "label": "Team Leader Dashboard",
  "links": [],
- "modified": "2025-11-06 08:25:37.489505",
+ "modified": "2025-11-07 09:57:48.522052",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Team Leader Dashboard",
  "number_cards": [
   {
-   "label": "Open Project",
-   "number_card_name": "TLW openprojectcount"
+   "label": "Open Objects",
+   "number_card_name": "Open Objects Count"
   }
  ],
  "owner": "Administrator",
@@ -72,10 +72,18 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "\ud83d\udd2dview open project",
-   "link_to": "TLW Open project link",
-   "report_ref_doctype": "Project Setup",
-   "type": "Report"
+   "label": "Objects Work Started",
+   "link_to": "Project Setup",
+   "stats_filter": "[[\"Project Setup\",\"total_compleated_work_till_now\",\">\",0,false],[\"Project Setup\",\"status\",\"=\",\"Open\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Object Work Not Started",
+   "link_to": "Project Setup",
+   "stats_filter": "[[\"Project Setup\",\"total_compleated_work_till_now\",\"=\",0,false]]",
+   "type": "DocType"
   }
  ],
  "title": "Team Leader Dashboard"

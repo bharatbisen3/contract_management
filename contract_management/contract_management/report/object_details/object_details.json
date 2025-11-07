@@ -1,0 +1,41 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-11-07 09:23:36.014603",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-11-07 09:23:36.014603",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "Object Details",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    REPLACE(project.project_name, '_', ' ') AS `Project Name`,\r\n    REPLACE(project.object_title, '_', ' ') AS `Object Title`,\r\n    project.status AS `Status`,\r\n    project.project__object_size_in_hecter AS `Object Size (Hecter)`,\r\n    project.project__object_price_per_hecter AS `Price Per Hecter`,\r\n    REPLACE(project.task, '_', ' ') AS `Task`,\r\n    REPLACE(project.sla_class, '_', ' ') AS `SLA Class`,\r\n    REPLACE(project.work_team, '_', ' ') AS `Work Team`,\r\n    project.team_leader AS `Team Leader`,\r\n    user.full_name AS `Team Leader Name`\r\nFROM \r\n    `tabProject Setup` project\r\nLEFT JOIN \r\n    `tabUser` user ON project.team_leader = user.name\r\nGROUP BY \r\n    project.project_name, project.object_title, project.status,\r\n    project.project__object_size_in_hecter, project.project__object_price_per_hecter,\r\n    project.task, project.sla_class, project.work_team,\r\n    project.team_leader, user.full_name\r\nORDER BY \r\n    project.project_name;",
+ "ref_doctype": "Project Setup",
+ "report_name": "Object Details",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Projects Manager"
+  },
+  {
+   "role": "Projects User"
+  },
+  {
+   "role": "Employee"
+  },
+  {
+   "role": "Employee Self Service"
+  },
+  {
+   "role": "Team Leader"
+  }
+ ],
+ "timeout": 0
+}

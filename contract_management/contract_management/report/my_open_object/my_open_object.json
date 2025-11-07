@@ -1,0 +1,38 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-11-07 09:16:01.178028",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-11-07 09:16:01.178028",
+ "modified_by": "Administrator",
+ "module": "Contract Management",
+ "name": "My Open Object",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    project_customer as \"Project\",\n    object_title as \"Object\",\n    task as \"Task\", \n    status as \"Status\",\n    expected_start_date as \"Start Date\",\n    expected_end_date as \"End Date\",\n    project__object_size_in_hecter as \"Total Work\",\n    total_compleated_work_till_now as \"Done Work\",\n    (project__object_size_in_hecter - total_compleated_work_till_now) as \"Remaining Work\"\nFROM \n    `tabProject Setup`\nWHERE \n    docstatus = 0\n    AND status = 'Open'\n",
+ "ref_doctype": "Project Setup",
+ "report_name": "My Open Object",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Hr Executive"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Team Leader"
+  },
+  {
+   "role": "Projects Manager"
+  }
+ ],
+ "timeout": 0
+}

@@ -8,10 +8,10 @@
  "doctype": "Dashboard Chart",
  "filters_json": "{}",
  "group_by_type": "Count",
- "idx": 0,
+ "idx": 2,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2025-10-30 13:41:35.750081",
+ "modified": "2025-11-07 10:21:00.188161",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Object wise attendance percentage: Object_name vs Marked_present",
@@ -28,12 +28,8 @@
  "x_field": "object_name",
  "y_axis": [
   {
-   "color": "#449CF0",
+   "color": "#CB2929",
    "y_field": "marked_present"
-  },
-  {
-   "color": "#29CD42",
-   "y_field": "attendance_percentage"
   }
  ]
 }

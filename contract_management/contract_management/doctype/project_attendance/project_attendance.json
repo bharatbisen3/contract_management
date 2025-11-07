@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{###} - {project_name}{naming}",
+ "autoname": "format:{object_title}-{naming}-{###}",
  "creation": "2025-03-20 15:19:30.168832",
  "default_view": "List",
  "doctype": "DocType",
@@ -10,9 +10,10 @@
   "work_team_and_project_section",
   "project__client",
   "show_work_team_members",
-  "project_name",
+  "object_title",
   "column_break_iyvv",
   "work_team",
+  "project_name",
   "team_members_section",
   "column_break_vppk",
   "team_leader",
@@ -248,12 +249,19 @@
    "fieldtype": "Date",
    "hidden": 1,
    "label": "Object Start Date"
+  },
+  {
+   "fetch_from": "project__client.object_title",
+   "fieldname": "object_title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Object Title"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-19 10:00:05.632359",
+ "modified": "2025-11-07 10:51:00.629244",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Attendance",
