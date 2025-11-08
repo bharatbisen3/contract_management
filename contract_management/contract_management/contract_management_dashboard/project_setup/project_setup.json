@@ -22,7 +22,7 @@
    "width": "Half"
   },
   {
-   "chart": "Object wise attendance percentage: Object_name vs Marked_present",
+   "chart": "Object wise attendance percentage: Object_name vs Attendance_marked_count",
    "width": "Half"
   }
  ],
@@ -33,7 +33,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2025-11-07 10:12:51.994544",
+ "modified": "2025-11-08 10:31:36.849368",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Setup",

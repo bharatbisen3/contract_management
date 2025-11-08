@@ -1,10 +1,6 @@
 {
  "charts": [
   {
-   "chart_name": "Object wise attendance percentage: Object_name vs Marked_present",
-   "label": "Object wise attendance percentage"
-  },
-  {
    "chart_name": "Object Closed This Month",
    "label": "Object Closed This Month"
   },
@@ -13,7 +9,7 @@
    "label": "Object Closed Last Month"
   }
  ],
- "content": "[{\"id\":\"6KujjCf73r\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Projects</b></span>\",\"col\":12}},{\"id\":\"-djbwzeTPL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1. Create New Project\",\"col\":3}},{\"id\":\"zCI3gzZyVy\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List Of All Open Projects\",\"col\":4}},{\"id\":\"yz1OKinqbn\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Projects\",\"col\":4}},{\"id\":\"rZQSSBenUh\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"E2D5VQI6dF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Objects</b></span>\",\"col\":12}},{\"id\":\"dg-RZf_2ng\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. Create New Object\",\"col\":3}},{\"id\":\"-ME2Dt6y4H\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Objects Work Started\",\"col\":3}},{\"id\":\"tMyhtlMNca\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Object Work Not Started\",\"col\":3}},{\"id\":\"tI5Trc2Up2\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Objects Due This Month\",\"col\":4}},{\"id\":\"mLLpyJSJBh\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Object \",\"col\":4}},{\"id\":\"qOppfR5wby\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"P-mg69cEgA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Timesheets</b></span>\",\"col\":12}},{\"id\":\"05j1oy9Se2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Object Wise Timesheets, This Month\",\"col\":4}},{\"id\":\"yhLjLa-MiS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"All Timesheets\",\"col\":3}},{\"id\":\"dbwkXgP9Pa\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object Closed This Month\",\"col\":6}},{\"id\":\"dp8VTVPKwD\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object Closed Last Month\",\"col\":6}},{\"id\":\"8O_Ssm9_0f\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object wise attendance percentage\",\"col\":12}}]",
+ "content": "[{\"id\":\"6KujjCf73r\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Projects</b></span>\",\"col\":12}},{\"id\":\"-djbwzeTPL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"1. Create New Project\",\"col\":3}},{\"id\":\"zCI3gzZyVy\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List Of All Open Projects\",\"col\":4}},{\"id\":\"yz1OKinqbn\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Projects\",\"col\":4}},{\"id\":\"rZQSSBenUh\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"E2D5VQI6dF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Objects</b></span>\",\"col\":12}},{\"id\":\"dg-RZf_2ng\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"2. Create New Object\",\"col\":3}},{\"id\":\"-ME2Dt6y4H\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Objects Work Started\",\"col\":3}},{\"id\":\"tMyhtlMNca\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Object Work Not Started\",\"col\":3}},{\"id\":\"tI5Trc2Up2\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Objects Due This Month\",\"col\":4}},{\"id\":\"mLLpyJSJBh\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"List of All Object \",\"col\":4}},{\"id\":\"dbwkXgP9Pa\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object Closed This Month\",\"col\":6}},{\"id\":\"dp8VTVPKwD\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object Closed Last Month\",\"col\":6}},{\"id\":\"qOppfR5wby\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"P-mg69cEgA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Timesheets</b></span>\",\"col\":12}},{\"id\":\"05j1oy9Se2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Object Wise Timesheets, This Month\",\"col\":4}},{\"id\":\"yhLjLa-MiS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"All Timesheets\",\"col\":3}},{\"id\":\"8O_Ssm9_0f\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Object wise attendance percentage\",\"col\":12}}]",
  "creation": "2025-10-22 09:29:36.852968",
  "custom_blocks": [],
  "docstatus": 0,
@@ -26,7 +22,7 @@
  "is_hidden": 0,
  "label": "Project Manager Dashboard",
  "links": [],
- "modified": "2025-11-07 10:21:11.459985",
+ "modified": "2025-11-08 10:21:25.252516",
  "modified_by": "Administrator",
  "module": "Contract Management",
  "name": "Project Manager Dashboard",
