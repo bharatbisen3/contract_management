@@ -896,3 +896,23 @@ fixtures = [
         ]
     }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+# API Endpoints
+
+# Scheduler Events (Optional - agar automated tasks chahiye)
+scheduler_events = {
+    "daily": [
+        "contract_management.api.onboarding.check_expired_invitations"
+    ]
+}
